@@ -1,0 +1,2 @@
+class CdItem < ApplicationRecord
+end

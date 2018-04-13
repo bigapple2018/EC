@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  item_id: 1
+  status_id: 1
+  buy_day: 2018-04-13 08:41:33
+  destination: MyString
+  payment_id: 1
+  summary_price: 1
+  summary_count: 1
+
+two:
+  user_id: 1
+  item_id: 1
+  status_id: 1
+  buy_day: 2018-04-13 08:41:33
+  destination: MyString
+  payment_id: 1
+  summary_price: 1
+  summary_count: 1
