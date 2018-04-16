@@ -2,8 +2,8 @@
 
 one:
   song_title: MyString
-  song_item_id: 1
+  cd_item_id: 1
 
 two:
   song_title: MyString
-  song_item_id: 1
+  cd_item_id: 1
