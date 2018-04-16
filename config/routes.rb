@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+
   devise_for :admins, controllers: {
   sessions:      'admins/sessions',
   passwords:     'admins/passwords',
@@ -14,5 +15,6 @@ devise_for :users, controllers: {
 
  resources :users, only:[:show]
  resources :items, only:[:index,:show]
+ resources :sub_addresses, only:[:index, :new, :edit, :create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

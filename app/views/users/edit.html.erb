@@ -1,0 +1,34 @@
+<!-- ユーザー情報編集 -->
+<h1>情報変更</h1>
+
+<%= form_for(@user) do |f| %>
+<%= f.label :name, "名前" %>
+<%= f.text_field :name %>
+<%= f.text_field :name %>
+
+<%= f.label :name_kana, "名前(カナ)" %>
+<%= f.text_field :name_kana %>
+<%= f.text_field :name_kana %>
+
+<%= f.label :postal_code, "〒" %>
+<%= f.text_field :postal_code %>
+
+<%= f.label :address, "住所" %>
+<%= f.text_field :address %>
+
+<%= f.label :tell, "電話番号" %>
+<%= f.text_field :tell %>
+
+<%= f.label :email, "メールアドレス" %>
+<%= f.text_field :email %>
+
+<%= f.label :password, "パスワード" %>
+<%= f.text_field :password %>
+<%= f.label :password_confirmation, "パスワード確認" %>
+<%= f.text_field :password_confirmation %>
+
+<%= f.submit "更新"  %>
+<% end %>
+<%= link_to "戻る", user_path(user.id) %>
+
+<!-- ユーザー情報編集 -->
