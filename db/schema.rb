@@ -122,6 +122,7 @@ ActiveRecord::Schema.define(version: 20180416045952) do
     t.integer "cd_item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["cd_item_id"], name: "index_songs_on_cd_item_id"
   end
 
   create_table "statuses", force: :cascade do |t|
