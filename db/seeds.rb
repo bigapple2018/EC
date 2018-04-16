@@ -7,13 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #ジャンル初期データ
-Genre.first_or_create(:genre_name => 'J-Pop')
-Genre.first_or_create(:genre_name => 'K-Pop')
-Genre.first_or_create(:genre_name => 'R&B/ソウル')
-Genre.first_or_create(:genre_name => 'ダンス')
-Genre.first_or_create(:genre_name => 'Jazz')
-Genre.first_or_create(:genre_name => 'Rock')
-Genre.first_or_create(:genre_name => 'クラシック')
+Genre.create(:genre_name => 'J-Pop')
+Genre.create(:genre_name => 'K-Pop')
+Genre.create(:genre_name => 'R&B/ソウル')
+Genre.create(:genre_name => 'ダンス')
+Genre.create(:genre_name => 'Jazz')
+Genre.create(:genre_name => 'Rock')
+Genre.create(:genre_name => 'クラシック')
 
 #管理ユーザ初期データ
 Admin.first_or_create(:email => 'test@test.com', :password => 'password')

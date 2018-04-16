@@ -4045,3 +4045,66 @@ FOREIGN KEY ("cd_item_id")
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 [0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mGenre Load (2.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY "genres"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.1ms)[0m  [1m[32mINSERT INTO "genres" ("genre_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["genre_name", "J-Pop"], ["created_at", "2018-04-16 06:31:47.209000"], ["updated_at", "2018-04-16 06:31:47.209000"]]
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGenre Load (3.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY "genres"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGenre Load (3.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY "genres"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGenre Load (2.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY "genres"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGenre Load (2.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY "genres"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGenre Load (2.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY "genres"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGenre Load (2.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY "genres"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAdmin Load (2.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" ORDER BY "admins"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists (2.8ms)[0m  [1m[34mSELECT  1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  [1m[35mSQL (5.8ms)[0m  [1m[32mINSERT INTO "admins" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@test.com"], ["encrypted_password", "$2a$11$BIPDMacUBMpS9r9BZI/Dc.c4Ubwg.8jytkcnVaK7DCShAOkC1OIFa"], ["created_at", "2018-04-16 06:31:47.572853"], ["updated_at", "2018-04-16 06:31:47.572853"]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.1ms)[0m  [1m[32mINSERT INTO "items" ("artist", "title_name", "label", "price", "stock", "image_id", "admin_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["artist", "testArtist"], ["title_name", "testAlbam"], ["label", "testLabel"], ["price", 1980], ["stock", 10], ["image_id", "test.jpg"], ["admin_id", 1], ["genre_id", 1], ["created_at", "2018-04-16 06:31:47.635081"], ["updated_at", "2018-04-16 06:31:47.635081"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (15.2ms)[0m  [1m[32mINSERT INTO "cd_items" ("cd_title", "item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["cd_title", "testCDtitle"], ["item_id", 1], ["created_at", "2018-04-16 06:31:47.690276"], ["updated_at", "2018-04-16 06:31:47.690276"]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (11.4ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "cd_item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["song_title", "testSong1"], ["cd_item_id", 1], ["created_at", "2018-04-16 06:31:47.763241"], ["updated_at", "2018-04-16 06:31:47.763241"]]
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (11.9ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "cd_item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["song_title", "testSong2"], ["cd_item_id", 1], ["created_at", "2018-04-16 06:31:47.786893"], ["updated_at", "2018-04-16 06:31:47.786893"]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.6ms)[0m  [1m[32mINSERT INTO "genres" ("genre_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["genre_name", "J-Pop"], ["created_at", "2018-04-16 06:34:44.385543"], ["updated_at", "2018-04-16 06:34:44.385543"]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.5ms)[0m  [1m[32mINSERT INTO "genres" ("genre_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["genre_name", "K-Pop"], ["created_at", "2018-04-16 06:34:44.401669"], ["updated_at", "2018-04-16 06:34:44.401669"]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.2ms)[0m  [1m[32mINSERT INTO "genres" ("genre_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["genre_name", "R&B/ソウル"], ["created_at", "2018-04-16 06:34:44.420664"], ["updated_at", "2018-04-16 06:34:44.420664"]]
+  [1m[35m (8.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (13.2ms)[0m  [1m[32mINSERT INTO "genres" ("genre_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["genre_name", "ダンス"], ["created_at", "2018-04-16 06:34:44.444811"], ["updated_at", "2018-04-16 06:34:44.444811"]]
+  [1m[35m (11.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.9ms)[0m  [1m[32mINSERT INTO "genres" ("genre_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["genre_name", "Jazz"], ["created_at", "2018-04-16 06:34:44.476660"], ["updated_at", "2018-04-16 06:34:44.476660"]]
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (11.9ms)[0m  [1m[32mINSERT INTO "genres" ("genre_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["genre_name", "Rock"], ["created_at", "2018-04-16 06:34:44.499082"], ["updated_at", "2018-04-16 06:34:44.499082"]]
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (10.7ms)[0m  [1m[32mINSERT INTO "genres" ("genre_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["genre_name", "クラシック"], ["created_at", "2018-04-16 06:34:44.527514"], ["updated_at", "2018-04-16 06:34:44.527514"]]
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAdmin Load (4.5ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" ORDER BY "admins"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (16.2ms)[0m  [1m[32mINSERT INTO "items" ("artist", "title_name", "label", "price", "stock", "image_id", "admin_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["artist", "testArtist"], ["title_name", "testAlbam"], ["label", "testLabel"], ["price", 1980], ["stock", 10], ["image_id", "test.jpg"], ["admin_id", 1], ["genre_id", 1], ["created_at", "2018-04-16 06:34:44.673688"], ["updated_at", "2018-04-16 06:34:44.673688"]]
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (59.7ms)[0m  [1m[32mINSERT INTO "cd_items" ("cd_title", "item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["cd_title", "testCDtitle"], ["item_id", 1], ["created_at", "2018-04-16 06:34:44.784036"], ["updated_at", "2018-04-16 06:34:44.784036"]]
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (12.8ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "cd_item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["song_title", "testSong1"], ["cd_item_id", 1], ["created_at", "2018-04-16 06:34:44.915434"], ["updated_at", "2018-04-16 06:34:44.915434"]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (15.2ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "cd_item_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["song_title", "testSong2"], ["cd_item_id", 1], ["created_at", "2018-04-16 06:34:44.944238"], ["updated_at", "2018-04-16 06:34:44.944238"]]
+  [1m[35m (18.2ms)[0m  [1m[36mcommit transaction[0m
