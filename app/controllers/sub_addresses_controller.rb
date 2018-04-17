@@ -15,7 +15,6 @@ class SubAddressesController < ApplicationController
   def edit
   end
 
-
    private
 
    def subAddress_params
