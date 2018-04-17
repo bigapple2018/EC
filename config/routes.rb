@@ -12,7 +12,10 @@ devise_for :users, controllers: {
   registrations: 'users/registrations'
 }
 
- resources :users, only:[:show]
+
+ resources :users, only:[:show, :edit, :update]
+ 
  resources :items, only:[:index,:show]
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
