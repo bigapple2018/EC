@@ -18,6 +18,15 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
+  # サインイン後に呼ばれるアクション指定
+  def after_sign_in_path_for(resource)
+    root_path
+  end
+  # サインアウト後に呼ばれるアクション指定
+  def after_sign_out_path_for(resource)
+    root_path
+  end
+
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
