@@ -16,12 +16,40 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+
 a,a:hover,a:visited{
   color:white;
   text-decoration: none;
 }
-input[type="text"] ,input[type="email"] {
+input[type="text"],input[type="email"],input[type="password"] {
 	border-radius: 5px;
+  margin: 5px 0;
+}
+// ボタン
+.btn{
+  margin: 5px 0;
+}
+.red-btn{
+  background-color: #e60303;
+  color:#fff;
+  width: 200px;
+}
+.red-border-btn{
+  background-color: #fff;
+  border:solid 1px #e60303;
+  color:#e60303;
+  width: 200px;
+}
+.red-gray-btn{
+  background-color:#ccc;
+  border:none;
+  color:#e60303;
+  width: 200px;
+}
+.blue-btn{
+  background-color:#33a4ec;
+  color:#fff;
+  width: 200px;
 }
 // ヘッダー・フッター共通
 header,footer{
@@ -58,4 +86,16 @@ footer{
 .itemname-search-txt{
   margin-top:5px;
   width: 300px;
+}
+// サインアップ・ログインフォーム
+.form-div{
+  width: 80%;
+  margin: 30px auto;
+  padding:20px;
+  border: solid 1px #bababa;
+  text-align: center;
+  .postal-code-txt,.address-txt,
+  .tell-text,.email-txt,.password-txt{
+    width: 310px;
+  }
 }
