@@ -9,7 +9,7 @@ class SubAddressesController < ApplicationController
   def create
   	user = SubAddress(subAddress_params)
   	user.save
-  	redirect_to "/sub_address"
+  	redirect_to sub_addresses_path
   end
 
   def edit
