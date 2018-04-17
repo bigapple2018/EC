@@ -18,7 +18,29 @@ Genre.create(:genre_name => 'クラシック')
 #管理ユーザ初期データ
 Admin.first_or_create(:email => 'test@test.com', :password => 'password')
 
-Item.create(:artist => 'testArtist', :title_name => 'testAlbam',:label => 'testLabel',:price => 1980,:stock => 10,:image_id => 'test.jpg',:admin_id => 1,:genre_id =>1)
-CdItem.create(:item_id =>1,:cd_title => 'testCDtitle')
+#開発用商品データ
+Item.create(:artist => 'testArtist1', :title_name => 'testAlbam1',:label => 'testLabel1',:price => 1980,:stock => 10,:image_id => 'test.jpg',:admin_id => 1,:genre_id =>1)
+Item.create(:artist => 'testArtist2', :title_name => 'testAlbam2',:label => 'testLabel2',:price => 1980,:stock => 10,:image_id => 'test.jpg',:admin_id => 1,:genre_id =>2)
+Item.create(:artist => 'testArtist3', :title_name => 'testAlbam3',:label => 'testLabel1',:price => 1980,:stock => 10,:image_id => 'test.jpg',:admin_id => 1,:genre_id =>2)
+Item.create(:artist => 'testArtist3', :title_name => 'testAlbam4',:label => 'testLabel2',:price => 1980,:stock => 10,:image_id => 'test.jpg',:admin_id => 1,:genre_id =>1)
+Item.create(:artist => 'testArtist4', :title_name => 'testAlbam5',:label => 'testLabel2',:price => 1980,:stock => 10,:image_id => 'test.jpg',:admin_id => 1,:genre_id =>1)
+
+CdItem.create(:item_id =>1,:cd_title => 'testCDtitle1')
+CdItem.create(:item_id =>2,:cd_title => 'testCDtitle2')
+CdItem.create(:item_id =>3,:cd_title => 'testCDtitle3')
+CdItem.create(:item_id =>4,:cd_title => 'testCDtitle4')
+CdItem.create(:item_id =>5,:cd_title => 'testCDtitle5')
+
 Song.create(:song_title => 'testSong1',:cd_item_id => 1)
+<<<<<<< HEAD
 Song.create(:song_title => 'testSong2',:cd_item_id => 1)
+=======
+Song.create(:song_title => 'testSong2',:cd_item_id => 1)
+Song.create(:song_title => 'testSong3',:cd_item_id => 2)
+Song.create(:song_title => 'testSong4',:cd_item_id => 3)
+Song.create(:song_title => 'testSong5',:cd_item_id => 3)
+Song.create(:song_title => 'testSong6',:cd_item_id => 4)
+Song.create(:song_title => 'testSong7',:cd_item_id => 5)
+Song.create(:song_title => 'testSong8',:cd_item_id => 5)
+Song.create(:song_title => 'testSong9',:cd_item_id => 5)
+>>>>>>> 451c1e4643a7289361a9c756298fb9d795a35239

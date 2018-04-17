@@ -1,33 +1,72 @@
-<h1>ユーザー詳細画面</h1>
+<h1>ユーザー詳細</h1>
 
-<h1>苗字</h1>
-<%= @user.first_name %>
 
-<h1>名前</h1>
-<%= @user.last_name %>
+<div class="admin_user_show">
+	<table width="80%">
+		<tbody>
+			<tr>
+				<td>名前（姓・名)</td>
+				<td><%= @user.last_name %> <%= @user.first_name %></td>
+			</tr>
+			<tr>
+				<td>名前（かな）</td>
+				<td><%= @user.last_kana %> <%= @user.first_kana %></td>
+			</tr>
+			<tr>
+				<td>郵便番号</td>
+				<td><%= @user.postal_code %></td>
+			</tr>
+			<tr>
+				<td>住所</td>
+				<td><%= @user.address %></td>
+			</tr>
+			<tr>
+				<td>電話番号</td>
+				<td><%= @user.tell %></td>
+			</tr>
+			<tr>
+				<td>メールアドレス</td>
+				<td><%= @user.email %></td>
+			</tr>
+		</tbody>
+    </table>
 
-<h1>苗字kana</h1>
-<%= @user.first_kana %>
+	<%#= link_to “戻る”, ユーザー一覧画面_path %>
 
-<h1>名前kana</h1>
-<%= @user.last_kana %>
+	<%#= link_to “購入履歴”, ユーザー一覧画面_path %>
 
-<h1>郵便番号</h1>
-<%= @user.postal_code %>
+	<%#= link_to “編集”, ユーザー一覧画面_path %>
 
-<h1>住所</h1>
-<%= @user.address %>
+	<%#= link_to “削除”, 削除_path(params[:id]), method: :delete %>
 
-<h1>電話番号</h1>
-<%= @user.tell %>
+</div>
 
-<h1>メールアドレス</h1>
-<%= @user.mail_address %>
 
-<%#= link_to “戻る”, ユーザー一覧画面_path %>
 
-<%#= link_to “購入履歴”, ユーザー一覧画面_path %>
 
-<%#= link_to “編集”, ユーザー一覧画面_path %>
 
-<%#= link_to “削除”, 削除_path(params[:id]), method: :delete %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

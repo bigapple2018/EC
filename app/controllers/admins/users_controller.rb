@@ -1,6 +1,5 @@
 class Admins::UsersController < ApplicationController
 
-
  def show
  	@user = User.find(params[:id])
  end
@@ -14,6 +13,5 @@ class Admins::UsersController < ApplicationController
  	 user.updaet(user_params)
  	 redirect_to user_path(user.id)
  end
-
 
 end
