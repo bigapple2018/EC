@@ -12,6 +12,7 @@ devise_for :users, controllers: {
   registrations: 'users/registrations'
 }
 
+ root to: 'items#index'
  resources :users, only:[:show]
  resources :items, only:[:index,:show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
