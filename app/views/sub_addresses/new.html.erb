@@ -2,16 +2,20 @@
 
 <div class ="container">
  <div class="row">
-    <h1>住所新規登録</h1>
-	<%= form_for(@address) do |f| %>
-	<%= f.label :sub_postal_code, "〒" %>
-	<%= f.text_field :sub_postal_code %>
-	<br>
-	<%= f.label :sub_address, "住所" %>
-	<%= f.text_field :sub_address %>
-	<br>
-	<%= f.submit '登録' %>
-	<% end %>
+ 	 <div class="col-lg-4">
+ 	 </div>
+	  <div class="col-lg-4">
+	    <h1>住所新規登録</h1>
+		<%= form_for(@address) do |f| %>
+		<%= f.label :sub_postal_code, "〒" %>
+		<%= f.text_field :sub_postal_code %>
+		<br>
+		<%= f.label :sub_address, "住所" %>
+		<%= f.text_field :sub_address %>
+		<br>
+		<%= f.submit '登録' %>
+		<% end %>
+	  </div>
  </div>
 </div>
 
