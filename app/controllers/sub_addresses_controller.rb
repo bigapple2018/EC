@@ -1,5 +1,6 @@
 class SubAddressesController < ApplicationController
   def index
+     @addresses = SubAddress.all
   end
 
   def new
@@ -7,8 +8,9 @@ class SubAddressesController < ApplicationController
   end
 
   def create
-  	user = SubAddress(subAddress_params)
-  	user.save
+  	address = SubAddress.new(sub_address_params)
+    address.user_id = current_user.id
+  	address.save
   	redirect_to sub_addresses_path
   end
 
@@ -17,8 +19,8 @@ class SubAddressesController < ApplicationController
 
    private
 
-   def subAddress_params
-   	params.require(:subAddress).permit(:sub_postel_code, :sub_address)
+   def sub_address_params
+   	params.require(:sub_address).permit(:sub_postal_code, :sub_address)
 
    end
 
