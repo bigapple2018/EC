@@ -4,9 +4,9 @@
       <div class="heading">
         <p>Genre</p>
       </div>
-      <ul>
+      <ul class="genre_list">
       <% @genres.each do |genre| %>
-          <li><%= genre.genre_name %></li>
+          <a href="#"><li><img src="no_image.png" class="genre_image"><%= genre.genre_name %></li></a>
       <% end %>
       </ul>
     </div>

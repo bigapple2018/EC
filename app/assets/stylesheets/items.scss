@@ -8,7 +8,6 @@
   border-bottom:solid 3px #000;
   margin-top:30px;
   margin-bottom:30px;
-  margin-left:30px;
 }
 .heading > p{
   font-size: 20px;
@@ -24,7 +23,7 @@ ul.items_list > li {
  width: 25%;
  border: 1px solid white;
  list-style: none;
- flex-grow: 1;
+ flex-grow: 0;
  box-sizing: border-box;
 }
 ul.items_list > li > a{
@@ -35,4 +34,25 @@ ul.items {
 }
 ul.items > li{
   list-style: none;
+}
+
+// ジャンル一覧の表示
+ul.genre_list{
+  width: 100%;
+  padding-left: 0px;
+}
+ul.genre_list > li{
+  height: 50px;
+  border:1px solid white;
+  list-style: none;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+}
+ul.genre_list a{
+  color:#000;
+  list-style: none;
+}
+.genre_image{
+  height: 50px;
+  width: 50px;
 }
