@@ -16,8 +16,9 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-a,a:hover,a:visited{
-  color:white;
+
+td a,a:hover,a:visited{
+  color:lightgray;
   text-decoration: none;
 }
 input[type="text"] ,input[type="email"] {
