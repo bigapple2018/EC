@@ -1,3 +1,38 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 見出し
+.heading{
+  height: 30px;
+  border-bottom:solid 3px #000;
+  margin-top:30px;
+  margin-bottom:30px;
+  margin-left:30px;
+}
+.heading > p{
+  font-size: 20px;
+}
+
+// 商品一覧のタイル表示
+ul.items_list {
+ display: flex;
+ flex-wrap: wrap;
+ width: 100%;
+}
+ul.items_list > li {
+ width: 25%;
+ border: 1px solid white;
+ list-style: none;
+ flex-grow: 1;
+ box-sizing: border-box;
+}
+ul.items_list > li > a{
+  color:#000;
+}
+ul.items {
+  padding:5px;
+}
+ul.items > li{
+  list-style: none;
+}

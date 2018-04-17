@@ -1,6 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3">
+      <div class="heading">
+        <p>Genre</p>
+      </div>
       <ul>
       <% @genres.each do |genre| %>
           <li><%= genre.genre_name %></li>
@@ -8,16 +11,20 @@
       </ul>
     </div>
     <div class="col-md-9">
-      <table class="table">
+      <div class="heading">
+        <p>Music</p>
+      </div>
+      <ul class="items_list">
       <% @items.each do |item| %>
-        <tr>
-          <td><%= item.image_id %></td>
-          <td><%= item.title_name %></td>
-          <td><%= item.artist %></td>
-        </tr>
-        </div>
+        <li>
+          <ul class="items">
+            <li><a href ='#'><%= attachment_image_tag item, :image, :fill, 120, 120, format: 'png', class: "" %></a></li>
+            <li><%= item.title_name %></li>
+            <li><%= item.artist %></li>
+          </ul>
+        </li>
       <% end %>
-      </table>
+    </ul>
     </div>
   </div>
 </div>
