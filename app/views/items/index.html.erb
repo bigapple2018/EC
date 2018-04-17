@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <ul>
+      <% @genres.each do |genre| %>
+          <li><%= genre.genre_name %></li>
+      <% end %>
+      </ul>
+    </div>
+    <div class="col-md-9">
+      <table class="table">
+      <% @items.each do |item| %>
+        <tr>
+          <td><%= item.image_id %></td>
+          <td><%= item.title_name %></td>
+          <td><%= item.artist %></td>
+        </tr>
+        </div>
+      <% end %>
+      </table>
+    </div>
+  </div>
+</div>
