@@ -32,9 +32,7 @@ CdItem.create(:item_id =>4,:cd_title => 'testCDtitle4')
 CdItem.create(:item_id =>5,:cd_title => 'testCDtitle5')
 
 Song.create(:song_title => 'testSong1',:cd_item_id => 1)
-<<<<<<< HEAD
 Song.create(:song_title => 'testSong2',:cd_item_id => 1)
-=======
 Song.create(:song_title => 'testSong2',:cd_item_id => 1)
 Song.create(:song_title => 'testSong3',:cd_item_id => 2)
 Song.create(:song_title => 'testSong4',:cd_item_id => 3)
@@ -43,4 +41,3 @@ Song.create(:song_title => 'testSong6',:cd_item_id => 4)
 Song.create(:song_title => 'testSong7',:cd_item_id => 5)
 Song.create(:song_title => 'testSong8',:cd_item_id => 5)
 Song.create(:song_title => 'testSong9',:cd_item_id => 5)
->>>>>>> 451c1e4643a7289361a9c756298fb9d795a35239

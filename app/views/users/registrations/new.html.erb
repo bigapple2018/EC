@@ -1,44 +1,43 @@
 <div class ="container">
   <div class="row">
     <div class="col-md-12">
-      <div class="form_div">
-        <h2>Sign up</h2>
+      <%= devise_error_messages! %>
+      <div class="form-div">
+        <h4>Sign up</h4>
 
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= devise_error_messages! %>
-
           <div class="field">
-            <%= f.text_field :last_name, autofocus: true, autocomplete: "name_kana",:placeholder => "名前(姓)" %>
-            <%= f.text_field :first_name, autocomplete: "name_kana",:placeholder => "名前(名)" %>
+            <%= f.text_field :last_name, autocomplete: "last_name",:placeholder => "名前(姓)" %>
+            <%= f.text_field :first_name, autocomplete: "first_name",:placeholder => "名前(名)" %>
           </div>
           <div class="field">
-            <%= f.text_field :last_kana, autocomplete: "name_kana",:placeholder => "名前(姓・カナ)" %>
-            <%= f.text_field :first_kana, autocomplete: "name_kana",:placeholder => "名前(名・カナ)" %>
+            <%= f.text_field :last_kana, autocomplete: "last_kana",:placeholder => "名前(姓・カナ)" %>
+            <%= f.text_field :first_kana, autocomplete: "first_kana",:placeholder => "名前(名・カナ)" %>
           </div>
           <div class="field">
-            <%= f.text_field  :postal_code, autocomplete: "postal_code", :placeholder => "郵便番号" %>
+            <%= f.text_field  :postal_code, autocomplete: "postal_code", :placeholder => "郵便番号",:class =>"postal-code-txt" %>
           </div>
           <div class="field">
-            <%= f.text_field :address, autocomplete: "address", :placeholder => "住所" %>
+            <%= f.text_field :address, autocomplete: "address", :placeholder => "住所" ,:class => "address-txt" %>
           </div>
           <div class="field">
-            <%= f.text_field  :tell, autocomplete: "tell", :placeholder => "電話番号" %>
+            <%= f.text_field  :tell, autocomplete: "tell", :placeholder => "電話番号" ,:class => "tell-text" %>
           </div>
           <br>
           <div class="field">
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "メールアドレス" %>
+            <%= f.email_field :email, autocomplete: "email", :placeholder => "メールアドレス",:class => "email-txt" %>
           </div>
 
           <div class="field">
-            <%= f.password_field :password, autocomplete: "off" , :placeholder => "パスワード" %>
+            <%= f.password_field :password, autocomplete: "off" , :placeholder => "パスワード", :class => "password-txt" %>
           </div>
 
           <div class="field">
-            <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => "パスワード(確認)" %>
+            <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => "パスワード(確認)", :class => "password-txt" %>
           </div>
 
           <div class="actions">
-            <%= f.submit "Sign up" %>
+            <%= f.submit "Sign up", class:"btn red-btn" %>
           </div>
         <% end %>
       </div>
