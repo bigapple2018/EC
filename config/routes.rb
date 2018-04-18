@@ -21,16 +21,10 @@ Rails.application.routes.draw do
  resources :sub_addresses, only:[:index, :new, :edit, :create, :destroy]
 
  namespace :admins do
-
- 	resources :users
-
- 	resources :items
-
+	resources :users
+	resources :items
  end
-
-
- get '/admins_top' => 'admins#top'
-
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+ # get '/admins_top' => 'admins#top'
+ # get '/admins/users' => 'admins#index'
+	# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,2 +1,15 @@
-名前　（性、名）　　　電話番号　詳細
+<table>
+	<tbody>
+		<% @users.each do |user| %>
+		<tr>
+			<td> 名前(姓・名)</td>
+			<td>user.name</td>
+			<td> 電話番号</td>
+			<td>user.tell</td>
+			<td>詳細</td>
+			<td><%= link_to "詳細", user_path(user.id) %></td>
+		</tr>
+	</tbody>
 
+		<% end %>
+</table>
