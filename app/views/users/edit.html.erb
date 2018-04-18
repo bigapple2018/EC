@@ -1,36 +1,78 @@
 <!-- ユーザー情報編集 -->
-<h1>情報変更</h1>
-
-<%= form_for(@user) do |f| %>
-<%= f.label :name, "名前" %>
-
-<%= f.text_field :last_name, :placeholder => "姓" %>
-<%= f.text_field :first_name, :placeholder => "名" %>
-
-<%= f.label :name_kana, "名前(カナ)" %>
-<%= f.text_field :last_kana, :placeholder => "姓カナ" %>
-<%= f.text_field :first_kana, :placeholder => "名カナ" %>
-
-
-<%= f.label :postal_code, "〒" %>
-<%= f.text_field :postal_code %>
-
-<%= f.label :address, "住所" %>
-<%= f.text_field :address %>
-
-<%= f.label :tell, "電話番号" %>
-<%= f.text_field :tell %>
-
-<%= f.label :email, "メールアドレス" %>
-<%= f.text_field :email %>
-
-<%= f.label :password, "パスワード" %>
-<%= f.text_field :password %>
-<%= f.label :password_confirmation, "パスワード確認" %>
-<%= f.text_field :password_confirmation %>
-
-<%= f.submit "更新"  %>
-<% end %>
-<%= link_to "戻る", user_path(user.id) %>
-
+<div class="container">
+<h1 class="user_info"> User edit</h1>
+  <div class="row">
+  	<div class="col-lg-3">
+    </div>
+      <div class="col-lg-7">
+			<%= form_for(@user) do |f| %>
+	   <form class="form-horizontal">
+			<div class="form-group">
+				  <%= f.label :name, "名前", class: "col-sm-3 control-label" %>
+				<div class="col-sm-9">
+				  <%= f.text_field :last_name, :placeholder => "姓" %>
+				  <%= f.text_field :first_name, :placeholder => "名" %>
+			    </div>
+			</div>
+			<div class="form-group">
+				  <%= f.label :name_kana, "名前(カナ)", class: "col-sm-3 control-label" %>
+				<div class="col-sm-9">
+				  <%= f.text_field :last_kana, :placeholder => "姓カナ" %>
+				  <%= f.text_field :first_kana, :placeholder => "名カナ" %>
+				</div>
+			</div>
+			<div class="form-group">
+				  <%= f.label :postal_code, "〒", class: "col-sm-3 control-label" %>
+				<div class="col-sm-9">
+				  <%= f.text_field :postal_code, :placeholder => "郵便番号" %>
+			    </div>
+			</div>
+			<div class="form-group">
+				  <%= f.label :address, "住所", class: "col-sm-3" %>
+				<div class="col-sm-9">
+				  <%= f.text_field :address, :placeholder => "住所" %>
+			    </div>
+		    </div>
+		    <div class="form-group">
+				  <%= f.label :tell, "電話番号", class: "col-sm-3 control-label" %>
+				<div class="col-sm-9">
+				  <%= f.text_field :tell, :placeholder => "電話番号" %>
+			    </div>
+			</div>
+			<div class="form-group">
+				  <%= f.label :email, "メールアドレス", class: "col-sm-3 control-label" %>
+				<div class="col-sm-9">
+				  <%= f.email_field :email, :placeholder => "メールアドレス" %>
+				</div>
+			</div>
+			<div class="form-group">
+				  <%= f.label :password, "パスワード", class: "col-sm-3 control-label" %>
+				  <div class="col-sm-9">
+				  <%= f.password_field :password, :placeholder => "パスワード" %>
+				</div>
+			</div>
+			<div class="form-group">
+				  <%= f.label :password_confirmation, "パスワード確認", class: "col-sm-3 control-label" %>
+				<div class="col-sm-9">
+				  <%= f.password_field :password_confirmation, :placeholder => "パスワード確認" %>
+				</div>
+		    </div>
+		    <div class="form-group">
+		    	<div class="col-sm-4">
+		        </div>
+				  <%= f.submit "更新", class: " btn red-btn btn-xs col-sm-4" %>
+				<div class="col-sm-4">
+			    </div>
+			</div>
+		</form>
+			<% end %>
+	 </div>
+	<div class="col-lg-2">
+    </div>
+  </div>
+            <div class="btn_box2">
+			   <%= link_to "購入履歴", user_path(current_user.id), class: "btn red-gray-btn btn-xs" %>
+			   <%= link_to "戻る", user_path(current_user.id), class: "btn red-gray-btn btn-xs" %>
+			</div>
+</div>
 <!-- ユーザー情報編集 -->
