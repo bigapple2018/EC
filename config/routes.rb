@@ -25,7 +25,7 @@ Rails.application.routes.draw do
  end
  get '/admins_top' => 'admins#top'
 
-	
+
  get 'items/search/:id', to: 'items#search_genre', as: :search_genre
 
 end
