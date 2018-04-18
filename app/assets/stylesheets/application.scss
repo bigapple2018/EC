@@ -17,10 +17,7 @@
  @import "bootstrap";
 
 
-
 a,a:hover,a:visited{
-  color:white;
-
   text-decoration: none;
 }
 // テキストボックス
@@ -81,6 +78,12 @@ header,footer{
   color:White;
   margin: 0 20px;
   padding:10px 0;
+    a,a:visited{
+      color:white;
+    }
+    a:hover{
+      color:lightgray;
+    }
 }
 footer{
   text-align: center;
