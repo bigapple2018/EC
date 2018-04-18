@@ -26,7 +26,8 @@ ul.items_list > li {
  flex-grow: 0;
  box-sizing: border-box;
 }
-ul.items_list > li > a{
+ul.items_list a{
+  list-style: none;
   color:#000;
 }
 ul.items {

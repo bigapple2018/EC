@@ -15,9 +15,11 @@ devise_for :users, controllers: {
 
 
  resources :users, only:[:show, :edit, :update]
- 
+
  resources :items, only:[:index,:show]
  resources :sub_addresses, only:[:index, :new, :edit, :create]
+
+ get 'items/search/:id', to: 'items#search_genre', as: :search_genre
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

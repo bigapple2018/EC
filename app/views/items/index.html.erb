@@ -6,7 +6,9 @@
       </div>
       <ul class="genre_list">
       <% @genres.each do |genre| %>
-          <a href="#"><li><img src="no_image.png" class="genre_image"><%= genre.genre_name %></li></a>
+        <%= link_to search_genre_path(genre.id),target: "self" do %>
+          <li><img src="no_image.png" class="genre_image"><%= genre.genre_name %></li>
+        <% end %>
       <% end %>
       </ul>
     </div>
@@ -18,9 +20,13 @@
       <% @items.each do |item| %>
         <li>
           <ul class="items">
-            <li><a href ='#'><%= attachment_image_tag item, :image, :fill, 120, 120, format: 'png', class: "" %></a></li>
-            <li><%= item.title_name %></li>
-            <li><%= item.artist %></li>
+            <%= link_to item_path(item.id),target: "self" do %>
+              <li>
+                  <%= attachment_image_tag item, :image, :fill, 120, 120, format: 'png', class: "" %>
+              </li>
+              <li><%= item.title_name %></li>
+              <li><%= item.artist %></li>
+            <% end %>
           </ul>
         </li>
       <% end %>
