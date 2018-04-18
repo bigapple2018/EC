@@ -41,7 +41,7 @@ input[type="text"],input[type="email"],input[type="password"] {
 .red-border-btn{
   background-color: #fff;
   border:solid 1px #e60303;
-  color:#e60303;
+  color:red;
   width: 200px;
 }
 .red-gray-btn{
@@ -123,4 +123,45 @@ footer{
   .tell-text,.email-txt,.password-txt{
     width: 310px;
   }
+}
+// ユーザー詳細画面
+.user_info {
+  margin-bottom: 50px;
+}
+
+.user_info::before, .user_info::after {
+  content: "";
+  display: inline-block;
+  width: 140px;
+  height: 1px;
+  margin: 0 3rem;
+  background-color: #333;
+  vertical-align: middle;
+}
+/*table調整*/
+.personal_box {
+  width: 400px;
+  margin: 5px 0 0 70px;
+}
+.td_box {
+  width: 200px;
+}
+/*ユーザー詳細画面ボタン調整*/
+.btn_box {
+  width: 61%;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+.btn_box .red-btn {
+  width: 100px;
+}
+.btn_box .red-gray-btn {
+  width: 110px;
+  margin: 0 10px;
+}
+.leave .red-border-btn{
+  width: 100px;
+}
+.leave a {
+  color: red;
 }
