@@ -26,6 +26,11 @@ Rails.application.routes.draw do
  get '/admins_top' => 'admins#top'
 
 
+
+namespace :admins do
+ get "/users/:id",:to=>"users#show"
+end
+
  get 'items/search/:id', to: 'items#search_genre', as: :search_genre
 
 end
