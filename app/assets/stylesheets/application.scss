@@ -17,12 +17,63 @@
  @import "bootstrap";
 
 
-td a,a:hover,a:visited{
-  color:lightgray;
+
+a,a:hover,a:visited{
+  color:white;
+
   text-decoration: none;
 }
-input[type="text"] ,input[type="email"] {
+// テキストボックス
+input[type="text"],input[type="email"],input[type="password"] {
 	border-radius: 5px;
+  margin: 5px 0;
+  -webkit-appearance: none;
+  border: 1px solid #ccc;
+  line-height: 2em;
+}
+// ボタン
+.btn{
+  margin: 5px 0;
+}
+.red-btn{
+  background-color: #e60303;
+  color:#fff;
+  width: 200px;
+}
+.red-border-btn{
+  background-color: #fff;
+  border:solid 1px #e60303;
+  color:#e60303;
+  width: 200px;
+}
+.red-gray-btn{
+  background-color:#ccc;
+  border:none;
+  color:#e60303;
+  width: 200px;
+}
+.blue-btn{
+  background-color:#33a4ec;
+  color:#fff;
+  width: 200px;
+}
+// deviseエラー表示用
+// bootstrapのflushに寄せる
+#error_explanation{
+  width: 80%;
+  margin: 30px auto;
+  padding-top:10px;
+  padding-bottom:5px;
+  background-color: #ffd5cd;
+  border-radius: 5px;
+}
+// エラー見出し非表示
+#error_explanation > h2{
+  display: none;
+}
+// 改行されてしまう対応
+.field_with_errors{
+  display: inline-block;
 }
 // ヘッダー・フッター共通
 header,footer{
@@ -33,6 +84,9 @@ header,footer{
 }
 footer{
   text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 // ロゴ
 .logo{
@@ -59,4 +113,16 @@ footer{
 .itemname-search-txt{
   margin-top:5px;
   width: 300px;
+}
+// サインアップ・ログインフォーム
+.form-div{
+  width: 80%;
+  margin: 30px auto;
+  padding:20px;
+  border: solid 1px #bababa;
+  text-align: center;
+  .postal-code-txt,.address-txt,
+  .tell-text,.email-txt,.password-txt{
+    width: 310px;
+  }
 }
