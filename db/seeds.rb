@@ -33,6 +33,7 @@ CdItem.create(:item_id =>5,:cd_title => 'testCDtitle5')
 
 Song.create(:song_title => 'testSong1',:cd_item_id => 1)
 Song.create(:song_title => 'testSong2',:cd_item_id => 1)
+Song.create(:song_title => 'testSong2',:cd_item_id => 1)
 Song.create(:song_title => 'testSong3',:cd_item_id => 2)
 Song.create(:song_title => 'testSong4',:cd_item_id => 3)
 Song.create(:song_title => 'testSong5',:cd_item_id => 3)
