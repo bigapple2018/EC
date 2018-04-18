@@ -1,3 +1,79 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+ul{
+  list-style: none;
+}
+// 見出し
+.heading{
+  height: 30px;
+  border-bottom:solid 3px #000;
+  margin-top:30px;
+  margin-bottom:30px;
+}
+.heading > p{
+  font-size: 20px;
+}
+
+// 商品一覧のタイル表示
+ul.items_list {
+ display: flex;
+ flex-wrap: wrap;
+ width: 100%;
+}
+ul.items_list > li {
+ width: 25%;
+ border: 1px solid white;
+ list-style: none;
+ flex-grow: 0;
+ box-sizing: border-box;
+}
+ul.items_list a{
+  list-style: none;
+  color:#000;
+}
+ul.items {
+  padding:5px;
+}
+ul.items > li{
+  list-style: none;
+}
+
+// ジャンル一覧の表示
+ul.genre_list{
+  width: 100%;
+  padding-left: 0px;
+}
+ul.genre_list > li{
+  height: 50px;
+  border:1px solid white;
+  list-style: none;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+}
+ul.genre_list a{
+  color:#000;
+  list-style: none;
+}
+.genre_image{
+  height: 50px;
+  width: 50px;
+}
+
+// 商品詳細画面
+.item_title{
+  font-size: 20px;
+}
+.item_artist{
+  font-size: 16px;
+}
+.item_detail_btn_div{
+  margin: 30px　0;
+  text-align: right;
+}
+.cd_title{
+  margin-top:10px;
+  font-size: 16px;
+}
