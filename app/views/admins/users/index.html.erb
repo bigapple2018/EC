@@ -3,13 +3,11 @@
 		<% @users.each do |user| %>
 		<tr>
 			<td> 名前(姓・名)</td>
-			<td>user.name</td>
+			<td><%= user.last_name %> <%= user.first_name %></td>
 			<td> 電話番号</td>
-			<td>user.tell</td>
-			<td>詳細</td>
-			<td><%= link_to "詳細", user_path(user.id) %></td>
+			<td><%= user.tell %></td>
+			<td><%= link_to "詳細", admins_user_path(user.id), class: "btn blue-btn" %></td>
 		</tr>
 	</tbody>
-
 		<% end %>
 </table>

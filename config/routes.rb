@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 	resources :users
 	resources :items
  end
- # get '/admins_top' => 'admins#top'
+ get '/admins_top' => 'admins#top'
  # get '/admins/users' => 'admins#index'
 	# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
