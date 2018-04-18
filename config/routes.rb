@@ -24,7 +24,16 @@ Rails.application.routes.draw do
 	resources :users
 	resources :items
  end
+
  # get '/admins_top' => 'admins#top'
  # get '/admins/users' => 'admins#index'
-	# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+
+
+
+
+ get 'items/search/:id', to: 'items#search_genre', as: :search_genre
+
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
 end
