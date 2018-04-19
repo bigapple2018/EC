@@ -1,6 +1,8 @@
 class Admins::UsersController < ApplicationController
 
-
+	def index
+		@users = User.all
+	end
  def show
  	@user = User.find(params[:id])
  end
@@ -19,14 +21,9 @@ class Admins::UsersController < ApplicationController
  	end
  end
 
- def index
-	# Users.all
- end
-
 private
    def admin_user_params
    	  params.require(:user).parmit(:last_name, :first_name, :last_kana, :first_kana, :postal_code, :address, :tell, :delete_date, :email, :password)
    end
-
 end
 
