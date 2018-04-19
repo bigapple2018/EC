@@ -1,38 +1,52 @@
 <!-- ユーザー情報編集 -->
+<h1 class="user_info"> User edit</h1>
+		  	<table class="form_table">
+		  		<%= form_for(@user) do |f| %>
+		  			<tr>
+					    <td><%= f.label :name, "名前" %></td>
+		  				<td><%= f.text_field :last_name, :size=>"17", :placeholder => "姓" %>
+							<%= f.text_field :first_name, :size=>"17", :placeholder => "名" %>
+						</td>
+		  			</tr>
+		  			<tr>
+		  				<td><%= f.label :name_kana, "名前(カナ)" %></td>
+		  				<td> <%= f.text_field :last_kana, :size=>"17", :placeholder => "姓カナ" %>
+							  <%= f.text_field :first_kana, :size=>"17", :placeholder => "名カナ" %>
+					    </td>
+		  			</tr>
+		  			<tr>
+		  				<td><%= f.label :postal_code, "〒" %></td>
+		  				<td><%= f.text_field :postal_code, :size=>"36", :placeholder => "郵便番号" %></td>
+		  			</tr>
+		  			<tr>
+		  				<td><%= f.label :address, "住所" %></td>
+		  				<td><%= f.text_field :address, :size=>"36", :placeholder => "住所" %></td>
+		  			</tr>
+		  			<tr>
+		  				<td><%= f.label :tell, "電話番号" %></td>
+		  				<td><%= f.text_field :tell, :size=>"36", :placeholder => "電話番号" %></td>
+		  			</tr>
+		  			<tr>
+		  				<td><%= f.label :email, "メールアドレス" %></td>
+		  				<td><%= f.email_field :email, :size=>"36", :placeholder => "メールアドレス" %></td>
+		  			</tr>
+		  			<tr>
+		  				<td><%= f.label :password, "パスワード" %></td>
+		  				<td><%= f.password_field :password, :size=>"36", :placeholder => "パスワード" %></td>
+		  			</tr>
+		  			<tr>
+		  				<td><%= f.label :password_confirmation, "パスワード確認" %></td>
+		  				<td><%= f.password_field :password_confirmation, :size=>"36", :placeholder => "パスワード確認" %></td>
+		  			</tr>
+		  	</table>
+				  	<div class="btn_box1">
+				  	<%= f.submit "更新", class: " btn red-btn btn-xs" %>
+				    </div>
+			    <% end %>
 
-<h1>情報変更</h1>
-
-<%= form_for(@user) do |f| %>
-<%= f.label :name, "名前" %>
-
-<%= f.text_field :last_name, :placeholder => "姓" %>
-<%= f.text_field :first_name, :placeholder => "名" %>
-
-<%= f.label :name_kana, "名前(カナ)" %>
-<%= f.text_field :last_kana, :placeholder => "姓カナ" %>
-<%= f.text_field :first_kana, :placeholder => "名カナ" %>
-
-
-<%= f.label :postal_code, "〒" %>
-<%= f.text_field :postal_code %>
-
-<%= f.label :address, "住所" %>
-<%= f.text_field :address %>
-
-<%= f.label :tell, "電話番号" %>
-<%= f.text_field :tell %>
-
-<%= f.label :email, "メールアドレス" %>
-<%= f.text_field :email %>
-
-<%= f.label :password, "パスワード" %>
-<%= f.text_field :password %>
-<%= f.label :password_confirmation, "パスワード確認" %>
-<%= f.text_field :password_confirmation %>
-
-<%= f.submit "更新"  %>
-<% end %>
-<%= link_to "戻る", user_path(@user.id) %>
-
-
-<!-- ユーザー情報編集 -->
+		            <div class="btn_box2">
+					   <%= link_to "購入履歴", user_path(@user.id), class: "btn red-gray-btn btn-xs" %>
+					   <%= link_to "戻る", user_path(@user.id), class: "btn red-gray-btn btn-xs" %>
+					</div>
+ </div>
+ <!-- ユーザー情報編集 -->
