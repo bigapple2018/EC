@@ -32,7 +32,7 @@
 		 	<div class="btn_box">
 				<%= link_to "編集", edit_user_path(current_user.id), class: "btn red-btn btn-xs" %>
 				<%= link_to "購入履歴", user_path(current_user.id), class: "btn red-gray-btn btn-xs" %>
-				<%= link_to "住所管理", sub_addresses_path(current_user), class: "btn red-btn btn-xs" %>
+				<%= link_to "住所管理", sub_addresses_path(current_user.id), class: "btn red-btn btn-xs" %>
 			</div>
 
 	   </div>
