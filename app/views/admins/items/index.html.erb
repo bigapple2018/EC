@@ -1,0 +1,45 @@
+<h1>CD一覧画面</h1>
+
+
+<div class="admin_items">
+	<table class="table-bordered">
+		<tbody>
+			<tr>
+				<td>アーティスト</td>
+				<td><%#= @item.artist %></td>
+			</tr>
+			<tr>
+				<td>シングル・アルバム名</td>
+				<td><%#= @item.title_name %></td>
+			</tr>
+			<tr>
+				<td>レーベル名</td>
+				<td><%#= @item.label %></td>
+			</tr>
+			<tr>
+				<td>ジャンル</td>
+				<td><%#= @item.genre_id %></td>
+			</tr>
+			<tr>
+				<td>収録曲</td>
+				<td><%#= @item.tell %></td>
+			</tr>
+			<tr>
+				<td>値段</td>
+				<td><%#= @item.price %></td>
+			</tr>
+			<tr>
+				<td>在庫数</td>
+				<td><%#= @item.stock %></td>
+			</tr>
+		</tbody>
+    </table>
+
+	<%#= link_to “戻る”, admins_users_path %>
+
+	<%#= link_to “購入履歴”, ユーザー一覧画面_path %>
+
+	<%#= link_to "編集", edit_admins_user_path(@user.id) %>
+
+	<%#= link_to “削除”, 削除_path(params[:id]), method: :delete %>
+</div>

@@ -1,0 +1,44 @@
+<h1>ユーザー詳細編集</h1>
+
+
+<div class="admin_user_edit">
+	<table width="80%">
+
+<%= form_for(@user) do |f| %>
+
+		<tbody>
+			<tr>
+				<td>名前（姓・名)</td>
+				<td><%= f.text_field :last_name %> <%= f.text_field :first_name %></td>
+			</tr>
+			<tr>
+				<td>名前（かな）</td>
+				<td><%= f.text_field :last_kana %> <%= f.text_field :first_kana %></td>
+			</tr>
+			<tr>
+				<td>郵便番号</td>
+				<td><%= f.text_field :postal_code,:size=>"42" %></td>
+			</tr>
+			<tr>
+				<td>住所</td>
+				<td><%= f.text_field :address, :size=>"42" %></td>
+			</tr>
+			<tr>
+				<td>電話番号</td>
+				<td><%= f.text_field :tell,:size=>"42" %></td>
+			</tr>
+			<tr>
+				<td>メールアドレス</td>
+				<td><%= f.text_field :email,:size=>"42" %></td>
+			</tr>
+		</tbody>
+    </table>
+
+    <%= f.submit '保存' %>
+	<%= link_to "戻る", admins_path(@user) %>
+
+	<%#= link_to “更新”, ユーザー一覧画面_path %>
+
+
+<% end %>
+</div>
