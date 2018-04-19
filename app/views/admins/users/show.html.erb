@@ -1,0 +1,72 @@
+<h1>ユーザー詳細</h1>
+
+
+<div class="admin_user_show">
+	<table width="80%">
+		<tbody>
+			<tr>
+				<td>名前（姓・名)</td>
+				<td><%= @user.last_name %> <%= @user.first_name %></td>
+			</tr>
+			<tr>
+				<td>名前（かな）</td>
+				<td><%= @user.last_kana %> <%= @user.first_kana %></td>
+			</tr>
+			<tr>
+				<td>郵便番号</td>
+				<td><%= @user.postal_code %></td>
+			</tr>
+			<tr>
+				<td>住所</td>
+				<td><%= @user.address %></td>
+			</tr>
+			<tr>
+				<td>電話番号</td>
+				<td><%= @user.tell %></td>
+			</tr>
+			<tr>
+				<td>メールアドレス</td>
+				<td><%= @user.email %></td>
+			</tr>
+		</tbody>
+    </table>
+
+	<%#= link_to “戻る”, admins_users_path %>
+
+	<%#= link_to “購入履歴”, ユーザー一覧画面_path %>
+
+	<%= link_to "編集", edit_admins_user_path(@user.id) %>
+
+	<%#= link_to “削除”, 削除_path(params[:id]), method: :delete %>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
