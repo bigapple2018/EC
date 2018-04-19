@@ -30,10 +30,14 @@ Rails.application.routes.draw do
  post '/admins/items' => 'admins/items#create'
 
 
+
 namespace :admins do
  get "/users/:id",:to=>"users#show"
  get "/user/:user_id/orderHistories",:to=>"order_history#index", as:'order_histories'
 end
+
+ get 'items/search/:id', to: 'items#search_genre', as: :search_genre
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
