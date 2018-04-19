@@ -45,7 +45,7 @@
       <table class="table">
         <% cd.song.each do |song| %>
         <tr>
-          <td><%= song.song_title %></td>
+          <td><%=song.song_number %>.<%= song.song_title %></td>
         </tr>
         <% end %>
       </table>
