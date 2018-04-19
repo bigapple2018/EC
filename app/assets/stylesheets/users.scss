@@ -1,3 +1,26 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1{
+	border-bottom: solid;
+	padding: 20px;
+	padding-left: 50px;
+	width: 80%;
+}
+
+.admin_user_show{
+	margin-left: 100px;
+}
+
+td{
+	font-size: 20px;
+}
+
+tr{
+	height: 50px;
+}
+
+.admin_user_edit{
+	padding-left: 50px;
+}

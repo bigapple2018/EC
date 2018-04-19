@@ -15,8 +15,8 @@ Rails.application.routes.draw do
 
  root to: 'items#index'
 
- resources :users, only:[:show, :edit, :update]
 
+ resources :users, only:[:show, :edit, :update]
  resources :items, only:[:index,:show]
  resources :sub_addresses, only:[:index, :new, :edit, :create, :destroy]
 
@@ -32,7 +32,15 @@ Rails.application.routes.draw do
  get '/admins_top' => 'admins#top'
 
 
+
+namespace :admins do
+ get "/users/:id",:to=>"users#show"
+end
+
  get 'items/search/:id', to: 'items#search_genre', as: :search_genre
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+
+
