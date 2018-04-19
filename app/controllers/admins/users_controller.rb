@@ -1,6 +1,10 @@
 class Admins::UsersController < ApplicationController
 
 
+ def index
+	@user = User.all
+ end
+
  def show
  	@user = User.find(params[:id])
  end
@@ -17,10 +21,6 @@ class Admins::UsersController < ApplicationController
 	 else
  	 	redirect_to user_path(user.id)
  	end
- end
-
- def index
-	# Users.all
  end
 
 private

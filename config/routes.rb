@@ -21,19 +21,18 @@ Rails.application.routes.draw do
  resources :sub_addresses, only:[:index, :new, :edit, :create, :destroy]
 
  namespace :admins do
-
  	resources :users
-
  	resources :items
-
  end
 
 
  get '/admins_top' => 'admins#top'
+ post '/admins/items' => 'admins/items#create'
 
 
 namespace :admins do
  get "/users/:id",:to=>"users#show"
+ get "/user/:user_id/orderHistories",:to=>"order_history#index", as:'order_histories'
 end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
