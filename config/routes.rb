@@ -19,16 +19,20 @@ Rails.application.routes.draw do
  resources :sub_addresses, only:[:index, :new, :edit, :create, :destroy]
 
  namespace :admins do
+
   get "/users/:id",:to=>"users#show"
 	resources :users
 	resources :items
+
  end
  get '/admins_top' => 'admins#top'
+ post '/admins/items' => 'admins/items#create'
 
 
 
 namespace :admins do
  get "/users/:id",:to=>"users#show"
+ get "/user/:user_id/orderHistories",:to=>"order_history#index", as:'order_histories'
 end
 
  get 'items/search/:id', to: 'items#search_genre', as: :search_genre
