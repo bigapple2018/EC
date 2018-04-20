@@ -7,7 +7,7 @@
       <ul class="genre_list">
       <% @genres.each do |genre| %>
         <%= link_to search_genre_path(genre.id),target: "self" do %>
-          <li><img src="no_image.png" class="genre_image"><%= genre.genre_name %></li>
+          <li><%= genre.genre_name %></li>
         <% end %>
       <% end %>
       </ul>

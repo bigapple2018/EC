@@ -1,0 +1,42 @@
+<h1>CD新規追加</h1>
+
+<!-- 下記の様に指定することで、adminのコントローラからインスタンス変数を持ってくることができる -->
+<%= form_for([:admins, @item]) do |f| %>
+
+<table>
+	<tbody>
+			<tr>
+				<td>アーティスト</td>
+				<td><%= f.text_field :artist %></td>
+			</tr>
+			<tr>
+				<td>シングル・アルバム名</td>
+				<td><%= f.text_field :title_name %></td>
+			</tr>
+			<tr>
+				<td>レーベル名</td>
+				<td><%= f.text_field :label %></td>
+			</tr>
+			<tr>
+				<td>ジャンル</td>
+				<td><%= f.text_field :genre_id %></td>
+			</tr>
+			<tr>
+				<td>収録曲</td>
+				<td><%#= f.text_field :tell %></td>
+			</tr>
+			<tr>
+				<td>値段</td>
+				<td><%= f.text_field :price %></td>
+			</tr>
+			<tr>
+				<td>在庫数</td>
+				<td><%= f.text_field :stock %></td>
+			</tr>
+	</tbody>
+</table>
+
+
+<%= f.submit '投稿' %>
+
+<% end %>
