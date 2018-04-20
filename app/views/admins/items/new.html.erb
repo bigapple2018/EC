@@ -1,7 +1,11 @@
 <h1>CD新規追加</h1>
 
+
+<div class="admin_items_new">
 <!-- 下記の様に指定することで、adminのコントローラからインスタンス変数を持ってくることができる -->
 <%= form_for([:admins, @item]) do |f| %>
+
+<%= f.attachment_field :image%>
 
 <table>
 	<tbody>
@@ -36,7 +40,7 @@
 	</tbody>
 </table>
 
-
 <%= f.submit '投稿' %>
 
 <% end %>
+</div>

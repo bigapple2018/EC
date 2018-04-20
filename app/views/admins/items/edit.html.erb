@@ -1,17 +1,7 @@
-<h1>CD一覧画面</h1>
+<h1>CD一覧編集</h1>
 
-<div class="container"> <!-- ここを追加 -->
-   <div class="row">   <!-- ここを追加 -->
-      <div class="col-lg-3" style="background-color: white;">
-         <% @items.each do |post| %>
-             <%= attachment_image_tag post, :image, :fill, 250, 250, format: 'jpeg' %>
-         <% end %>
-      </div>
-      <div class="col-lg-8">  <!-- ここを追加 -->
 
-<%= link_to '新規登録', new_admins_item_path %>
-
-<div class="admin_items">
+<div class="admin_items_edit">
 	<table class="table">
 		<tbody>
 			<tr>
@@ -46,7 +36,6 @@
     </table>
 
     <%= link_to '編集', new_admins_item_path %>
-    <%#= link_to "削除", destroy_post_path(@item.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
 
 	<%#= link_to “戻る”, admins_users_path %>
 
@@ -55,9 +44,4 @@
 	<%#= link_to "編集", edit_admins_user_path(@user.id) %>
 
 	<%#= link_to “削除”, 削除_path(params[:id]), method: :delete %>
-</div>
-
-
-</div>  <!-- ここを追加 -->
-</div>      <!-- ここを追加 -->
 </div>

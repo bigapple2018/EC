@@ -11,16 +11,28 @@ def create
 end
 
 def index
-	@item = Item.all
+	@items = Item.all
 end
 
 def show
 	@item = Item.find(params[:id])
 end
 
+def edit
+	@item = Item.find(params[:id])
+end
+
+def destroy
+	item = Item.find(params[:id])
+    item.destroy
+    redirect_to admins_items_path
+end
+
 private
    def item_params
-   	  params.require(:item).permit(:artist, :title_name, :label, :price, :stock, :image_id, :admin_id, :genre_id)
+   	  params.require(:item).permit(:artist, :title_name, :label, :price, :stock, :image)
+
+   	  # params.require(:item).permit(:artist, :title_name, :label, :price, :stock, :image, :admin_id, :genre_id)
    end
 
 
