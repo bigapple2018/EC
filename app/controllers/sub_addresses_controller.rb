@@ -10,12 +10,30 @@ class SubAddressesController < ApplicationController
   def create
   	address = SubAddress.new(sub_address_params)
     address.user_id = current_user.id
-  	address.save
+  	if address.save
   	redirect_to sub_addresses_path
+    else
+      @address = address
+      render "sub_addresses/new"
+    end
   end
 
   def edit
+     @address = SubAddress.find(params[:id])
   end
+
+  def update
+      address = SubAddress.find(params[:id])
+      address.update(subaddress_params)
+      redirect_to sub_addresses_path
+  end
+
+  def destroy
+     address = SubAddress.find(params[:id])
+     address.destroy
+     redirect_to sub_addresses_path
+  end
+
 
    private
 

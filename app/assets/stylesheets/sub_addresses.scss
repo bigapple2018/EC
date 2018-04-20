@@ -1,3 +1,52 @@
 // Place all the styles related to the subAddresses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/*新規住所画面調整*/
+/*見出し調整*/
+.heading_box .heading_address {
+	margin-bottom: 60px;
+}
+.heading_address::before, .heading_address::after{
+      content:"";
+      display:inline-block;
+      width:140px;
+      height:1px;
+      margin:0 3rem;
+      background-color: #333;
+      vertical-align: middle;
+  }
+/*table調整*/
+.address_table {
+	width: 25%;
+	margin: 0 auto;
+	text-align: center;
+}
+.address_table tr {
+	border-bottom: 1px solid #c7c1c1;
+}
+.td_address1 {
+	padding-top: 6px;
+}
+.td_address2 {
+	padding-top: 32px;
+}
+.td_address3 {
+	padding-top: 25px;
+}
+/*btn調整*/
+.address_btn {
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+}
+.address_btn .red-btn {
+	width: 100px;
+}
+.address_btn2 {
+	width: 100%;
+	text-align: center;
+	margin-top: 10px;
+}
+.address_btn2 .red-gray-btn {
+	width: 100px;
+}
