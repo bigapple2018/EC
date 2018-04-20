@@ -20,7 +20,7 @@ end
 
 private
    def item_params
-   	  params.require(:item).permit(:artist, :title_name, :label, :price, :stock, :image_id, :admin_id, :genre_id)
+   	  params.require(:item).permit(:artist, :title_name, :label, :price, :stock, :image)
    end
 
 
