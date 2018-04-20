@@ -104,6 +104,10 @@ footer{
 .user_logo{
   background-color:#e60303;
 }
+.admin_logo{
+  background-color:#4c9feb;
+  width: 180px;
+}
 // メニュー
 .nav{
 	float: right;
@@ -112,6 +116,10 @@ footer{
  list-style: none;
  display: inline;
  padding:0 5px;
+}
+.admin-nav{
+  height: 100%;
+  vertical-align: bottom;
 }
 .itemname-search-txt{
   margin-top:5px;
