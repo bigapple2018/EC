@@ -1,37 +1,31 @@
 <!-- サブアドレス一覧画面 -->
 <div class="container">
-  <h1>住所一覧</h1>
-    <table class="table">
+	<div class="heading_box">
+  <h1 class="heading_address">住所一覧</h1>
+    </div>
+    <table class="address_table2">
 		<thead>
 			<tr>
-				<th> 〒</th>
-				<th> 住所</th>
-				<th> </th>
-				<th> </th>
+				<th class="address_table2_subpostal"> 〒</th>
+				<th class="address_table2_subaddress"> 住所</th>
+				<th class="address_table2_btn"> </th>
+				<th class="address_table2_btn"> </th>
 			</tr>
 		</thead>
 		 <tbody>
 			<% @addresses.each do |sub_address| %>
 				<tr>
 					<td><%= sub_address.sub_postal_code %></td>
-					<td><%= sub_address.sub_address %></td>
-					<td><%= link_to "編集", edit_sub_address_path(sub_address.id), class: "btn red-btn" %></td>
-					<td><%= link_to "削除",  sub_address_path(sub_address.id), method: :delete, "data-confirm" => "本当に消しますか", class: "btn red-border-btn" %></td>
+					<td class="address_table2_position"><%= sub_address.sub_address %></td>
+					<td class="address_table2_edit"><%= link_to "編集", edit_sub_address_path(sub_address.id), class: "btn red-btn btn-xs" %></td>
+					<td class="address_table2_delete"><%= link_to "削除",  sub_address_path(sub_address.id), method: :delete, "data-confirm" => "本当に消しますか", class: "btn red-border-btn btn-xs" %></td>
 				</tr>
 			<% end %>
 		 </tbody>
-	    </div>
-	    </div>
-	 </div>
 	</table>
-	<div class="row">
-		<div class="col-lg-4">
-		</div>
-		   <div class="col-lg-4">
-			<%= link_to "戻る", user_path(current_user.id), class: "btn red-gray-btn" %>
-			<%= link_to "新規登録", new_sub_address_path, class: "btn red-btn" %>
-		   </div>
-		<div class="col-lg-4">
-    </div>
+         <div class="address_newback">
+			<%= link_to "新規登録", new_sub_address_path, class: "btn red-btn btn-xs" %>
+			<%= link_to "戻る", user_path(current_user), class: "btn red-gray-btn btn-xs" %>
+         </div>
 </div>
 <!-- サブアドレス一覧画面 -->
