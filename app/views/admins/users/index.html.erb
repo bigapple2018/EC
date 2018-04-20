@@ -1,13 +1,21 @@
-<table>
-	<tbody>
-		<% @users.each do |user| %>
-		<tr>
+<div class="container">
+  <table class="table">
+		<thead>
+			<h1>ユーザー一覧</h1>
 			<td> 名前(姓・名)</td>
-			<td><%= user.last_name %> <%= user.first_name %></td>
 			<td> 電話番号</td>
-			<td><%= user.tell %></td>
-			<td><%= link_to "詳細", admins_user_path(user.id), class: "btn blue-btn" %></td>
-		</tr>
-	</tbody>
+		</thead>
+			<tbody>
+				<% @users.each do |user| %>
+					<tr>
+						<td><%= user.last_name %> <%= user.first_name %></td>
+						<td><%= user.tell %></td>
+						<td><%= link_to "詳細", admins_user_path(user.id), class: "btn blue-btn" %></td>
+					</tr>
+			</tbody>
 		<% end %>
-</table>
+   </table>
+</div>
+
+
+
