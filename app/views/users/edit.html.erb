@@ -1,6 +1,8 @@
 <!-- ユーザー情報編集 -->
 <div class="container">
+	<div class="user_box">
 <h1 class="user_info"> User edit</h1>
+    </div>
 		  	<table class="form_table">
 		  		<%= form_for(@user) do |f| %>
 		  			<tr>
@@ -30,14 +32,6 @@
 		  			<tr>
 		  				<td><%= f.label :email, "メールアドレス" %></td>
 		  				<td><%= f.email_field :email, :size=>"36", :placeholder => "メールアドレス" %></td>
-		  			</tr>
-		  			<tr>
-		  				<td><%= f.label :password, "パスワード" %></td>
-		  				<td><%= f.password_field :password, :size=>"36", :placeholder => "パスワード" %></td>
-		  			</tr>
-		  			<tr>
-		  				<td><%= f.label :password_confirmation, "パスワード確認" %></td>
-		  				<td><%= f.password_field :password_confirmation, :size=>"36", :placeholder => "パスワード確認" %></td>
 		  			</tr>
 		  	</table>
 				  	<div class="btn_box1">
