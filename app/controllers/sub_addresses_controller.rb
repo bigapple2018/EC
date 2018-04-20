@@ -24,7 +24,7 @@ class SubAddressesController < ApplicationController
 
   def update
       address = SubAddress.find(params[:id])
-      address.update(subaddress_params)
+      address.update(sub_address_params)
       redirect_to sub_addresses_path
   end
 

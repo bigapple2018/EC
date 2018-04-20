@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /*住所画面調整*/
-/*新規・一覧見出し調整*/
+/*新規・一覧・編集見出し調整*/
 .heading_box .heading_address {
 	margin-bottom: 60px;
 }
@@ -15,7 +15,7 @@
       background-color: #333;
       vertical-align: middle;
   }
-/*新規投稿画面table調整*/
+/*新規・編集投稿画面table調整*/
 .address_table {
 	width: 25%;
 	margin: 0 auto;

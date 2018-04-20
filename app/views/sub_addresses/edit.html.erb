@@ -1,20 +1,9 @@
-<!-- サブ住所新規投稿画面 -->
+<!-- サブ住所変更画面 -->
 <div class ="container">
  <div class="row">
 	   <div class="heading_box">
-	    <h1 class="heading_address">住所新規登録</h1>
+	    <h1 class="heading_address">住所変更</h1>
 	  </div>
-	       <% if @address.errors.any? %>
-	    <div id="error_explanation">
-		      <h2><%= @address.errors.count %>件のエラーが発生しました。</h2>
-		      <ul>
-		      <% @address.errors.full_messages.each do |message| %>
-		        <li><%= message %></li>
-	          <% end %>
-	          </ul>
-        </div>
-     <% end %>
-
      <table class="address_table">
 　　<%= form_for(@address) do |f| %>
 		<tbody>
@@ -29,7 +18,7 @@
 		</tbody>
 	 </table>
 	         <div class="address_btn">
-	  		    <%= f.submit "登録", class: "btn red-btn btn-xs" %>
+	  		    <%= f.submit "更新", class: "btn red-btn btn-xs" %>
 	  		 </div> 
 	  		 <div class="address_btn_back">
 	            <%= link_to "戻る", sub_addresses_path, class: "btn red-gray-btn btn-xs" %>
@@ -37,4 +26,4 @@
 　　<% end %>
   </div>
 </div>
-<!-- サブ住所新規投稿画面 -->
+<!-- サブ住所変更画面 -->
