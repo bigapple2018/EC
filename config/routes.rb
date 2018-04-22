@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
  root to: 'items#index'
 
+ get '/carts/:id/comfirm' => 'carts#comfirm', as:'carts_comfirm'
 
  resources :users, only:[:show, :edit, :update]
  resources :items, only:[:index,:show]
