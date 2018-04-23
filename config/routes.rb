@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
  resources :users, only:[:show, :edit, :update]
  resources :items, only:[:index,:show]
+ resources :items_cart ,only:[:create,:update,:destroy]
  resources :sub_addresses, only:[:index, :new, :edit, :create, :destroy]
 
  namespace :admins do
