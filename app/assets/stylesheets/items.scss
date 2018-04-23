@@ -46,8 +46,9 @@ ul.genre_list{
   width: 100%;
   padding-left: 0px;
 }
-ul.genre_list > li{
+ul.genre_list >a> li{
   height: 50px;
+  padding: 15px 5px;
   border:1px solid white;
   list-style: none;
   box-sizing: border-box;
@@ -55,11 +56,9 @@ ul.genre_list > li{
 }
 ul.genre_list a{
   color:#000;
-  list-style: none;
 }
-.genre_image{
-  height: 50px;
-  width: 50px;
+ul.genre_list > a > li:hover{
+  background-color:#ffded5;
 }
 
 // 商品詳細画面

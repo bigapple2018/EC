@@ -6,7 +6,7 @@
       </div>
       <ul class="genre_list">
       <% @genres.each do |genre| %>
-        <%= link_to items_path,target: "self" do %>
+        <%= link_to root_path(q:{genre_id_eq: genre.id}) do %>
           <li><%= genre.genre_name %></li>
         <% end %>
       <% end %>
