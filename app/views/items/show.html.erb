@@ -40,10 +40,10 @@
         </tr>
       </table>
       <!--収録CD,曲名表示-->
-      <% @item.cd_item.each do |cd| %>
+      <% @item.cd_items.each do |cd| %>
       <p class="cd_title"><%= cd.cd_title %></p>
       <table class="table">
-        <% cd.song.each do |song| %>
+        <% cd.songs.each do |song| %>
         <tr>
           <td><%=song.song_number %>.<%= song.song_title %></td>
         </tr>
