@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
  resources :users, only:[:show, :edit, :update]
  resources :items, only:[:index,:show]
+ resources :items_carts ,only:[:create,:update,:destroy]
  resources :sub_addresses, only:[:index, :new, :edit, :create, :destroy]
 
  namespace :admins do
@@ -42,5 +43,3 @@ end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
-
-
