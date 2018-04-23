@@ -16,7 +16,11 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-
+// フッターの下部位置調整
+html, body {
+  height: 100%;
+  margin: 0;
+}
 a,a:hover,a:visited{
   text-decoration: none;
 }
@@ -85,11 +89,18 @@ header,footer{
       color:lightgray;
     }
 }
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -50px;
+}
+.push {
+  height: 50px;
+}
 footer{
   text-align: center;
-  position: fixed;
   bottom: 0;
   width: 100%;
+  height: 40px;
 }
 // ロゴ
 .logo{
