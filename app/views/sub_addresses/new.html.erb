@@ -4,15 +4,14 @@
 	   <div class="heading_box">
 	    <h1 class="heading_address">住所新規登録</h1>
 	  </div>
-	       <% if @address.errors.any? %>
-	    <div id="error_explanation">
-		      <h2><%= @address.errors.count %>件のエラーが発生しました。</h2>
+	 <% if @address.errors.any? %>
+		    <div id="error_explanation">
 		      <ul>
-		      <% @address.errors.full_messages.each do |message| %>
-		        <li><%= message %></li>
-	          <% end %>
+			      <% @address.errors.full_messages.each do |message| %>
+			        <li><%= message %></li>
+		          <% end %>
 	          </ul>
-        </div>
+	        </div>
      <% end %>
 
      <table class="address_table">
@@ -24,13 +23,13 @@
 			</tr>
 			<tr>
 				<td class="address_table_subaddress"><%= f.label :sub_address, "住所" %></td>
-				<td class="address_table_subaddress2"><%= f.text_field :sub_address, :size => "30", :placeholder => "住所" %></td>
+				<td class="address_table_subaddress2"><%= f.text_area :sub_address, :size => "30", :placeholder => "住所" %></td>
 			</tr>
 		</tbody>
 	 </table>
 	         <div class="address_btn">
 	  		    <%= f.submit "登録", class: "btn red-btn btn-xs" %>
-	  		 </div> 
+	  		 </div>
 	  		 <div class="address_btn_back">
 	            <%= link_to "戻る", sub_addresses_path, class: "btn red-gray-btn btn-xs" %>
 	        </div>

@@ -17,8 +17,8 @@
 				<tr>
 					<td><%= sub_address.sub_postal_code %></td>
 					<td class="address_table2_position"><%= sub_address.sub_address %></td>
-					<td class="address_table2_edit"><%= link_to "編集", edit_sub_address_path(sub_address.id), class: "btn red-btn btn-xs" %></td>
-					<td class="address_table2_delete"><%= link_to "削除",  sub_address_path(sub_address.id), method: :delete, "data-confirm" => "本当に消しますか", class: "btn red-border-btn btn-xs" %></td>
+					<td class="address_table2_edit"><%= link_to "編集", edit_sub_address_path(sub_address), class: "btn red-btn btn-xs" %></td>
+					<td class="address_table2_delete"><%= link_to "削除",  sub_address_path(sub_address), method: :delete, "data-confirm" => "本当に消しますか", class: "btn red-border-btn btn-xs" %></td>
 				</tr>
 			<% end %>
 		 </tbody>
