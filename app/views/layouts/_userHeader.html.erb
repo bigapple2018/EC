@@ -13,6 +13,7 @@
            <%= search_form_for @q,enforce_utf8: false do |f| %>
              <%= f.search_field :title_name_cont %>
              <span class="glyphicon glyphicon-search search_icon"></span>
+             <%= select :item,:category,[['タイトル',1],['アーティスト',2]],:onchange => 'change_search_category()'%>
            <% end %>
          <% end %>
        </div>
@@ -37,3 +38,19 @@
    </div>
  </div>
 </div>
+<script>
+$(function($) {
+  // 検索方法の選択切り替え
+    $('#item_category').change(function() {
+        var search_input = $("input[type='search']")
+        var category = $('#item_category option:selected').val();
+        if(category == 1){
+          search_input.attr("name","q[title_name_cont]")
+          search_input.attr("id","q_title_name_cont")
+        }else{
+          search_input.attr("name","q[artist_cont]")
+          search_input.attr("id","q_artist_cont")
+        }
+    });
+});
+</script>
