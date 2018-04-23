@@ -132,9 +132,18 @@ footer{
   height: 100%;
   vertical-align: bottom;
 }
-.itemname-search-txt{
+#q_title_name_cont{
   margin-top:5px;
   width: 300px;
+  color: #000;
+  border-radius: 3px;
+  padding-right: 50px;
+}
+.search_icon{
+  color:#000;
+  position: absolute;
+  margin: -30px;
+  top:42px;
 }
 // サインアップ・ログインフォーム
 .form-div{

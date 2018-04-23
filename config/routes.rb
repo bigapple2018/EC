@@ -36,8 +36,6 @@ namespace :admins do
  get "/user/:user_id/orderHistories",:to=>"order_history#index", as:'order_histories'
 end
 
- get 'items/search/:id', to: 'items#search_genre', as: :search_genre
+get 'items/search/:id', to: 'items#search_genre', as: :search_genre
 
 end
-
-
