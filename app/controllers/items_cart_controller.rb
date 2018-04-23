@@ -4,13 +4,8 @@ class ItemsCartController < ApplicationController
   #カートに追加する
   def create
     # ユーザのカートがなければ作成する
-    cart = Cart.find_by(user_id:current_user.id)
-    if cart.empty?
-      cart = Cart.new(:user_id => current_user.id)
-      if !cart.save
-        redirect_to item_path(params[:id])
-      end
-    end
+    cart = Cart.find_or_create_by(user_id:current_user.id)
+    # cart_idを参照して新規のitems_cartレコードを作成する
     items_cart = ItemsCart.new(
       :cart_id => cart.id
       :items_id => params[:id]
