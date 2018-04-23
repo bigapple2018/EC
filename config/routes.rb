@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'order_histories/index'
+
   devise_for :admins, controllers: {
   sessions:      'admins/sessions',
   passwords:     'admins/passwords',
@@ -20,7 +22,7 @@ Rails.application.routes.draw do
 
  resources :sub_addresses, only:[:index, :new, :edit, :create, :update, :destroy]
  resources :items_cart ,only:[:create,:update,:destroy]
-
+ get '/orderHistories' => 'order_histories#index', as:'order_histories'
 
  namespace :admins do
 

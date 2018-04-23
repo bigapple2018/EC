@@ -1,2 +1,0 @@
-class OrderHistoryController < ApplicationController
-end
