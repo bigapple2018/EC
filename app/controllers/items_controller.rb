@@ -14,7 +14,4 @@ class ItemsController < ApplicationController
     @q = Item.search(params[:q])
     @items = @q.result(distinct: true)
   end
-  def search_params
-    params.require(:q).permit(:title_name_cont,:genre_id_eq)
-  end
 end
