@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="logo admin_logo">
+        BIGAPPLE admin
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="nav">
+            <ul>
+              <% if admin_signed_in? %>
+                <li>ユーザ e-mail　<%= current_admin.email %> </li>
+                <li><%= link_to 'Sign out',destroy_admin_session_path, method: :delete %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

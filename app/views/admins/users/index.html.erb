@@ -1,2 +1,21 @@
-名前　（性、名）　　　電話番号　詳細
+<div class="container">
+  <table class="table">
+		<thead>
+			<h1>ユーザー一覧</h1>
+			<td> 名前(姓・名)</td>
+			<td> 電話番号</td>
+		</thead>
+			<tbody>
+				<% @users.each do |user| %>
+					<tr>
+						<td><%= user.last_name %> <%= user.first_name %></td>
+						<td><%= user.tell %></td>
+						<td><%= link_to "詳細", admins_user_path(user.id), class: "btn blue-btn" %></td>
+					</tr>
+			</tbody>
+		<% end %>
+   </table>
+</div>
+
+
 
