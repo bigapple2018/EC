@@ -3,5 +3,5 @@ class Item < ApplicationRecord
 
   belongs_to :genre
   attachment :image
-  has_many :cd_item
+  has_many :cd_items
 end
