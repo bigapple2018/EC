@@ -1,5 +1,9 @@
 class Admins::UsersController < ApplicationController
 
+ def index
+	@users = User.all
+ end
+
 
  def show
  	@user = User.find(params[:id])
@@ -19,9 +23,6 @@ class Admins::UsersController < ApplicationController
  	end
  end
 
- def index
-	# Users.all
- end
 
 private
    def admin_user_params

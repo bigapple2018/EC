@@ -17,6 +17,14 @@ class Admins::SessionsController < Devise::SessionsController
   # def destroy
   #   super
   # end
+  # サインイン後に呼ばれるアクション指定
+  def after_sign_in_path_for(resource)
+    admins_top_path
+  end
+  # サインアウト後に呼ばれるアクション指定
+  def after_sign_out_path_for(resource)
+    new_admin_session_path
+  end
 
   # protected
 

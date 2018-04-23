@@ -1,3 +1,24 @@
 // Place all the styles related to the carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*購入確認画面*/
+.comfirm-box {
+	text-align: center;
+	width: 40%;
+	margin: 100px auto;
+	border : 2px solid;
+	line-height: 30px;
+	background-color: #fff8dc;
+}
+.comfirm_box_text {
+	font-size :20px;
+	margin-top: 100px;
+}
+.comfirm_box_btn {
+	margin-bottom: 150px;
+}
+.comfirm_box_btn .red-btn,
+.comfirm_box_btn .red-gray-btn {
+    width: 300px;
+}
