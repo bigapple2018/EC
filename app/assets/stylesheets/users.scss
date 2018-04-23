@@ -3,9 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-// ユーザー詳細画面
+
+/*table調整*/
+.personal_box {
+  width: 400px;
+  margin: 5px 0 0 70px;
+}
+/*ユーザー詳細画面*/
 .user_info {
   margin-bottom: 50px;
+}
+.user_box .user_info {
+  margin-bottom: 30px;
 }
 
 .user_info::before, .user_info::after {
@@ -17,10 +26,19 @@
   background-color: #333;
   vertical-align: middle;
 }
-/*table調整*/
-.personal_box {
-  width: 400px;
-  margin: 5px 0 0 70px;
+/*ユーザー詳細画面table調整*/
+.user_table {
+  width: 40%;
+  margin: 0 auto;
+}
+.user_table td {
+	padding-top: 30px;
+	font-size :15px;
+	padding-left: 40px;
+}
+.user_table tr {
+	border-bottom: 1px solid #AAAAAA;
+	height: 55px;
 }
 .td_box {
   width: 200px;
@@ -29,18 +47,64 @@
 .btn_box {
   width: 61%;
   margin: 0 auto;
-  padding-top: 40px;
+  padding-top: 80px;
+  text-align: center;
 }
 .btn_box .red-btn {
   width: 100px;
 }
 .btn_box .red-gray-btn {
-  width: 110px;
+  width: 100px;
   margin: 0 10px;
 }
 .leave .red-border-btn{
   width: 100px;
 }
-.leave a {
+.leave_btn {
+	margin-top: 100px;
+	text-align: right;
+}
+.leave_btn a {
+  width: 100px;
   color: red;
 }
+/*ユーザー編集画面FORM調整*/
+.form_table{
+	width: 43%;
+	margin: 0 auto;
+}
+.form_table td{
+	padding-top: 5px;
+	padding-bottom: 15px;
+}
+.form_table tr td:nth-child(1){
+	padding-top: 20px;
+}
+.form_table tr td:nth-child(2){
+	padding-left: 20px;
+	padding-top: 15px;
+}
+.form_table tr{
+	border-bottom: 1px solid #c7c1c1;
+	text-align: center;
+}
+/*ユーザー編集画面ボタン調整*/
+.btn_box1 {
+	width: 90%;
+	margin : 0 auto;
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 5px;
+}
+.btn_box1 .red-btn {
+	width: 100px;
+}
+.btn_box2 {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+.btn_box2 .red-gray-btn {
+	width: 100px;
+}
+

@@ -16,7 +16,11 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-
+// フッターの下部位置調整
+html, body {
+  height: 100%;
+  margin: 0;
+}
 a,a:hover,a:visited{
   text-decoration: none;
 }
@@ -85,11 +89,18 @@ header,footer{
       color:lightgray;
     }
 }
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -50px;
+}
+.push {
+  height: 50px;
+}
 footer{
   text-align: center;
-  position: fixed;
   bottom: 0;
   width: 100%;
+  height: 40px;
 }
 // ロゴ
 .logo{
@@ -121,9 +132,18 @@ footer{
   height: 100%;
   vertical-align: bottom;
 }
-.itemname-search-txt{
+#q_title_name_cont{
   margin-top:5px;
   width: 300px;
+  color: #000;
+  border-radius: 3px;
+  padding-right: 50px;
+}
+.search_icon{
+  color:#000;
+  position: absolute;
+  margin: -30px;
+  top:42px;
 }
 // サインアップ・ログインフォーム
 .form-div{

@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <div class="heading">
+      <p>Music</p>
+    </div>
+    <div class="col-lg-3">
+      <%= attachment_image_tag @item, :image, :fill, 200, 200, format: 'png' %>
+    </div>
+    <div class="col-lg-9">
+      <p class="item_title"><%= @item.title_name %></p>
+      <p class="item_artist"><%= @item.artist %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <table>
+        <tr>
+          <td><%= @item.price.to_s(:delimited) %>円</td>
+        </tr>
+        <tr>
+          <td><%= @item.genre.genre_name %></td>
+        </tr>
+        <tr>
+          <td>リリース　<%= @item.created_at.strftime("%Y年%m月%d日")  %></td>
+        </tr>
+        <tr>
+          <td><%= @item.label %></td>
+        </tr>
+        <tr>
+          <!--在庫数表示切り替え-->
+          <td>
+            <% if @item.stock == 0 %>
+              在庫なし
+            <% elsif @item.stock <= 5 %>
+            　残りわずか
+            <% else %>
+              在庫あり
+            <% end %>
+          </td>
+        </tr>
+      </table>
+      <!--収録CD,曲名表示-->
+      <% @item.cd_items.each do |cd| %>
+      <p class="cd_title"><%= cd.cd_title %></p>
+      <table class="table">
+        <% cd.songs.each do |song| %>
+        <tr>
+          <td><%=song.song_number %>.<%= song.song_title %></td>
+        </tr>
+        <% end %>
+      </table>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="item_detail_btn_div">
+        <% if user_signed_in? %>
+          <%= link_to "カートに追加", "" ,class: "btn red-btn" %>
+        <% else %>
+          <%= link_to "ログイン", new_user_session_path ,class:"btn red-btn" %>
+          <%= link_to "新規登録", new_user_registration_path, class: "btn red-gray-btn" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
