@@ -137,7 +137,7 @@ footer{
 .admin-nav{
   margin-top:40px;
 }
-#q_title_name_cont{
+#q_title_name_cont,#q_artist_cont{
   margin-top:5px;
   width: 300px;
   color: #000;
@@ -149,6 +149,11 @@ footer{
   position: absolute;
   margin: -30px;
   top:42px;
+}
+#item_category{
+  color:#000;
+  height: 1.8em;
+  border-radius: 2px;
 }
 // サインアップ・ログインフォーム
 .form-div{
