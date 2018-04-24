@@ -13,6 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
@@ -80,8 +88,8 @@ input[type="text"],input[type="email"],input[type="password"] {
 header,footer{
   background-color: Black;
   color:White;
-  margin: 0 20px;
-  padding:10px 0;
+/*  margin: 0 20px;
+*/  padding:10px 0;
     a,a:visited{
       color:white;
     }
@@ -123,16 +131,21 @@ footer{
 .nav{
 	float: right;
 }
+.nav > ul {
+  margin-bottom:0px;
+}
 .nav > ul > li{
  list-style: none;
  display: inline;
  padding:0 5px;
 }
-.admin-nav{
-  height: 100%;
-  vertical-align: bottom;
+.user-nav{
+  margin-top: 8px;
 }
-#q_title_name_cont{
+.admin-nav{
+  margin-top:40px;
+}
+#q_title_name_cont,#q_artist_cont{
   margin-top:5px;
   width: 300px;
   color: #000;
@@ -144,6 +157,11 @@ footer{
   position: absolute;
   margin: -30px;
   top:42px;
+}
+#item_category{
+  color:#000;
+  height: 1.8em;
+  border-radius: 2px;
 }
 // サインアップ・ログインフォーム
 .form-div{
@@ -157,4 +175,3 @@ footer{
     width: 310px;
   }
 }
-

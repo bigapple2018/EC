@@ -8,11 +8,16 @@
     <div class="col-md-9">
       <div class="row">
         <div class="col-md-12">
-          <div class="nav">
+          <div class="nav admin-nav">
             <ul>
               <% if admin_signed_in? %>
-                <li>ユーザ e-mail　<%= current_admin.email %> </li>
-                <li><%= link_to 'Sign out',destroy_admin_session_path, method: :delete %></li>
+                <li>ユーザーメールアドレス：<%= current_admin.email %>　　</li>
+                <% if request.path != admins_top_path %>
+                  <li><%= link_to '　Home',admins_top_path %></li>
+                  <li><%= link_to '　ユーザー一覧',admins_users_path %></li>
+                  <li><%= link_to '　商品一覧',admins_items_path %></li>
+                <% end %>
+                <li><%= link_to '　Sign out',destroy_admin_session_path, method: :delete %></li>
               <% end %>
             </ul>
           </div>
