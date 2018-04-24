@@ -31,11 +31,11 @@
 		</tbody>
     </table>
 
-	<%#= link_to “戻る”, admins_users_path %>
+	<%= link_to "戻る", admins_users_path(@user),class: 'btn btn-primary' %>
 
 	<%#= link_to “購入履歴”, ユーザー一覧画面_path %>
 
-	<%= link_to "編集", edit_admins_user_path(@user.id) %>
+	<%= link_to "編集", edit_admins_user_path(@user.id), class: 'btn btn-primary' %>
 
 	<%#= link_to “削除”, 削除_path(params[:id]), method: :delete %>
 
