@@ -1,45 +1,65 @@
-<h1>CD一覧画面</h1>
+<h1 class="item-index">CD一覧画面</h1><%= link_to '新規登録',new_admins_item_path, class: 'btn btn-primary' %>
+
+<div class="container">
+	<div class="row">
+
+		<% @item.each do |item| %>
+		<%= attachment_image_tag item, :image, :fill, 300, 300, format: 'jpeg',class: "col-lg-4" %>
 
 
-<div class="admin_items">
-	<table class="table-bordered">
-		<tbody>
-			<tr>
-				<td>アーティスト</td>
-				<td><%#= @item.artist %></td>
-			</tr>
-			<tr>
-				<td>シングル・アルバム名</td>
-				<td><%#= @item.title_name %></td>
-			</tr>
-			<tr>
-				<td>レーベル名</td>
-				<td><%#= @item.label %></td>
-			</tr>
-			<tr>
-				<td>ジャンル</td>
-				<td><%#= @item.genre_id %></td>
-			</tr>
-			<tr>
-				<td>収録曲</td>
-				<td><%#= @item.tell %></td>
-			</tr>
-			<tr>
-				<td>値段</td>
-				<td><%#= @item.price %></td>
-			</tr>
-			<tr>
-				<td>在庫数</td>
-				<td><%#= @item.stock %></td>
-			</tr>
-		</tbody>
-    </table>
+		<div class="admin_items">
 
-	<%#= link_to “戻る”, admins_users_path %>
+			<div class="col-lg-8">
 
-	<%#= link_to “購入履歴”, ユーザー一覧画面_path %>
 
-	<%#= link_to "編集", edit_admins_user_path(@user.id) %>
+				<table class="table">
+					<tbody>
+						<tr>
+							<td>アーティスト</td>
+							<td><%= item.artist %></td>
+						</tr>
+						<tr>
+							<td>シングル・アルバム名</td>
+							<td><%= item.title_name %></td>
+						</tr>
+						<tr>
+							<td>レーベル名</td>
+							<td><%= item.label %></td>
+						</tr>
+						<tr>
+							<td>ジャンル</td>
+							<td><%= item.genre_id %></td>
+						</tr>
+						<tr>
+							<td>収録曲</td>
+							<td><%#= item.tell %></td>
+						</tr>
+						<tr>
+							<td>値段</td>
+							<td><%= item.price %></td>
+						</tr>
+						<tr>
+							<td>在庫数</td>
+							<td><%= item.stock %></td>
+						</tr>
+					</tbody>
+				</table>
+				<%#= link_to “戻る”, admins_users_path %>
 
-	<%#= link_to “削除”, 削除_path(params[:id]), method: :delete %>
+				<%#= link_to “購入履歴”, ユーザー一覧画面_path %>
+
+				<!-- ead~doの中に入れて上げないとどこからitem.idを持ってきてくればいいのかわかない -->
+				<%= link_to "編集", edit_admins_item_path(item.id), class: 'btn btn-primary' %>
+
+				<%= link_to "削除", admins_destroy_item_path(item.id), method: :delete, "data-confirm" => "本当に削除しますか？" ,class: "btn btn-danger"%>
+			</div>
+		</div>
+		<br>
+		<% end %><%= paginate @item, class: "pagenate" %>
+
+	</div>
 </div>
+<br>
+
+
+

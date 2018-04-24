@@ -1,9 +1,12 @@
 <h1>CD新規追加</h1>
 
+
 <!-- 下記の様に指定することで、adminのコントローラからインスタンス変数を持ってくることができる -->
 <%= form_for([:admins, @item]) do |f| %>
 
-<table>
+<%= f.attachment_field :image %>
+
+<table class="admin_item_new">
 	<tbody>
 			<tr>
 				<td>アーティスト</td>
@@ -38,5 +41,6 @@
 
 
 <%= f.submit '投稿' %>
+<%= link_to "戻る", admins_items_path(@item), class: 'btn btn-primary' %>
 
 <% end %>
