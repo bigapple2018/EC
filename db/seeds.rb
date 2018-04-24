@@ -41,3 +41,8 @@ Song.create(:song_title => 'testSong6',:cd_item_id => 4, :song_number => 1)
 Song.create(:song_title => 'testSong7',:cd_item_id => 5, :song_number => 1)
 Song.create(:song_title => 'testSong8',:cd_item_id => 5, :song_number => 2)
 Song.create(:song_title => 'testSong9',:cd_item_id => 5, :song_number => 3)
+
+Status.create(:status_name => '送付済み')
+Payment.create(:payment_name => '現金払い')
+OrderHistory.create(:user_id => 2, :status_id => 1, :payment_id => 1, :buy_day => '2018/04/24', :destination => '東京都渋谷', :summary_count => '5', :summary_price => '3250')
+OrderHistoryItem.create(:item_id =>1, :order_history_id =>1 )

@@ -1,23 +1,31 @@
-
 <!-- 購入履歴画面 -->
 <div class="container">
 	<h1 class="hedding_order_history"> 購入履歴</h1>
-		<table>
+		<table class="table table-bordered">
 			<thead>
 				<tr>
 					<th> 購入日</th>
 					<th> 購入内容(アーティスト名/シングル・アルバム名)</th>
+					<th> 送付先</th>
 					<th> 購入価格</th>
 					<th> ステータス</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>あ</td>
-					<td>い</td>
-					<td>う</td>
-					<td>え</td>
-				</tr>
+			  <% @histories.each do |order_history| %>
+			  <%# binding.pry %>
+						<tr>
+							<td><%= order_history.buy_day %></td>
+			     <% order_history.order_history_items.each do |order_history_item| %>
+							<td><%= order_history_item.item_id %></td>
+							<td><%= order_history.destination %></td>
+							<td></td>
+				<% @status.each do |s| %>
+							<td><%= s.status_name %></td>
+				<% end %>
+						</tr>
+				 <% end %>
+			 <% end %>
 			</tbody>
 		</table>
 		　　　　<div class="order_history_btn">

@@ -1,6 +1,6 @@
 class OrderHistory < ApplicationRecord
-	blongs_to :user
-	blongs_to :status
-	blongs_to :order_history_item
-	blongs_to :payment
+	has_many :order_history_items
+	belongs_to :user
+	belongs_to :status
+	belongs_to :payment
 end
