@@ -13,10 +13,14 @@ Rails.application.routes.draw do
 
  root to: 'items#index'
 
+ get '/carts/:id/comfirm' => 'carts#comfirm', as:'carts_comfirm'
 
  resources :users, only:[:show, :edit, :update]
  resources :items, only:[:index,:show]
- resources :sub_addresses, only:[:index, :new, :edit, :create, :destroy]
+
+ resources :sub_addresses, only:[:index, :new, :edit, :create, :update, :destroy]
+ resources :items_cart ,only:[:create,:update,:destroy]
+
 
  namespace :admins do
 
@@ -37,8 +41,6 @@ namespace :admins do
 
 end
 
- get 'items/search/:id', to: 'items#search_genre', as: :search_genre
+get 'items/search/:id', to: 'items#search_genre', as: :search_genre
 
 end
-
-
