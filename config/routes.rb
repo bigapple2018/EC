@@ -33,6 +33,8 @@ Rails.application.routes.draw do
 namespace :admins do
  get "/users/:id",:to=>"users#show"
  get "/user/:user_id/orderHistories",:to=>"order_history#index", as:'order_histories'
+ delete '/item/:id' => 'items#destroy', as: 'destroy_item'
+
 end
 
  get 'items/search/:id', to: 'items#search_genre', as: :search_genre
