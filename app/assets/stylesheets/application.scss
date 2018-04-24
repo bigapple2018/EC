@@ -123,14 +123,19 @@ footer{
 .nav{
 	float: right;
 }
+.nav > ul {
+  margin-bottom:0px;
+}
 .nav > ul > li{
  list-style: none;
  display: inline;
  padding:0 5px;
 }
+.user-nav{
+  margin-top: 8px;
+}
 .admin-nav{
-  height: 100%;
-  vertical-align: bottom;
+  margin-top:40px;
 }
 #q_title_name_cont{
   margin-top:5px;
@@ -157,4 +162,3 @@ footer{
     width: 310px;
   }
 }
-
