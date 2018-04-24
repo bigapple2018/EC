@@ -1,0 +1,25 @@
+// Place all the styles related to the order_histories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.hedding_order_history {
+	margin-bottom: 50px;
+}
+.hedding_order_history::before, .hedding_order_history::after{
+      content:"";
+      display:inline-block;
+      width:140px;
+      height:1px;
+      margin:0 3rem;
+      background-color: #333;
+      vertical-align: middle;
+  }
+.table-bordered th {
+  background-color: #ebebf1;
+}
+.order_history_btn {
+  	text-align: right;
+  }
+.order_hisrory_btn .red-gray-btn {
+	width: 100px;
+}

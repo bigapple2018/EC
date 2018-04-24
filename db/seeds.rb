@@ -59,6 +59,10 @@ Song.create(:song_title => 'testSong7',:cd_item_id => 5, :song_number => 1)
 Song.create(:song_title => 'testSong8',:cd_item_id => 5, :song_number => 2)
 Song.create(:song_title => 'testSong9',:cd_item_id => 5, :song_number => 3)
 
+
+Status.create(:status_name => '送付済み')
+Payment.create(:payment_name => '現金払い')
+
 #開発用購入履歴
 OrderHistory.create(:user_id => 1,:status_id=>4,:buy_day => '2018-01-01',:payment_id => 1,:summary_count => 2,:summary_price =>3960,:destination => 'テスト住所')
 OrderHistoryItem.create(:item_id => 1,:order_history_id => 1,:price => 1980,:artist => 'testArtist1',:title_name => 'testAlbam1')
@@ -80,3 +84,4 @@ OrderHistory.create(:user_id => 1,:status_id=>4,:buy_day => '2018-04-11',:paymen
 OrderHistoryItem.create(:item_id => 4,:order_history_id => 7,:price => 1980,:artist => 'testArtist4',:title_name => 'testAlbam4')
 OrderHistory.create(:user_id => 3,:status_id=>4,:buy_day => '2018-04-15',:payment_id => 1,:summary_count => 3,:summary_price =>5940,:destination => 'テスト住所')
 OrderHistoryItem.create(:item_id => 4,:order_history_id => 8,:price => 1980,:artist => 'testArtist4',:title_name => 'testAlbam4')
+
