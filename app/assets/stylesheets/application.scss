@@ -33,7 +33,8 @@ a,a:hover,a:visited{
   text-decoration: none;
 }
 // テキストボックス
-input[type="text"],input[type="email"],input[type="password"] {
+input[type="text"],input[type="email"],input[type="password"]
+{
 	border-radius: 5px;
   margin: 5px 0;
   -webkit-appearance: none;
@@ -173,5 +174,10 @@ footer{
   .postal-code-txt,.address-txt,
   .tell-text,.email-txt,.password-txt{
     width: 310px;
+  }
+  textarea{
+    border-radius: 5px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
   }
 }
