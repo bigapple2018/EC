@@ -11,8 +11,8 @@
 	　<tr>
 		<td><%= link_to "item_cart.item.title_name, item_cart.item.artist" %></td>
 		<td><%= item_cart.item.price %>円</td>
-		<tb><%= select_tag 'note[point]', options_for_select(["1", "2", "3", "4", "5"]) %> </tb>
-		<td><%= link_to "削除", current_cart.id.path(cart.id) %></td>
+		<tb><%= select_tag 'item_cart.count', options_for_select(["1", "2", "3", "4", "5"]) %> </tb>
+		<td><%= link_to "削除", item_cart.path(cart.id) %></td>
 	　</tr>
 	<% end %>
  </tbody>

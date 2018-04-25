@@ -6,6 +6,6 @@ class CartsController < ApplicationController
 		@cart = Cart.find_by(user_id: current_user.id)
 	end
 
-	@note.point = params[:note][:point]
+	@item_cart.count = params[:note][:point]
 
 end 
