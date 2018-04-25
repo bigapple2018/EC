@@ -1,4 +1,4 @@
-<h1>CD編集画面</h1>
+<h1 class="head-text">CD編集画面</h1>
 
 
 <!-- 下記の様に指定することで、adminのコントローラからインスタンス変数を持ってくることができる -->
@@ -20,9 +20,10 @@
 		</tr>
 		<tr>
 			<td>ジャンル</td>
-			<td><%= f.text_field :genre_id %></td>
-		</tr>
-		<tr>
+			<td>
+				<%= f.select :genre_id, [["J-Pop", "J-Pop"], ["K-Pop", "K-Pop"], ["R&B/ソウル", "R&B/ソウル"], ["ダンス", "ダンス"], ["Jazz", "Jazz"], ["Pop", "Pop"], ["Rock", "Rock"], ["その他", "その他"]] ,class:"form-control" %></td>
+			</tr>
+			<tr>
 			<td>収録曲</td>
 			<td><%#= f.text_field :song_title %></td>
 		</tr>
@@ -37,9 +38,10 @@
 	</tbody>
 </table>
 
-
-<%= f.submit '更新' %>
-<%= link_to "戻る", admins_items_path(@item), class: 'btn btn-primary' %>
+<div class="edit-back">
+	<%= f.submit '更新', class: 'btn btn-primary' %>
+	<%= link_to "戻る", admins_items_path(@item), class: 'btn btn-primary' %>
+</div>
 
 
 <% end %>
