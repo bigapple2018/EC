@@ -13,7 +13,7 @@
            <%= search_form_for @q,enforce_utf8: false do |f| %>
              <%= f.search_field :title_name_cont %>
              <span class="glyphicon glyphicon-search search_icon"></span>
-             <%= select :item,:category,[['タイトル',1],['アーティスト',2]]%>
+             <%= select_tag 'item[category]', options_for_select([['タイトル',1],['アーティスト',2]]) %>
            <% end %>
          <% end %>
        </div>
