@@ -23,4 +23,12 @@ class User < ApplicationRecord
 
   has_many :sub_addresses
 
+  def self.search(search)
+    if search
+      where(['name LIKE ?', "%#{search}%"])
+    else
+      all
+    end
+  end
+
 end

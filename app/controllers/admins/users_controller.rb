@@ -1,7 +1,7 @@
 class Admins::UsersController < ApplicationController
 
  def index
-	@users = User.all
+	@users = User.page(params[:page]).reverse_order .search(params[:search])
  end
 
 
