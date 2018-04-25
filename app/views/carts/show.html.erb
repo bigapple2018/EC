@@ -1,0 +1,19 @@
+<div class="container">
+	<table class="table">
+		<thead>
+			<h3>カート詳細</h3>
+			<td>アーティスト名</td>
+			<td>単価</td>
+			<tb>個数</tb>
+		</thead>
+ <tbody>
+　　<% @cart.item_carts.each do |item_cart| %>
+	　<tr>
+		<td><%= link_to "item_cart.item.title_name, item_cart.item.artist" %></td>
+		<td><%= item_cart.item.price %>円</td>
+		<tb><%= select_tag 'note[point]', options_for_select(["1", "2", "3", "4", "5"]) %> </tb>
+		<td><%= link_to "削除", current_cart.id.path(cart.id) %></td>
+	　</tr>
+	<% end %>
+ </tbody>
+</div>
