@@ -22,5 +22,6 @@ class User < ApplicationRecord
   validates :tell, format: { with: POSTAL_TELL_REGEXP,message: "数字とハイフンのみが使用できます" }, length: { minimum: 11 },if:"tell.present?"
 
   has_many :sub_addresses
+  has_many :order_histories
 
 end
