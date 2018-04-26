@@ -22,8 +22,8 @@ Rails.application.routes.draw do
 
  resources :sub_addresses, only:[:index, :new, :edit, :create, :update, :destroy]
  resources :items_cart ,only:[:create,:update,:destroy]
+ resources :leaves, only:[:new, :create, :destroy]
  get '/orderHistories' => 'order_histories#index', as:'order_histories'
-
  namespace :admins do
 
   get "/users/:id",:to=>"users#show"
