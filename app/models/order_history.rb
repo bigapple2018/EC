@@ -3,4 +3,6 @@ class OrderHistory < ApplicationRecord
 	belongs_to :user
 	belongs_to :status
 	belongs_to :payment
+    paginates_per 5
+
 end

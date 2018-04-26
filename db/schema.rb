@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180424052530) do
+
+ActiveRecord::Schema.define(version: 20180426082534) do
+
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -105,9 +107,9 @@ ActiveRecord::Schema.define(version: 20180424052530) do
     t.integer "order_history_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "price", null: false
-    t.string "artist", null: false
-    t.string "title_name", null: false
+    t.integer "price", default: 0, null: false
+    t.string "artist", default: "", null: false
+    t.string "title_name", default: "", null: false
     t.index ["item_id"], name: "index_order_history_items_on_item_id"
     t.index ["order_history_id"], name: "index_order_history_items_on_order_history_id"
   end

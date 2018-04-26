@@ -14,7 +14,9 @@ ja:
         tell: 電話番号
         email: メールアドレス
         password: パスワード
-ja:
+      sub_address:
+        sub_postal_code: "郵便番号"
+        sub_address: "住所"
   views:
     pagination:
       first: "&laquo; 最初"
@@ -22,8 +24,4 @@ ja:
       previous: "&lsaquo; 前"
       next: "次 &rsaquo;"
       truncate: "&hellip;"
-
-      sub_address:
-        sub_postal_code: "郵便番号"
-        sub_address: "住所"
 
