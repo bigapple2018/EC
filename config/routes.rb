@@ -34,6 +34,8 @@ Rails.application.routes.draw do
  get '/admins_top' => 'admins#top'
  post '/admins/items' => 'admins/items#create'
 
+ get 'cart/:id' => 'carts#show'
+
 
 
 namespace :admins do
