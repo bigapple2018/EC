@@ -1,4 +1,6 @@
 class LeavesController < ApplicationController
+    before_action :authenticate_user!
+
 	def new
 		@leave = Leave.new
 	end
