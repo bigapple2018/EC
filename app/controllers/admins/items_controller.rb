@@ -2,6 +2,7 @@ class Admins::ItemsController < ApplicationController
 
 def new
 	@item = Item.new
+	@song = Song.new
 end
 
 def create
@@ -9,11 +10,18 @@ def create
 	item = Item.new(item_params)
 	item.admin_id = 1
 	item.save
+	@cd_item = item.cd_items.build
+	@cd_item.save
+	@song = @cd_item.songs.build(song_params)
+	@song.save
+
 	redirect_to  admins_items_path
 end
 
+
 def index
-	@item = Item.page(params[:page]).reverse_order
+	@items = Item.page(params[:page]).reverse_order
+	# binding.pry
 end
 
 def show
@@ -38,9 +46,13 @@ end
 
 private
    def item_params
-   	  params.require(:item).permit(:artist, :title_name, :label, :price, :stock, :image, :genre_id)
-   	  params.require(:songs).permit(:song_title)
+   	  params.require(:item).permit(:artist, :title_name, :label, :price, :stock, :image, :genre_id, :id, :destroy, :genre_name)
    end
+
+   def song_params
+   	  params.require(:song).permit(:song_title)
+   end
+
 
 
 end

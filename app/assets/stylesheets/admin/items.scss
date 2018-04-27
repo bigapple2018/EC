@@ -7,7 +7,61 @@
 	margin-left: 80px;
 }
 
-.item-index{
-	display: line;
+.head-text{
+position: relative;
+margin-left: 30px
+
+}
+
+.head-text:after {
+	width: 200px;
+content: "";
+display: block;
+height: 4px;
+background: -moz-linear-gradient(to right, rgb(255, 186, 115), #ffb2b2);
+background: -webkit-linear-gradient(to right, rgb(255, 186, 115), #ffb2b2);
+background: linear-gradient(to right, rgb(255, 186, 115), #ffb2b2);
+}
+
+
+.paginate-text{
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.new{
+	margin-left:30px;
+	margin-bottom: 20px;
+}
+
+.edit-back{
+	margin-left: 470px;
+}
+
+select{
+	width: 190px;
+	height: 40px;
+}
+
+.image-new{
+	margin-left: 260px;
+	margin-bottom: 10px;
+}
+
+.item-edit{
+	text-align: right;
+	margin-bottom: 50px;
+}
+
+.table{
+	height: 50px;
+}
+
+.cd_index_content{
+	text-align: right;
+}
+
+.col-lg-8{
+	margin-bottom: 50px;
 }
 

@@ -1,0 +1,9 @@
+<h1 class="head-text">曲追加</h1>
+
+<%= form_for(@item, @cd_item) do |f| %>
+
+        </tbody>
+      </table>
+      <%= f.add_nested_fields_link :song, 'Add new', class: 'btn btn-primary', role: 'button' %>
+
+<% end %>
