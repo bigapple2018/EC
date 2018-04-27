@@ -6,9 +6,9 @@
             <div class="col-lg-11 leave_box">
 		      <div class="leave_text">
 					<p>本当に<strong>退会</strong>しますか？</p>
-				  </div>
+			  </div>
 				     <div class="leave_nobtn">
-						<%= link_to "いいえ (Topページ)", user_path(current_user), class: "btn red-btn btn-lg" %>
+						<%= link_to "いいえ (マイページ)", user_path(current_user), class: "btn red-btn btn-lg" %>
 					 </div>
 					<% if @leave.errors.any? %>
 					    <div id="error_explanation">
@@ -24,13 +24,11 @@
 					<%= f.text_area :leave_reason, :size =>"90", :placeholder => "退会理由を記載ください" %><br>
 				</div>
 				 <div class="leave_yesbtn">
-					<%= f.submit "登録", class: "btn red-gray-btn btn-xs" %>
+					<%= f.submit "はい", method: :delete, "data-confirm" => "本当に退会しますか", class: "btn red-border-btn btn-xs" %>
 				</div>
 					<% end %>
-				 <div class="leave_leavebtn">
-					<%= link_to "退会", user_registration_path, method: :delete, "data-confirm" => "本当に退会しますか", class: "btn red-border-btn btn-xs" %>
-				</div>
 			</div>
 		 <div class="col-lg-2">
          </div>
+    </div>
 </div>

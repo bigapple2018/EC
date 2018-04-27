@@ -8,7 +8,10 @@ class LeavesController < ApplicationController
 		leave = Leave.new(leave_params)
 		leave.user_id = current_user.id
 		if leave.save
-			redirect_to root_path
+		   leave = User.find(current_user.id)
+		   leave.destroy
+		   leave.update(email: leave.delete_date.to_i.to_s + '_' + leave.email.to_s)
+		   redirect_to root_path
 	    else
 	    	@leave = leave
 	    	render "leaves/new"
@@ -18,6 +21,6 @@ class LeavesController < ApplicationController
 
 	private
 	def leave_params
-		params.require(:leave).permit(:leave_reason, :user_id)
+		params.require(:leave).permit(:leave_reason, :user_id, :delete_day)
 	end
 end

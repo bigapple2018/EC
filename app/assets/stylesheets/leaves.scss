@@ -2,9 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .leave_box {
-	margin-top: 10px;
+	margin-top: 70px;
 }
-.heading_leave::before, 
+.heading_leave::before,
 .heading_leave::after {
   content: "";
   display: inline-block;
@@ -40,17 +40,9 @@
 	text-align: right;
 	margin-top: 10px;
 }
-.leave_yesbtn .red-gray-btn {
-	width: 150px;
+.leave_yesbtn .red-border-btn {
+	width: 100px;
 }
 .leave_box {
 	margin-top: 25px;
-}
-.leave_leavebtn {
-	width: 90%;
-	text-align: right;
-	margin-top: 100px;
-}
-.leave_leavebtn .red-border-btn {
-	width: 90px;
 }
