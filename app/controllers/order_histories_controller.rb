@@ -1,6 +1,6 @@
 class OrderHistoriesController < ApplicationController
+  before_action :authenticate_user!
   def index
-  	  @histories = OrderHistory.all.includes(:order_history_items)
-  	  @status = Status.all
+  	  @histories = current_user.order_histories.order(buy_day: :desc).page(params[:page]).per(5)
   end
 end

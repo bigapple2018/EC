@@ -36,11 +36,11 @@ User.create(:last_name => '鈴木',:first_name => '花子',:last_kana => 'スズ
 User.create(:last_name => '佐藤',:first_name => '大介',:last_kana => 'サトウ',:first_kana => 'ダイスケ',:postal_code => '123-4567',:address => 'テスト住所', :tell => '123-4567-8901', :email =>'test4@test.com',:password=>'password')
 
 #開発用商品データ
-Item.create(:artist => 'testArtist1', :title_name => 'testAlbam1',:label => 'testLabel1',:price => 1980,:stock => 10,:image_id => 'test.jpg',:admin_id => 1,:genre_id =>1)
-Item.create(:artist => 'testArtist2', :title_name => 'testAlbam2',:label => 'testLabel2',:price => 1980,:stock => 10,:image_id => 'test.jpg',:admin_id => 1,:genre_id =>2)
-Item.create(:artist => 'testArtist3', :title_name => 'testAlbam3',:label => 'testLabel1',:price => 1980,:stock => 10,:image_id => 'test.jpg',:admin_id => 1,:genre_id =>2)
-Item.create(:artist => 'testArtist3', :title_name => 'testAlbam4',:label => 'testLabel2',:price => 1980,:stock => 10,:image_id => 'test.jpg',:admin_id => 1,:genre_id =>1)
-Item.create(:artist => 'testArtist4', :title_name => 'testAlbam5',:label => 'testLabel2',:price => 1980,:stock => 10,:image_id => 'test.jpg',:admin_id => 1,:genre_id =>1)
+Item.create(:artist => 'testArtist1', :title_name => 'testAlbam1',:label => 'testLabel1',:price => 1980,:stock => 10,:image_id => '38b087a1dcd2b171234f3361dbad3fc419050d813a9a62da44729185bd14',:admin_id => 1,:genre_id =>1)
+Item.create(:artist => 'testArtist2', :title_name => 'testAlbam2',:label => 'testLabel2',:price => 1980,:stock => 10,:image_id => '38b087a1dcd2b171234f3361dbad3fc419050d813a9a62da44729185bd14',:admin_id => 1,:genre_id =>2)
+Item.create(:artist => 'testArtist3', :title_name => 'testAlbam3',:label => 'testLabel1',:price => 1980,:stock => 10,:image_id => '38b087a1dcd2b171234f3361dbad3fc419050d813a9a62da44729185bd14',:admin_id => 1,:genre_id =>2)
+Item.create(:artist => 'testArtist3', :title_name => 'testAlbam4',:label => 'testLabel2',:price => 1980,:stock => 10,:image_id => '38b087a1dcd2b171234f3361dbad3fc419050d813a9a62da44729185bd14',:admin_id => 1,:genre_id =>1)
+Item.create(:artist => 'testArtist4', :title_name => 'testAlbam5',:label => 'testLabel2',:price => 1980,:stock => 10,:image_id => '38b087a1dcd2b171234f3361dbad3fc419050d813a9a62da44729185bd14',:admin_id => 1,:genre_id =>1)
 
 CdItem.create(:item_id =>1,:cd_title => 'testCDtitle1')
 CdItem.create(:item_id =>1,:cd_title => 'testCDtitle2')
@@ -60,14 +60,11 @@ Song.create(:song_title => 'testSong8',:cd_item_id => 5, :song_number => 2)
 Song.create(:song_title => 'testSong9',:cd_item_id => 5, :song_number => 3)
 
 
-Status.create(:status_name => '送付済み')
-Payment.create(:payment_name => '現金払い')
-
 #開発用購入履歴
-OrderHistory.create(:user_id => 1,:status_id=>4,:buy_day => '2018-01-01',:payment_id => 1,:summary_count => 2,:summary_price =>3960,:destination => 'テスト住所')
+OrderHistory.create(:user_id =>2,:status_id=>4,:buy_day => '2018-01-01',:payment_id => 1,:summary_count => 2,:summary_price =>3960,:destination => 'テスト住所')
 OrderHistoryItem.create(:item_id => 1,:order_history_id => 1,:price => 1980,:artist => 'testArtist1',:title_name => 'testAlbam1')
 OrderHistoryItem.create(:item_id => 2,:order_history_id => 1,:price => 1980,:artist => 'testArtist2',:title_name => 'testAlbam2')
-OrderHistory.create(:user_id => 2,:status_id=>4,:buy_day => '2018-01-10',:payment_id => 2,:summary_count => 1,:summary_price =>1980,:destination => 'テスト住所')
+OrderHistory.create(:user_id =>2,:status_id=>4,:buy_day => '2018-01-10',:payment_id => 2,:summary_count => 1,:summary_price =>1980,:destination => 'テスト住所')
 OrderHistoryItem.create(:item_id => 1,:order_history_id => 2,:price => 1980,:artist => 'testArtist1',:title_name => 'testAlbam1')
 OrderHistory.create(:user_id => 1,:status_id=>4,:buy_day => '2018-03-10',:payment_id => 1,:summary_count => 1,:summary_price =>1980,:destination => 'テスト住所')
 OrderHistoryItem.create(:item_id => 3,:order_history_id => 3,:price => 1980,:artist => 'testArtist3',:title_name => 'testAlbam3')
@@ -77,11 +74,10 @@ OrderHistoryItem.create(:item_id => 2,:order_history_id => 4,:price => 1980,:art
 OrderHistoryItem.create(:item_id => 3,:order_history_id => 4,:price => 1980,:artist => 'testArtist3',:title_name => 'testAlbam3')
 OrderHistory.create(:user_id => 3,:status_id=>4,:buy_day => '2018-04-10',:payment_id => 1,:summary_count => 1,:summary_price =>1980,:destination => 'テスト住所')
 OrderHistoryItem.create(:item_id => 1,:order_history_id => 5,:price => 1980,:artist => 'testArtist1',:title_name => 'testAlbam1')
-OrderHistory.create(:user_id => 2,:status_id=>4,:buy_day => '2018-04-10',:payment_id => 1,:summary_count => 2,:summary_price =>3960,:destination => 'テスト住所')
+OrderHistory.create(:user_id =>2,:status_id=>4,:buy_day => '2018-04-10',:payment_id => 1,:summary_count => 2,:summary_price =>3960,:destination => 'テスト住所')
 OrderHistoryItem.create(:item_id => 4,:order_history_id => 6,:price => 1980,:artist => 'testArtist4',:title_name => 'testAlbam4')
 OrderHistoryItem.create(:item_id => 5,:order_history_id => 6,:price => 1980,:artist => 'testArtist5',:title_name => 'testAlbam5')
 OrderHistory.create(:user_id => 1,:status_id=>4,:buy_day => '2018-04-11',:payment_id => 1,:summary_count => 1,:summary_price =>1980,:destination => 'テスト住所')
 OrderHistoryItem.create(:item_id => 4,:order_history_id => 7,:price => 1980,:artist => 'testArtist4',:title_name => 'testAlbam4')
 OrderHistory.create(:user_id => 3,:status_id=>4,:buy_day => '2018-04-15',:payment_id => 1,:summary_count => 3,:summary_price =>5940,:destination => 'テスト住所')
 OrderHistoryItem.create(:item_id => 4,:order_history_id => 8,:price => 1980,:artist => 'testArtist4',:title_name => 'testAlbam4')
-

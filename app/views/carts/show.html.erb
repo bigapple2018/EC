@@ -18,6 +18,7 @@
 								<td><%= link_to "#{item_cart.item.artist}/ #{item_cart.item.title_name}" %></td>
 								<td>¥<%= item_cart.item.price.to_s(:delimited) %></td>
 								<td><%= select_tag 'item_cart.count', options_for_select(["1", "2", "3", "4", "5"]) %> </td>
+								<td><%= submit_tag "数量変更" %>
 								<td><%= link_to "削除", items_cart_path(item_cart),method: :delete, class: "btn red-border-btn btn-xs"%></td>
 							</tr>
 					</tbody>
@@ -33,6 +34,7 @@
 						<td><%= @total_price %></td>
 						<td>合計個数</td>
 						<td><%= @total_count %></td>
+						<tb><%= link_to "購入手続きへ", class: "btn red-border-btn btn-xs"%></td>
 
 					</tr>
 			</table>

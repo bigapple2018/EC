@@ -7,9 +7,8 @@ class CartsController < ApplicationController
 		@total_price = 0
 		@total_count = 0
 		@cart.item_carts.each do |itemcart|
-		binding.pry
         @total_price += itemcart.item.price
-        @total_count += itemcart.item.count
+        @total_count += itemcart.count
 		end
 	end
 

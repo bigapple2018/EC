@@ -36,9 +36,16 @@ class ItemsCartController < ApplicationController
 
   #カートの中身を更新する
   def update
+    @item_cart = ItemCart.find(params[:id])
+    @items_cart.update
+    redirect_to cart_path(current_user)
+
   end
   #カートから商品を削除する
   def destroy
+    @item_cart = ItemCart.find(params[:id])
+    @item_cart.destroy
+    redirect_to cart_path(current_user)
   end
 
   private
