@@ -5,20 +5,14 @@
 
 
 /*ユーザー詳細画面*/
-h1 {
-  font-family: 'Comic Sans MS', cursive ;
-}
 .user_info {
   margin-bottom: 50px;
+  margin-left: 100px;
 }
-.user_box .user_info {
-  margin-bottom: 30px;
-}
-
 .user_info::before, .user_info::after {
   content: "";
   display: inline-block;
-  width: 140px;
+  width: 90px;
   height: 1px;
   margin: 0 3rem;
   background-color: #333;

@@ -20,7 +20,7 @@
   box-sizing: border-box;
 }
 header a, header li, .header_logo_text, footer, .heading p, h1 {
-  font-family: 'Comic Sans MS', cursive ;
+  font-family: 'Comic Sans MS', cursive, 'arial unicode ms' !important ;
 }
 
  @import "bootstrap-sprockets";
