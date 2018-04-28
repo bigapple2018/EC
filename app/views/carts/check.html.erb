@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <%= form_tag(cart_confirm_path) do %>
+    <%= form_for(@order_history,url: cart_confirm_path) do |f| %>
     <div class="col-lg-9">
       <div class="heading">
         <p>購入手続き</p>
@@ -15,7 +15,7 @@
               <p>ユーザー名</p>
             </div>
             <div class="col-lg-9">
-              <%= "#{@user.last_name} #{@user.first_name}" %>
+              <%= "#{current_user.last_name} #{current_user.first_name}" %>
             </div>
           </div>
           <div class="row">
@@ -23,13 +23,13 @@
               <p>送付先</p>
             </div>
             <div class="col-lg-9">
-              <%= radio_button_tag("distination",0,:checked => true)%>
-              <%= label_tag("distination_0","#{@user.postal_code}#{@user.address}") %>
+              <%= f.radio_button("destination",0,:checked => true)%>
+              <%= f.label("destination_0","#{current_user.postal_code}#{current_user.address}") %>
               <% if !@subaddresses.nil? %>
                 <% @subaddresses.each do |subaddress| %>
                 <div>
-                  <%= radio_button_tag("distination",subaddress.id)%>
-                  <%= label_tag("distination_#{subaddress.id}","#{subaddress.sub_postal_code}#{subaddress.sub_address}") %>
+                  <%= f.radio_button("destination",subaddress.id)%>
+                  <%= f.label("destination_#{subaddress.id}","#{subaddress.sub_postal_code}#{subaddress.sub_address}") %>
                 </div>
                 <% end %>
               <% end %>
@@ -44,11 +44,11 @@
           </div>
           <% @payment.each do |pay| %>
             <% if pay.id == 1 %>
-              <%= radio_button_tag("payment",pay.id,:checked => true) %>
+              <%= f.radio_button("payment",pay.id,:checked => true) %>
             <% else %>
-              <%= radio_button_tag("payment",pay.id) %>
+              <%= f.radio_button("payment",pay.id) %>
             <% end %>
-            <%= label_tag("payment_#{pay.id}",pay.payment_name)%>
+            <%= f.label("payment_#{pay.id}",pay.payment_name)%>
           <% end %>
         </div>
       </div>
@@ -82,7 +82,7 @@
        </div>
        <div class="col-lg-6 cart_summary">
          ¥<%= @summary_price.to_s(:delimited) %>
-         <%= hidden_field_tag 'summary[price]',@summary_price %>
+         <%= f.hidden_field 'summary[price]',:value => @summary_price %>
        </div>
       </div>
       <div class="row">
@@ -91,7 +91,7 @@
         </div>
         <div class="col-lg-6 cart_summary">
           <%= @summary_count %>個
-          <%= hidden_field_tag 'summary[count]',@summary_count %>
+          <%= f.hidden_field 'summary[count]',:value => @summary_count %>
         </div>
       </div>
       <div class="row">
@@ -99,7 +99,7 @@
           <%= link_to "キャンセル", "#" ,class:"btn red-gray-btn" %><br>
         </div>
         <div class="cart_summary">
-          <%= submit_tag "購入確定", "data-confirm" => "購入を確定しますか", class: "btn red-btn" %>
+          <%= f.submit "購入確定", "data-confirm" => "購入を確定しますか", class: "btn red-btn" %>
         </div>
       </div>
     </div>

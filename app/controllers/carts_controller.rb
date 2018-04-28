@@ -1,10 +1,9 @@
 class CartsController < ApplicationController
-
+	before_action :authenticate_user!
 
 	# 購入手続き画面表示
 	def check
-		#ユーザ情報の取得
-		@user = User.find(current_user.id)
+		@order_history = OrderHistory.new
 		#サブ住所の取得
 		@subaddresses = SubAddress.where(:user_id => current_user.id)
 		#支払い方法の取得
@@ -19,46 +18,43 @@ class CartsController < ApplicationController
 				@summary_price += sub_summary
 		end
 	end
-	
+
 	#購入確定
 	def confirm
 		user = User.find(current_user.id)
 		#orderhistoryへのユーザ情報、送付先、支払い方法、合計数、合計金額の登録
-		payment = Payment.find(params[:payment])
+		payment = Payment.find(params[:order_history][:payment])
 		destination = "#{user.postal_code} #{user.address}"
-		if params[:distination] != "0"
-			subaddress = SubAddress.find(params[:distination])
+		if params[:order_history][:destination] != "0"
+			subaddress = SubAddress.find(params[:order_history][:destination])
 			destination = "#{subaddress.sub_postal_code} #{subaddress.sub_address}"
 		end
-		summary_count = params[:summary][:count]
-		summary_price = params[:summary][:price]
+		summary_count = params[:order_history][:summary][:count]
+		summary_price = params[:order_history][:summary][:price]
 
 		orderhistory = OrderHistory.new(
 			check_params
 		)
+		orderhistory.buy_day = Date.today.to_time
+		orderhistory.destination = destination
+		orderhistory.summary_price = summary_price
+		orderhistory.summary_count = summary_count
+		orderhistory.user_id = current_user.id
+		orderhistory.item_id = 1
+		orderhistory.status_id = 1
+		orderhistory.payment_id = payment.id
 
-		if orderhistory.save(
-			:buy_day => Date.today.to_time,
-			:destination => destination,
-
-			:summary_price => summary_price,
-			:summary_count => summary_count,
-			:user_id => current_user.id,
-			:status_id => 0,
-			:payment_id => payment.id
-		)
-			debugger
+		if orderhistory.save
 			#OrderHistoryが登録できたらOrderHistoryItemを登録する
 			cart = Cart.find_by(:user_id => current_user.id)
 			cart.item_carts.each do |item_cart|
-				item = Item.find(item_cart.item_id)
-				orderhistoryitem = OrderHistoryItem.new(
-					:item_id => item_cart.item_id,
-					:order_history_id => orderhistory.id,
-					:price => item.price,
-					:artist => item.artist,
-					:title_name => item.title_name
-				)
+				orderhistoryitem = OrderHistoryItem.new
+				orderhistoryitem.item_id = item_cart.item_id
+				orderhistoryitem.order_history_id = orderhistory.id
+				orderhistoryitem.price = item_cart.item.price
+				orderhistoryitem.artist = item_cart.item.artist
+				orderhistoryitem.title_name = item_cart.item.title_name
+
 				orderhistoryitem.save
 			end
 
@@ -72,6 +68,23 @@ class CartsController < ApplicationController
 
 	private
 	def check_params
-		params.require(:order_history).permit(:distination, :payment_id,:summary_count,:summary_price, :user_id, :status_id, :buy_day)
+		params.require(:order_history).permit(:destination,
+																					:payment_id,
+																					:summary_count,
+																					:summary_price,
+																					:user_id,
+																					:status_id,
+																					:buy_day
+																				)
+
+	end
+	def order_history_item_params
+		params.require(:order_history_item).permit(:item_id,
+			                                         :order_history_id,
+																							 :price,
+																							 :artist,
+																							 :title_name
+																						 )
+
 	end
 end
