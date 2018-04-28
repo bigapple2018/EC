@@ -19,10 +19,13 @@ Rails.application.routes.draw do
 
  resources :users, only:[:show, :edit, :update]
  resources :items, only:[:index,:show]
-
- resources :sub_addresses, only:[:index, :new, :edit, :create, :update, :destroy]
+ get '/sub_addresses/:id' => 'sub_addresses#index', as:'sub_addresses'
+ get '/sub_addresses/new/:id' => 'sub_addresses#new', as:'new_sub_address'
+ resources :sub_addresses, only:[:edit, :create, :update, :destroy]
  resources :items_cart ,only:[:create,:update,:destroy]
- resources :leaves, only:[:new, :create, :destroy]
+ get '/leaves/new/:id' => 'leaves#new', as:'new_leave'
+ post '/leaves' => 'leaves#create'
+ delete '/leaves/:id' => 'leaves#destroy'
  get '/orderHistories' => 'order_histories#index', as:'order_histories'
  namespace :admins do
 
