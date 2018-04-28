@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
 	before_action :authenticate_user!
+	before_action :check_current_users_cart
 
 	# 購入手続き画面表示
 	def check
@@ -35,12 +36,12 @@ class CartsController < ApplicationController
 		orderhistory = OrderHistory.new(
 			check_params
 		)
+
 		orderhistory.buy_day = Date.today.to_time
 		orderhistory.destination = destination
 		orderhistory.summary_price = summary_price
 		orderhistory.summary_count = summary_count
 		orderhistory.user_id = current_user.id
-		orderhistory.item_id = 1
 		orderhistory.status_id = 1
 		orderhistory.payment_id = payment.id
 
@@ -55,7 +56,9 @@ class CartsController < ApplicationController
 				orderhistoryitem.artist = item_cart.item.artist
 				orderhistoryitem.title_name = item_cart.item.title_name
 
-				orderhistoryitem.save
+				if !orderhistoryitem.save
+					flash.now[:error] = "購入に失敗しました"
+				end
 			end
 
 			#CartItemsとCartを削除する
@@ -63,6 +66,8 @@ class CartsController < ApplicationController
 				item_cart.destroy
 			end
 			cart.destroy
+		else
+			flash.now[:error] = "購入に失敗しました"
 		end
 	end
 
@@ -87,4 +92,12 @@ class CartsController < ApplicationController
 																						 )
 
 	end
+
+	#ログインユーザのカートが存在しない場合はトップ画面に遷移する
+	def check_current_users_cart
+		cart = Cart.find_by(:user_id => current_user.id)
+		if cart.nil?
+			redirect_to root_path
+		end
+  end
 end
