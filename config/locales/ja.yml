@@ -3,7 +3,7 @@ ja:
     models:
       user: ユーザー
       sub_address: "サブアドレス"
-      leave: リーブ
+      leave: 退会
     attributes:
       user:
         last_name: 姓

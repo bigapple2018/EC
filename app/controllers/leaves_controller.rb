@@ -21,6 +21,6 @@ class LeavesController < ApplicationController
 
 	private
 	def leave_params
-		params.require(:leave).permit(:leave_reason, :user_id, :delete_day)
+		params.require(:leave).permit(:leave_reason)
 	end
 end
