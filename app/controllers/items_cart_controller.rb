@@ -36,10 +36,18 @@ class ItemsCartController < ApplicationController
 
   #カートの中身を更新する
   def update
-    @item_cart = ItemCart.find(params[:id])
-    @items_cart.update
+    #カートを見つけてくる
+    @cart = Cart.find_by(user_id: current_user.id)
+    #カートの中身を見つけてくる＋どのアイテムを編集するか？を指示する
+    @item_cart = @cart.item_carts.find(params[:id])
+    #アイテムのどこのカラムを編集するか？
+    count = @item_cart.count
+    #新しく更新する値（数量）を取得する
+    count = params[:item_cart][:count]
+    #何を上書きするか？を指示する
+    @item_cart.update(count: count)
+    items_stock_update(item_id,count,isDecrease)
     redirect_to cart_path(current_user)
-
   end
   #カートから商品を削除する
   def destroy
