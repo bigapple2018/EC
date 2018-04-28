@@ -22,7 +22,7 @@
           <ul class="items">
             <%= link_to item_path(item.id) do %>
               <li>
-                  <%= attachment_image_tag item, :image, :fill, 120, 120, format: 'png', class: "" %>
+                  <%= attachment_image_tag item, :image, :fill, 120, 120, format: 'png' %>
               </li>
               <li><%= item.title_name %></li>
               <li><%= item.artist %></li>
