@@ -5,5 +5,5 @@ class Item < ApplicationRecord
   attachment :image
 
   has_many :cd_items
+  has_many :item_carts
 end
-
