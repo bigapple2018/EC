@@ -5,11 +5,12 @@
 /*新規・一覧・編集見出し調整*/
 .heading_box .heading_address {
 	margin-bottom: 60px;
+	margin-left: 100px;
 }
 .heading_address::before, .heading_address::after{
       content:"";
       display:inline-block;
-      width:140px;
+      width:90px;
       height:1px;
       margin:0 3rem;
       background-color: #333;

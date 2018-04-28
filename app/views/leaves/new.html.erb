@@ -1,0 +1,34 @@
+<div class="container">
+　<div class="row">
+		<h1 class="heading_leave">退会確認</h1>
+         <div class="col-lg-1">
+         </div>
+            <div class="col-lg-11 leave_box">
+		      <div class="leave_text">
+					<p>本当に<strong>退会</strong>しますか？</p>
+			  </div>
+				     <div class="leave_nobtn">
+						<%= link_to "いいえ (マイページ)", user_path(current_user), class: "btn red-btn btn-lg" %>
+					 </div>
+					<% if @leave.errors.any? %>
+					    <div id="error_explanation">
+					      <ul>
+						      <% @leave.errors.full_messages.each do |message| %>
+						        <li><%= message %></li>
+					          <% end %>
+				          </ul>
+				        </div>
+					<% end %>
+					<%= form_for(@leave) do |f| %>
+				 <div class="leave_leavetext">
+					<%= f.text_area :leave_reason, :size =>"90", :placeholder => "退会理由を記載ください" %><br>
+				</div>
+				 <div class="leave_yesbtn">
+					<%= f.submit "はい", method: :delete, "data-confirm" => "本当に退会しますか", class: "btn red-border-btn btn-xs" %>
+				</div>
+					<% end %>
+			</div>
+		 <div class="col-lg-2">
+         </div>
+    </div>
+</div>
