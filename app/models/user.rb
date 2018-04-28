@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  
+
   # 正規表現
   KANA_REGEXP = /\A([ァ-ン]|ー)+\z/
   POSTAL_TELL_REGEXP = /\A[0-9¥-]+\z/
@@ -23,6 +23,7 @@ class User < ApplicationRecord
 
   has_many :sub_addresses
   has_many :order_histories
+  acts_as_paranoid column: :delete_date
 
   def self.search(search)
     if search

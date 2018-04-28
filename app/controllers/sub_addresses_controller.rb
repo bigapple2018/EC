@@ -1,4 +1,5 @@
 class SubAddressesController < ApplicationController
+      before_action :authenticate_user!
       before_action :correct_sub_address, only: [:edit, :update, :destroy]
 
   def index
