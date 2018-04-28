@@ -23,7 +23,7 @@
               <p>送付先</p>
             </div>
             <div class="col-lg-9">
-              <%= radio_button_tag("distination",0)%>
+              <%= radio_button_tag("distination",0,:checked => true)%>
               <%= label_tag("distination_0","#{@user.postal_code}#{@user.address}") %>
               <% if !@subaddresses.nil? %>
                 <% @subaddresses.each do |subaddress| %>
@@ -43,7 +43,11 @@
             <p>支払い方法</p>
           </div>
           <% @payment.each do |pay| %>
-            <%= radio_button_tag("payment",pay.id) %>
+            <% if pay.id == 1 %>
+              <%= radio_button_tag("payment",pay.id,:checked => true) %>
+            <% else %>
+              <%= radio_button_tag("payment",pay.id) %>
+            <% end %>
             <%= label_tag("payment_#{pay.id}",pay.payment_name)%>
           <% end %>
         </div>

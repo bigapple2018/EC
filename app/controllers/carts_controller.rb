@@ -19,8 +19,10 @@ class CartsController < ApplicationController
 				@summary_price += sub_summary
 		end
 	end
+	
 	#購入確定
 	def confirm
+		user = User.find(current_user.id)
 		#orderhistoryへのユーザ情報、送付先、支払い方法、合計数、合計金額の登録
 		payment = Payment.find(params[:payment])
 		destination = "#{user.postal_code} #{user.address}"
@@ -32,15 +34,20 @@ class CartsController < ApplicationController
 		summary_price = params[:summary][:price]
 
 		orderhistory = OrderHistory.new(
+			check_params
+		)
+
+		if orderhistory.save(
 			:buy_day => Date.today.to_time,
 			:destination => destination,
+
 			:summary_price => summary_price,
 			:summary_count => summary_count,
 			:user_id => current_user.id,
 			:status_id => 0,
-			:payment_id => payment.id,
+			:payment_id => payment.id
 		)
-		if orderhistory.save
+			debugger
 			#OrderHistoryが登録できたらOrderHistoryItemを登録する
 			cart = Cart.find_by(:user_id => current_user.id)
 			cart.item_carts.each do |item_cart|
@@ -65,6 +72,6 @@ class CartsController < ApplicationController
 
 	private
 	def check_params
-		params.require(:cart).permit(:distination, :payment,:summary_count,:summary_price)
+		params.require(:order_history).permit(:distination, :payment_id,:summary_count,:summary_price, :user_id, :status_id, :buy_day)
 	end
 end
