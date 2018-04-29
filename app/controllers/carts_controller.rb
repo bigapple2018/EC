@@ -14,6 +14,19 @@ class CartsController < ApplicationController
 		end
 	end
 
+<<<<<<< HEAD
 
 
 end
+=======
+	def destroy
+        item_cart = CartItem.find(params[:id])
+	item_cart.destroy
+        redirect_to item_carts_id_path
+   	end
+	
+	def current_user
+	@item_cart.count = params[:note][:point]
+	end
+end
+>>>>>>> df02165c1dec9b6d0a38b8962ad28f49b9ddc2f8
