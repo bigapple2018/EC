@@ -1,5 +1,4 @@
 <div class="container">
-<<<<<<< HEAD
 	<div class="row">
 		<div class="col-lg-9">
 			<table class="table">
@@ -49,24 +48,3 @@
 		</div>
 	</div>
 </div>
-=======
-	<table class="table">
-		<thead>
-			<h3>カート詳細</h3>
-			<td>アーティスト名</td>
-			<td>単価</td>
-			<tb>個数</tb>
-		</thead>
-	<tbody>
-			<% @cart.item_carts.each do |item_cart| %>
-				<tr>
-					<td><%= link_to "item_cart.item.title_name, item_cart.item.artist" %></td>
-					<td><%= @item.price.to_s(:delimited) %></td>
-					<tb><%= select_tag 'item_cart.count', options_for_select(["1", "2", "3", "4", "5"]) %> </tb>
-					<td><%= link_to "削除", item_cart.path(item.cart) %></td>
-				</tr>
-			<% end %>
-		</table>
-	 </tbody>
-</div>
->>>>>>> df02165c1dec9b6d0a38b8962ad28f49b9ddc2f8
