@@ -19,7 +19,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+header a, header li, .header_logo_text, footer, .heading p, h1 {
+  font-family: 'Comic Sans MS', cursive, 'arial unicode ms' !important ;
+}
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
@@ -29,6 +31,7 @@ html, body {
   height: 100%;
   margin: 0;
 }
+
 a,a:hover,a:visited{
   text-decoration: none;
 }
@@ -97,6 +100,10 @@ header,footer{
     a:hover{
       color:lightgray;
     }
+}
+.header_logo_text {
+  font-size:20px;
+  color: red;
 }
 .wrapper {
   min-height: 100%;
@@ -174,6 +181,9 @@ footer{
   .postal-code-txt,.address-txt,
   .tell-text,.email-txt,.password-txt{
     width: 310px;
+  }
+  h4{
+    font-family: 'Comic Sans MS', cursive, 'arial unicode ms' !important;
   }
   textarea{
     border-radius: 5px;
