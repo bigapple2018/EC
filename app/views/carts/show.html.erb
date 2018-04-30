@@ -1,6 +1,11 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-9">
+			<% if @cart.item_carts.count == 0 %>
+			<div class="alert alert-warning alert_div" role="alert" >
+  			カートに商品がありません
+			</div>
+			<% else %>
 			<table class="table">
 				<thead>
 					<tr>
@@ -18,22 +23,47 @@
 								<td><%= link_to "#{item_cart.item.artist}/ #{item_cart.item.title_name}",item_path(item_cart.item.id) %></td>
 								<td>¥<%= item_cart.item.price.to_s(:delimited) %></td>
 								<td><%= form_for(item_cart, url: items_cart_path(item_cart), method: :patch) do |f| %>
-									<%= f.number_field :count %>
-									<%= f.submit "数量変更" %>
+									<%= f.number_field :count ,class: "count_num"%>
+									<%= f.submit "数量変更",class: "btn red-btn btn-xs" %>
 									<% end %>
 								<td><%= link_to "削除", items_cart_path(item_cart),method: :delete, class: "btn red-border-btn btn-xs"%></td>
 							</tr>
 					</tbody>
 				<% end %>
 			</table>
+			<% end %>
 		</div>
 		<div class="col-lg-3 summary">
-						<p>商品合計(数量)</p><br>
-						<p>合計金額</p><br>
-						<p>¥<%= @total_price %></p><br>
-						<p>合計個数</p>
-						<p><%= @total_count %><p><br>
-			<%= link_to "購入手続きへ", class: "btn red-border-btn btn-xs"%>
-		</div>
+      <div class="row">
+        <div class="heading">
+          <p>商品小計(数量)</p>
+        </div>
+      </div>
+      <div class="row">
+       <div class="col-lg-6 cart_summary">
+         合計金額
+       </div>
+       <div class="col-lg-6 cart_summary">
+         ¥<%= @total_price.to_s(:delimited) %>
+       </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 cart_summary">
+          合計個数
+        </div>
+        <div class="col-lg-6 cart_summary">
+          <%= @total_count %>個
+        </div>
+      </div>
+      <div class="row">
+        <div class="cart_summary">
+					<% if @cart.item_carts.count == 0 %>
+						<%= link_to "購入手続きへ","#", class: "btn red-btn", :disabled => true %>
+					<% else %>
+          	<%= link_to "購入手続きへ",cart_check_path, class: "btn red-btn"%>
+					<% end %>
+        </div>
+      </div>
+    </div>
 	</div>
 </div>

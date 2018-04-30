@@ -15,8 +15,7 @@ class ItemsCartController < ApplicationController
       if items_cart.save
         # 在庫を減らす
         items_stock_update(item_id,1,true)
-        #TODO:カート詳細へのリダイレクトに修正すること
-        redirect_to item_path(item_id)
+        redirect_to cart_path(current_cart)
       else
         redirect_to item_path(item_id)
       end
@@ -26,8 +25,7 @@ class ItemsCartController < ApplicationController
       if  items_cart.update(count: latest_count)
         # 在庫を減らす
         items_stock_update(item_id,1,true)
-        #TODO:カート詳細へのリダイレクトに修正すること
-        redirect_to item_path(item_id)
+        redirect_to cart_path(current_cart)
       else
         redirect_to item_path(item_id)
       end
