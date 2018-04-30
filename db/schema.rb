@@ -121,12 +121,8 @@ ActiveRecord::Schema.define(version: 20180428094052) do
     t.string "song_title"
     t.integer "cd_item_id"
     t.datetime "created_at", null: false
-<<<<<<< HEAD
-    t.datetime "", null: false
-=======
     t.datetime "updated_at", null: false
     t.integer "song_number", null: false
->>>>>>> master
     t.index ["cd_item_id"], name: "index_songs_on_cd_item_id"
   end
 

@@ -24,7 +24,7 @@
 		</tr>
 		<tr>
 			<td>ジャンル</td>
-			<td><%= f.collection_select :genre_name, Genre.all, :genre_name, :genre_name %>
+			<td><%= f.collection_select :genre_id, Genre.all, :id, :genre_name %>
 			</td>
 		</tr>
 		<tr>

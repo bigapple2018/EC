@@ -1,10 +1,10 @@
-<h1>ユーザー詳細編集</h1>
+<h1 class="user-edit">ユーザー詳細編集</h1>
 
 
 <div class="admin_user_edit">
 	<table width="80%">
 
-<%= form_for(@user) do |f| %>
+<%= form_for(@user, :url => { :controller =>'admins/users',:action =>'update' }) do |f| %>
 
 		<tbody>
 			<tr>

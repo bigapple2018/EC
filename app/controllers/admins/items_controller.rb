@@ -8,6 +8,8 @@ end
 def create
 	item = Item.new(item_params)
 	item.admin_id = 1
+	genre = Genre.find(item_params[:genre_id])
+	item.genre_name = genre.genre_name
 	item.save
 	redirect_to  admins_items_path
 end
