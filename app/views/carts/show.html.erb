@@ -1,0 +1,39 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-9">
+			<table class="table">
+				<thead>
+					<tr>
+						<h3>カート詳細</h3>
+						<td>画像</td>
+						<td>アーティスト名/アルバム名</td>
+						<td>単価</td>
+						<td>個数</td>
+					</tr>
+				</thead>
+					<tbody>
+						<% @cart.item_carts.each do |item_cart| %>
+							<tr>
+								<td><%= attachment_image_tag item_cart.item, :image, :fill, 90, 90, format: 'png' %></td>
+								<td><%= link_to "#{item_cart.item.artist}/ #{item_cart.item.title_name}",item_path(item_cart.item.id) %></td>
+								<td>¥<%= item_cart.item.price.to_s(:delimited) %></td>
+								<td><%= form_for(item_cart, url: items_cart_path(item_cart), method: :patch) do |f| %>
+									<%= f.number_field :count %>
+									<%= f.submit "数量変更" %>
+									<% end %>
+								<td><%= link_to "削除", items_cart_path(item_cart),method: :delete, class: "btn red-border-btn btn-xs"%></td>
+							</tr>
+					</tbody>
+				<% end %>
+			</table>
+		</div>
+		<div class="col-lg-3 summary">
+						<p>商品合計(数量)</p><br>
+						<p>合計金額</p><br>
+						<p>¥<%= @total_price %></p><br>
+						<p>合計個数</p>
+						<p><%= @total_count %><p><br>
+			<%= link_to "購入手続きへ", class: "btn red-border-btn btn-xs"%>
+		</div>
+	</div>
+</div>
