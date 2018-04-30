@@ -1,0 +1,109 @@
+<div class="container">
+  <div class="row test">
+    <%= flash[:error] %>
+    <%= form_for(@order_history,url: cart_confirm_path) do |f| %>
+    <div class="col-lg-9">
+      <div class="heading">
+        <p>購入手続き</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="sub_heading">
+            <p>ユーザ情報</p>
+          </div>
+          <div class="row">
+            <div class="col-lg-3">
+              <p>ユーザー名</p>
+            </div>
+            <div class="col-lg-9">
+              <%= "#{current_user.last_name} #{current_user.first_name}" %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3">
+              <p>送付先</p>
+            </div>
+            <div class="col-lg-9">
+              <%= f.radio_button("destination",0,:checked => true)%>
+              <%= f.label("destination_0","#{current_user.postal_code}#{current_user.address}",:class => 'radio_label') %>
+              <% if !@subaddresses.nil? %>
+                <% @subaddresses.each do |subaddress| %>
+                <div>
+                  <%= f.radio_button("destination",subaddress.id)%>
+                  <%= f.label("destination_#{subaddress.id}","#{subaddress.sub_postal_code}#{subaddress.sub_address}",:class => 'radio_label') %>
+                </div>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="sub_heading">
+            <p>支払い方法</p>
+          </div>
+          <% @payment.each do |pay| %>
+            <% if pay.id == 1 %>
+              <%= f.radio_button("payment",pay.id,:checked => true) %>
+            <% else %>
+              <%= f.radio_button("payment",pay.id) %>
+            <% end %>
+            <%= f.label("payment_#{pay.id}",pay.payment_name,:class => 'radio_label')%>
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="sub_heading">
+            <p>カート詳細</p>
+          </div>
+          <table class="table cart_detail_tbl">
+            <% @cart.item_carts.each do |item_cart| %>
+              <tr>
+                <td><%= attachment_image_tag item_cart.item, :image, :fill, 200, 200, format: 'png' %></td>
+                <td><%= link_to "#{item_cart.item.artist}/#{item_cart.item.title_name}", item_path(item_cart.item), :class => 'item_name'%></td>
+                <td>¥<%= item_cart.item.price.to_s(:delimited) %></td>
+                <td><%= item_cart.count %>個</td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 summary">
+      <div class="row">
+        <div class="heading">
+          <p>商品小計(数量)</p>
+        </div>
+      </div>
+      <div class="row">
+       <div class="col-lg-6 cart_summary">
+         合計金額
+       </div>
+       <div class="col-lg-6 cart_summary">
+         ¥<%= @summary_price.to_s(:delimited) %>
+         <%= f.hidden_field 'summary[price]',:value => @summary_price %>
+       </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 cart_summary">
+          合計個数
+        </div>
+        <div class="col-lg-6 cart_summary">
+          <%= @summary_count %>個
+          <%= f.hidden_field 'summary[count]',:value => @summary_count %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="cart_summary">
+          <%= link_to "キャンセル", cart_path(current_cart) ,class:"btn red-gray-btn btn-xs" %><br>
+        </div>
+        <div class="cart_summary">
+          <%= f.submit "購入確定", "data-confirm" => "購入を確定しますか", class: "btn red-btn" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

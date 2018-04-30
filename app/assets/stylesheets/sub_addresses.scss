@@ -1,3 +1,97 @@
 // Place all the styles related to the subAddresses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/*住所画面調整*/
+/*新規・一覧・編集見出し調整*/
+.heading_box .heading_address {
+	margin-bottom: 60px;
+	margin-left: 100px;
+}
+.heading_address::before, .heading_address::after{
+      content:"";
+      display:inline-block;
+      width:90px;
+      height:1px;
+      margin:0 3rem;
+      background-color: #333;
+      vertical-align: middle;
+  }
+/*新規・編集投稿画面table調整*/
+.address_table {
+	width: 25%;
+	margin: 0 auto;
+	text-align: center;
+}
+.address_table tr {
+	border-bottom: 1px solid #c7c1c1;
+}
+.address_table_subpostal {
+	padding-top: 6px;
+}
+.address_table_subaddress {
+	padding-top: 32px;
+}
+.address_table_subaddress2 {
+	padding-top: 25px;
+}
+/*btn調整*/
+.address_btn {
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+}
+.address_btn .red-btn {
+	width: 100px;
+}
+.address_btn_back {
+	width: 100%;
+	text-align: center;
+}
+.address_btn_back .red-gray-btn {
+	width: 100px;
+}
+/*住所一覧画面table調整*/
+.address_table2 {
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+}
+.address_table2 th {
+	text-align: center;
+	border-bottom: 1px solid #a09c9c;
+	padding-bottom: 10px;
+}
+.address_table2 td {
+	border-bottom: 1px solid #c7c1c1;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.address_table2_subpostal {
+	width: 70px;
+}
+.address_table2_subaddress {
+	text-align: left;
+	width: 50%;
+}
+.address_table2_btn {
+	width: 120px;
+}
+.address_table2_position {
+	text-align: left;
+	padding-left: 55px;
+}
+.address_table2_edit .red-btn,
+.address_table2_delete .red-border-btn {
+    width: 100px;
+}
+/*btn調整*/
+.address_newback {
+	width: 100%;
+	text-align: center;
+	margin-top: 50px;
+}
+
+.address_newback .red-gray-btn,
+.address_newback .red-btn {
+	width: 100px;
+}

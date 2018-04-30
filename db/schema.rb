@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180423083421) do
-
+ActiveRecord::Schema.define(version: 20180428094052) do
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -89,12 +88,10 @@ ActiveRecord::Schema.define(version: 20180423083421) do
     t.integer "summary_price"
     t.integer "summary_count"
     t.integer "user_id"
-    t.integer "item_id"
     t.integer "status_id"
     t.integer "payment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_order_histories_on_item_id"
     t.index ["payment_id"], name: "index_order_histories_on_payment_id"
     t.index ["status_id"], name: "index_order_histories_on_status_id"
     t.index ["user_id"], name: "index_order_histories_on_user_id"
@@ -105,6 +102,9 @@ ActiveRecord::Schema.define(version: 20180423083421) do
     t.integer "order_history_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price", default: 0, null: false
+    t.string "artist", default: "", null: false
+    t.string "title_name", default: "", null: false
     t.index ["item_id"], name: "index_order_history_items_on_item_id"
     t.index ["order_history_id"], name: "index_order_history_items_on_order_history_id"
   end
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(version: 20180423083421) do
     t.integer "cd_item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "song_number", null: false
     t.index ["cd_item_id"], name: "index_songs_on_cd_item_id"
   end
 

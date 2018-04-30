@@ -1,3 +1,69 @@
 // Place all the styles related to the carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*購入確認画面*/
+.comfirm-box {
+	text-align: center;
+	width: 40%;
+	margin: 100px auto;
+	border : 2px solid;
+	line-height: 30px;
+	background-color: #fff8dc;
+}
+.comfirm_box_text {
+	font-size :20px;
+	margin-top: 100px;
+}
+.comfirm_box_btn {
+	margin-bottom: 150px;
+}
+.comfirm_box_btn .red-btn,
+.comfirm_box_btn .red-gray-btn {
+    width: 300px;
+}
+
+/*購入手続き画面*/
+.table td{
+	vertical-align: middle !important;
+}
+.cart_summary{
+	margin:10px 0px;
+	text-align:center;
+}
+.sub_heading{
+  height: 20px;
+  border-bottom:solid 2px #c8c8c8;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+.sub_heading > p{
+  font-size: 16px;
+	padding-bottom:10px;
+}
+.summary {
+	background-color: #000;
+	color:#fff;
+	height: auto;
+	.heading{
+		border-bottom:solid 3px #fff;
+		margin:30px 20px;
+	}
+}
+.radio_label{
+	font-weight: normal;
+	margin-right: 20px;
+}
+.item_name{
+	font-size: 16px;
+}
+.table .red-border-btn,
+.table .red-btn{
+	width: 100px;
+}
+.count_num{
+	width: 50px;
+}
+.alert_div{
+	margin-top: 30px;
+}

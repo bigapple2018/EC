@@ -13,15 +13,31 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header a, header li, .header_logo_text, footer, .heading p, h1 {
+  font-family: 'Comic Sans MS', cursive, 'arial unicode ms' !important ;
+}
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+// フッターの下部位置調整
+html, body {
+  height: 100%;
+  margin: 0;
+}
 
 a,a:hover,a:visited{
   text-decoration: none;
 }
 // テキストボックス
-input[type="text"],input[type="email"],input[type="password"] {
+input[type="text"],input[type="email"],input[type="password"]
+{
 	border-radius: 5px;
   margin: 5px 0;
   -webkit-appearance: none;
@@ -76,8 +92,8 @@ input[type="text"],input[type="email"],input[type="password"] {
 header,footer{
   background-color: Black;
   color:White;
-  margin: 0 20px;
-  padding:10px 0;
+/*  margin: 0 20px;
+*/  padding:10px 0;
     a,a:visited{
       color:white;
     }
@@ -85,11 +101,22 @@ header,footer{
       color:lightgray;
     }
 }
+.header_logo_text {
+  font-size:20px;
+  color: red;
+}
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -50px;
+}
+.push {
+  height: 50px;
+}
 footer{
   text-align: center;
-  position: fixed;
   bottom: 0;
   width: 100%;
+  height: 40px;
 }
 // ロゴ
 .logo{
@@ -112,18 +139,40 @@ footer{
 .nav{
 	float: right;
 }
+.nav > ul {
+  margin-bottom:0px;
+}
 .nav > ul > li{
  list-style: none;
  display: inline;
  padding:0 5px;
 }
-.admin-nav{
-  height: 100%;
-  vertical-align: bottom;
+.user-nav{
+  margin-top: 8px;
 }
-.itemname-search-txt{
+.admin-nav{
+  margin-top:40px;
+}
+#q_title_name_cont,#q_artist_cont{
   margin-top:5px;
   width: 300px;
+  color: #000;
+  border-radius: 3px;
+  padding-right: 50px;
+}
+.search_icon{
+  color:#000;
+  position: absolute;
+  margin: -30px;
+  top:42px;
+}
+#item_category{
+  color:#000;
+  height: 1.8em;
+  border-radius: 2px;
+}
+.badge-red{
+  background-color: red;
 }
 // サインアップ・ログインフォーム
 .form-div{
@@ -136,45 +185,12 @@ footer{
   .tell-text,.email-txt,.password-txt{
     width: 310px;
   }
-}
-// ユーザー詳細画面
-.user_info {
-  margin-bottom: 50px;
-}
-
-.user_info::before, .user_info::after {
-  content: "";
-  display: inline-block;
-  width: 140px;
-  height: 1px;
-  margin: 0 3rem;
-  background-color: #333;
-  vertical-align: middle;
-}
-/*table調整*/
-.personal_box {
-  width: 400px;
-  margin: 5px 0 0 70px;
-}
-.td_box {
-  width: 200px;
-}
-/*ユーザー詳細画面ボタン調整*/
-.btn_box {
-  width: 61%;
-  margin: 0 auto;
-  padding-top: 40px;
-}
-.btn_box .red-btn {
-  width: 100px;
-}
-.btn_box .red-gray-btn {
-  width: 110px;
-  margin: 0 10px;
-}
-.leave .red-border-btn{
-  width: 100px;
-}
-.leave a {
-  color: red;
+  h4{
+    font-family: 'Comic Sans MS', cursive, 'arial unicode ms' !important;
+  }
+  textarea{
+    border-radius: 5px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+  }
 }

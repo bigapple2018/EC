@@ -5,4 +5,5 @@ class Admin < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
          attachment :image
+         # has_many :items
 end

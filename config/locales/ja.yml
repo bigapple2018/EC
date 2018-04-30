@@ -2,6 +2,8 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      sub_address: "サブアドレス"
+      leave: 退会
     attributes:
       user:
         last_name: 姓
@@ -13,3 +15,16 @@ ja:
         tell: 電話番号
         email: メールアドレス
         password: パスワード
+      sub_address:
+        sub_postal_code: "郵便番号"
+        sub_address: "住所"
+      leave:
+         leave_reason: 退会理由
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
+      truncate: "&hellip;"
+
