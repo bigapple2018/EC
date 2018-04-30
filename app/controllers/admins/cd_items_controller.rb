@@ -6,7 +6,7 @@ class Admins::CdItemsController < ApplicationController
 
   def show
     @cd_item = CdItem.find(params[:id])
-    @song = Song.new
+    @cd_item.songs.build
   end
 
   def create
@@ -19,8 +19,9 @@ class Admins::CdItemsController < ApplicationController
 
   private
 
-  def song_params
-   	  params.require(:songs).permit(:song_title,song_attributes: [:id,:_destroy])
-
+  def songs_params
+   	  params.require(:cd_items).permit(
+        :cd_title,
+        :cd_item_id)
   end
 end

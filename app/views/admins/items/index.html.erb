@@ -15,7 +15,7 @@
 
 		<div class="admin_items">
 
-			<div class="col-lg-8">
+			<div class="col-lg-8 admin_items_table">
 
 
 				<table class="table">
@@ -39,9 +39,7 @@
 						<tr>
 							<td>タイトル</td>
 							<td><% item.cd_items.each do |cd_item| %>
-								<% cd_item.songs.each do |song| %>
-								<%= song.song_title %>
-								<% end %>
+								<%= cd_item.cd_title %>
 								<% end %>
 							</td>
 						</tr>

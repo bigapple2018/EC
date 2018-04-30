@@ -120,7 +120,7 @@ ActiveRecord::Schema.define(version: 20180427045907) do
     t.string "song_title"
     t.integer "cd_item_id"
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "", null: false
     t.index ["cd_item_id"], name: "index_songs_on_cd_item_id"
   end
 

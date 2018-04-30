@@ -2,18 +2,18 @@ class Admins::ItemsController < ApplicationController
 
 def new
 	@item = Item.new
-	@song = Song.new
+	@item.cd_items.build
 end
 
 def create
-	
 	item = Item.new(item_params)
 	item.admin_id = 1
 	item.save
-	@cd_item = item.cd_items.build
-	@cd_item.save
-	@song = @cd_item.songs.build(song_params)
-	@song.save
+
+	# @cd_item = item.cd_items.build
+	# @cd_item.save
+	# @song = @cd_item.songs.build
+	# @song.save
 
 	redirect_to  admins_items_path
 end
@@ -30,6 +30,9 @@ end
 
 def edit
 	@item = Item.find(params[:id])
+	# @cd_item = params[:cd_item]
+	@cd_item = @item.cd_items
+    # @cd_item.songs.build
 end
 
 def update
@@ -46,14 +49,16 @@ end
 
 private
    def item_params
-   	  params.require(:item).permit(:artist, :title_name, :label, :price, :stock, :image, :genre_id, :id, :destroy, :genre_name)
+   	  params.require(:item).permit(:artist,
+   	                               :title_name,
+   	                               :label,
+   	                               :price,
+   	                               :stock,
+   	                               :image,
+   	                               :genre_id,
+   	                               :_destroy,
+   	                               :genre_name,
+   	                               cd_items_attributes: [:id, :item_id, :cd_title, :_destroy])
    end
-
-   def song_params
-   	  params.require(:song).permit(:song_title)
-   end
-
-
-
 end
 

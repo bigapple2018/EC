@@ -24,28 +24,26 @@
 				<%= f.select :genre_name, [["J-Pop", "J-Pop"], ["K-Pop", "K-Pop"], ["R&B/ソウル", "R&B/ソウル"], ["ダンス", "ダンス"], ["Jazz", "Jazz"], ["Pop", "Pop"], ["Rock", "Rock"], ["その他", "その他"]] ,class:"form-control" %></td>
 			</tr>
 			<tr>
-			<td>収録曲</td>
-			<td><%#= f.text_field :song_title %>
-				<% @item.cd_items.each_with_index do |cd_item, i| %>
-					Disc：<%= i + 1 %> 
-					<%= link_to "曲の追加", admins_item_cd_item_path(@item, cd_item), class: 'btn btn-primary' %></td>
+				<td>タイトル</td>
+				<%= f.fields_for :cd_items do |cd_item| %>
+					<td><%= cd_item.text_field :cd_title %></td>
 				<% end %>
-		</tr>
-		<tr>
-			<td>値段</td>
-			<td><%= f.text_field :price %></td>
-		</tr>
-		<tr>
-			<td>在庫数</td>
-			<td><%= f.text_field :stock %></td>
-		</tr>
-	</tbody>
-</table>
+			</tr>
+			<tr>
+				<td>値段</td>
+				<td><%= f.number_field :price %></td>
+			</tr>
+			<tr>
+				<td>在庫数</td>
+				<td><%= f.number_field :stock %></td>
+			</tr>
+		</tbody>
+	</table>
 
-<div class="edit-back">
-	<%= f.submit '更新', class: 'btn btn-primary' %>
-	<%= link_to "戻る", admins_items_path(@item), class: 'btn btn-primary' %>
-</div>
+	<div class="edit-back">
+		<%= f.submit '更新', class: 'btn btn-primary' %>
+		<%= link_to "戻る", admins_items_path(@item), class: 'btn btn-primary' %>
+	</div>
 
 
-<% end %>
+	<% end %>
