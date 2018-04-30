@@ -35,12 +35,13 @@ User.create(:last_name => '山田',:first_name => '太郎',:last_kana => 'ヤマ
 User.create(:last_name => '鈴木',:first_name => '花子',:last_kana => 'スズキ',:first_kana => 'ハナコ',:postal_code => '123-4567',:address => 'テスト住所', :tell => '123-4567-8901', :email =>'test3@test.com',:password=>'password')
 User.create(:last_name => '佐藤',:first_name => '大介',:last_kana => 'サトウ',:first_kana => 'ダイスケ',:postal_code => '123-4567',:address => 'テスト住所', :tell => '123-4567-8901', :email =>'test4@test.com',:password=>'password')
 
-#開発用商品データ
+
 Item.create(:artist => 'testArtist1', :title_name => 'testAlbam1',:label => 'testLabel1',:price => 1980,:stock => 10,:image_id => '38b087a1dcd2b171234f3361dbad3fc419050d813a9a62da44729185bd14',:admin_id => 1,:genre_id =>1)
 Item.create(:artist => 'testArtist2', :title_name => 'testAlbam2',:label => 'testLabel2',:price => 1980,:stock => 10,:image_id => '38b087a1dcd2b171234f3361dbad3fc419050d813a9a62da44729185bd14',:admin_id => 1,:genre_id =>2)
 Item.create(:artist => 'testArtist3', :title_name => 'testAlbam3',:label => 'testLabel1',:price => 1980,:stock => 10,:image_id => '38b087a1dcd2b171234f3361dbad3fc419050d813a9a62da44729185bd14',:admin_id => 1,:genre_id =>2)
 Item.create(:artist => 'testArtist3', :title_name => 'testAlbam4',:label => 'testLabel2',:price => 1980,:stock => 10,:image_id => '38b087a1dcd2b171234f3361dbad3fc419050d813a9a62da44729185bd14',:admin_id => 1,:genre_id =>1)
 Item.create(:artist => 'testArtist4', :title_name => 'testAlbam5',:label => 'testLabel2',:price => 1980,:stock => 10,:image_id => '38b087a1dcd2b171234f3361dbad3fc419050d813a9a62da44729185bd14',:admin_id => 1,:genre_id =>1)
+
 
 CdItem.create(:item_id =>1,:cd_title => 'testCDtitle1')
 CdItem.create(:item_id =>1,:cd_title => 'testCDtitle2')

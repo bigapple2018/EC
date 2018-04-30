@@ -1,0 +1,27 @@
+<h1 class="head-text">曲追加</h1>
+
+
+<%= form_for([:admins, @cd_item.item, @cd_item], :html => {:multipart => true}) do |f| %>
+<table class="table table-striped table-bordered table-hover">
+	<tbody>
+		<tr>
+			<th>曲名</th>
+			<th>Action</th>
+		</tr>
+		<%= f.nested_fields_for :songs, wrapper_tag: :tr do |q| %>
+		<td><%= q.text_field :song_title,     class: 'form-control' %></td>
+		<td><%= q.remove_nested_fields_link 'Delete', class: 'btn btn-danger', role: 'button' %></td>
+		<% end %>
+	</tbody>
+</table>
+<%= f.add_nested_fields_link :song, 'Add new', class: 'btn btn-primary', role: 'button' %>
+<%= f.submit%>
+<% end %>
+
+
+
+<div class="edit-back">
+	<%= link_to "戻る", admins_items_path(@item), class: 'btn btn-primary' %>
+</div>
+
+

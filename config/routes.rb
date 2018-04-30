@@ -30,9 +30,13 @@ Rails.application.routes.draw do
  namespace :admins do
 
   get "/users/:id",:to=>"users#show"
-	resources :users
-	resources :items
-
+  	resources :users
+  	resources :items do
+      resources :cd_items do
+        resources :songs, only:[:create,:destroy]
+      end
+      
+    end
  end
  get '/admins_top' => 'admins#top'
  post '/admins/items' => 'admins/items#create'
@@ -45,6 +49,7 @@ namespace :admins do
  get "/users/:id",:to=>"users#show"
  get "/user/:user_id/orderHistories",:to=>"order_history#index", as:'order_histories'
  delete '/item/:id' => 'items#destroy', as: 'destroy_item'
+ resources :cd
 
 end
 

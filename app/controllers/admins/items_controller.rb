@@ -2,18 +2,21 @@ class Admins::ItemsController < ApplicationController
 
 def new
 	@item = Item.new
+	@item.cd_items.build
 end
 
 def create
-	
 	item = Item.new(item_params)
 	item.admin_id = 1
+	genre = Genre.find(item_params[:genre_id])
+	item.genre_name = genre.genre_name
 	item.save
 	redirect_to  admins_items_path
 end
 
+
 def index
-	@item = Item.page(params[:page]).reverse_order
+	@items = Item.page(params[:page]).reverse_order
 end
 
 def show
@@ -22,6 +25,7 @@ end
 
 def edit
 	@item = Item.find(params[:id])
+	@cd_item = @item.cd_items
 end
 
 def update
@@ -38,10 +42,16 @@ end
 
 private
    def item_params
-   	  params.require(:item).permit(:artist, :title_name, :label, :price, :stock, :image, :genre_id)
-   	  params.require(:songs).permit(:song_title)
+   	  params.require(:item).permit(:artist,
+   	                               :title_name,
+   	                               :label,
+   	                               :price,
+   	                               :stock,
+   	                               :image,
+   	                               :genre_id,
+   	                               :_destroy,
+   	                               :genre_name,
+   	                               cd_items_attributes: [:id, :item_id, :cd_title, :_destroy])
    end
-
-
 end
 

@@ -16,7 +16,7 @@ class Admins::UsersController < ApplicationController
  def update
  	 user = User.find(params[:id])
  	 if admin_signed_in?
- 	 	user.updaet(admin_user_params)
+ 	 	user.update(admin_user_params)
  	 	redirect_to admins_user_path(user.id)
 	 else
  	 	redirect_to user_path(user.id)

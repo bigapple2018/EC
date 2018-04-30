@@ -15,3 +15,4 @@
 //= require bootstrap-sprockets
 //= require jquery.jpostal 
 //= require_tree .
+//= require nested_form_fields
