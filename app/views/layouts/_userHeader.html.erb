@@ -1,35 +1,62 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-3">
-      <div class="logo user_logo">
-        BIGAPPLE
-      </div>
-    </div>
-    <div class="col-md-9">
-      <div class="row">
-        <div class="col-md-12">
-          <!--商品検索フォーム-->
-          <input type="text" class="itemname-search-txt">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="nav">
-            <ul>
-              <% if user_signed_in? %>
-                <li>ユーザ名　<%= current_user.last_name %>  <%= current_user.first_name %> </li>
-                <li><%= link_to 'My Page','#' %></li>
-                <li><%= link_to 'View Cart', '#' %></li>
-                <li><%= link_to 'Sign out',destroy_user_session_path, method: :delete %></li>
-              <% else %>
-                <li><%= link_to 'Home',items_path %></li>
-                <li><%= link_to 'Sign in',new_user_session_path %></li>
-                <li><%= link_to 'Sign up',new_user_registration_path %></li>
-              <% end %>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+ <div class="row">
+   <div class="col-md-3">
+      <%= image_tag 'PED_kajiraretaapple_TP_V.jpg' %>
+      <span class="header_logo_text">Big Apple</span>
+   </div>
+   <div class="col-md-9">
+     <div class="row">
+       <div class="col-md-12">
+         <!--商品検索フォーム-->
+         <% if request.path == root_path || request.path == items_path ||request.path.include?('items/') %>
+           <%= search_form_for @q,enforce_utf8: false do |f| %>
+             <%= f.search_field :title_name_cont %>
+             <span class="glyphicon glyphicon-search search_icon"></span>
+             <%= select_tag 'item[category]', options_for_select([['タイトル',1],['アーティスト',2]]) %>
+           <% end %>
+         <% end %>
+       </div>
+     </div>
+     <div class="row">
+       <div class="col-md-12">
+         <div class="nav user-nav">
+           <ul>
+             <% if user_signed_in? %>
+               <li>UserName:　<%= current_user.last_name %>  <%= current_user.first_name %> 　　</li>
+               <li><%= link_to '　Home',root_path %></li>
+               <li><%= link_to '　My Page',user_path(current_user.id) %></li>
+               <li>
+                 <%= link_to '　View Cart', cart_path(current_cart) %>
+                 <% if current_item_count > 0 %>
+                    <span class="badge badge-pill badge-red"><%= current_item_count %></span>
+                 <% end %>
+               </li>
+               <li><%= link_to '　Sign out',destroy_user_session_path, method: :delete %></li>
+             <% else %>
+               <li><%= link_to '　Home',items_path %></li>
+               <li><%= link_to '　Sign in',new_user_session_path %></li>
+               <li><%= link_to '　Sign up',new_user_registration_path %></li>
+             <% end %>
+           </ul>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
 </div>
+<script>
+$(function($) {
+  // 検索方法の選択切り替え
+    $('#item_category').change(function() {
+        var search_input = $("input[type='search']")
+        var category = $('#item_category option:selected').val();
+        if(category == 1){
+          search_input.attr("name","q[title_name_cont]")
+          search_input.attr("id","q_title_name_cont")
+        }else{
+          search_input.attr("name","q[artist_cont]")
+          search_input.attr("id","q_artist_cont")
+        }
+    });
+});
+</script>

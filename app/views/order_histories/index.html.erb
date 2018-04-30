@@ -1,0 +1,34 @@
+<!-- 購入履歴画面 -->
+<div class="container">
+	<h1 class="hedding_order_history"> 購入履歴</h1>
+			 <% @histories.each do |order_history| %>
+	    <table class="table_history">
+			<thead>
+				<tr>
+					<th class="table_thbuy"> 購入日</th>
+					<th class="table_thcontent"> 購入内容(アーティスト名/シングル・アルバム名・単価)</th>
+					<th class="table_thdestination"> 送付先</th>
+					<th class="table_thprice"> 購入価格</th>
+					<th class="table_thstatus"> ステータス</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><%= order_history.buy_day.strftime("%Y年%m月%d日") %></td>
+				    <td>
+			      <% order_history.order_history_items.each do |order_history_item| %>
+					<%= order_history_item.artist %> / <%= order_history_item.title_name %> ￥<%= order_history_item.price %><br>
+					<% end %>
+					</td>
+					<td><%= order_history.destination %></td>
+					<td class="table_tdprice">￥<%= order_history.summary_price %></td>
+					<td class="table_tdstatus"><%= order_history.status.status_name %></td>
+				</tr>
+			<% end %>
+		</table>
+			</tbody>
+				 <%= paginate @histories %>
+		　　　　<div class="order_history_btn">
+				 <%= link_to "戻る", user_path(current_user), class: "btn red-gray-btn btn-xs" %>
+			   </div>
+</div>

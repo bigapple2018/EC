@@ -11,8 +11,8 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
 //= require jquery
 //= require bootstrap-sprockets
+//= require jquery.jpostal 
 //= require_tree .
 //= require nested_form_fields

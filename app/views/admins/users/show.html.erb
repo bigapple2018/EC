@@ -33,9 +33,7 @@
 
 	<%= link_to "戻る", admins_users_path(@user),class: 'btn btn-primary' %>
 
-	<%#= link_to “購入履歴”, ユーザー一覧画面_path %>
-
-	<%= link_to "編集", edit_admins_user_path(@user.id),class: 'btn btn-primary' %>
+	<%= link_to "編集", edit_admins_user_path(@user.id), class: 'btn btn-primary' %>
 
 	<%= link_to "削除", admins_user_path(@user.id), method: :delete, "data-confirm" => "本当に削除しますか？" ,class: "btn btn-danger"%>
 

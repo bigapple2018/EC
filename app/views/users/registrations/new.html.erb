@@ -18,7 +18,7 @@
             <%= f.text_field  :postal_code, autocomplete: "postal_code", :placeholder => "郵便番号",:class =>"postal-code-txt" %>
           </div>
           <div class="field">
-            <%= f.text_field :address, autocomplete: "address", :placeholder => "住所" ,:class => "address-txt" %>
+            <%= f.text_area :address, autocomplete: "address", :placeholder => "住所" ,:class => "address-txt" %>
           </div>
           <div class="field">
             <%= f.text_field  :tell, autocomplete: "tell", :placeholder => "電話番号" ,:class => "tell-text" %>
@@ -37,10 +37,18 @@
           </div>
 
           <div class="actions">
-            <%= f.submit "Sign up", class:"btn red-btn" %>
+            <%= f.submit "Sign up", class:"btn red-btn btn-xs" %>
           </div>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+<script>
+$("#user_postal_code").jpostal({
+  postcode : [ "#user_postal_code" ],
+  address  : {
+                 "#user_address" : "%3%4%5",
+               }
+})
+</script>

@@ -1,0 +1,69 @@
+// Place all the styles related to the order_histories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*購入履歴画面*/
+/*見出し調整*/
+.hedding_order_history {
+	margin-bottom: 50px;
+  margin-left: 100px;
+}
+.hedding_order_history::before, .hedding_order_history::after{
+      content:"";
+      display:inline-block;
+      width:90px;
+      height:1px;
+      margin:0 3rem;
+      background-color: #333;
+      vertical-align: middle;
+  }
+  /*table調整*/
+.table_history {
+  border: 1px solid #e1e1e6;
+  margin-bottom: 35px;
+}
+.table_history th {
+  border-bottom: 1px solid #e1e1e6;
+  border-right: 1px solid #d0d0d4;
+  background-color: #ebebf1;
+  text-align: center;
+}
+.table_history td {
+  border-right: 1px solid #d0d0d4;
+}
+.table_thbuy {
+  width: 110px;
+}
+.table_thcontent {
+  width: 500px;
+}
+.table_thdestination {
+  width: 300px;
+}
+.table_thprice {
+  width: 80px;
+}
+.table_thstatus {
+  width: 95px;
+}
+/*tablebtn調整*/
+.order_history_btn {
+  	text-align: right;
+    padding-bottom: 30px;
+  }
+.order_history_btn .red-gray-btn {
+	width: 100px;
+}
+/*ページ送り*/
+.pagination a:hover {
+  color:red;
+}
+.pagination a {
+  color:black;
+}
+
+.pagination {
+  width: 90%;
+  text-align: center;
+}
+

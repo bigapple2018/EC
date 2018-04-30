@@ -1,6 +1,18 @@
 class ItemsController < ApplicationController
+ before_action :authenticate_user!, except: [:index, :show]
   def index
-    @items = Item.all
+    item_search_init
     @genres = Genre.all
+  end
+
+  def show
+    item_search_init
+    @item = Item.find(params[:id])
+  end
+
+  private
+  def item_search_init
+    @q = Item.search(params[:q])
+    @items = @q.result(distinct: true)
   end
 end

@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+ul{
+  list-style: none;
+}
 // 見出し
 .heading{
   height: 30px;
@@ -42,8 +46,9 @@ ul.genre_list{
   width: 100%;
   padding-left: 0px;
 }
-ul.genre_list > li{
+ul.genre_list >a> li{
   height: 50px;
+  padding: 15px 5px;
   border:1px solid white;
   list-style: none;
   box-sizing: border-box;
@@ -51,10 +56,46 @@ ul.genre_list > li{
 }
 ul.genre_list a{
   color:#000;
-  list-style: none;
+  font-family: 'Comic Sans MS', cursive, 'arial unicode ms' !important ;
 }
-.genre_image{
-  height: 50px;
-  width: 50px;
+ul.genre_list > a > li:hover{
+  background-color:#ffded5;
+  border-radius: 5px;
 }
 
+// 商品詳細画面
+.item_title{
+  font-size: 20px;
+}
+.item_artist{
+  font-size: 16px;
+}
+.item_detail_btn_div{
+  margin: 30px　0;
+  text-align: right;
+}
+.cd_title{
+  margin-top:10px;
+  font-size: 16px;
+}
+.item_detail_tbl{
+  margin-left: 20px;
+}
+.price{
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+.label_font{
+  font-size: 14px;
+}
+.stock{
+  padding-top: 10px;
+  font-size: 16px;
+}
+.item_image{
+  margin-bottom: 30px;
+}
+.songs_list_div{
+  margin-top: 30px;
+  margin-left: 15px;
+}
