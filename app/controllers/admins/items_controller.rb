@@ -9,19 +9,12 @@ def create
 	item = Item.new(item_params)
 	item.admin_id = 1
 	item.save
-
-	# @cd_item = item.cd_items.build
-	# @cd_item.save
-	# @song = @cd_item.songs.build
-	# @song.save
-
 	redirect_to  admins_items_path
 end
 
 
 def index
 	@items = Item.page(params[:page]).reverse_order
-	# binding.pry
 end
 
 def show
@@ -30,9 +23,7 @@ end
 
 def edit
 	@item = Item.find(params[:id])
-	# @cd_item = params[:cd_item]
 	@cd_item = @item.cd_items
-    # @cd_item.songs.build
 end
 
 def update

@@ -20,9 +20,9 @@
 		</tr>
 		<tr>
 			<td>ジャンル</td>
-			<td>
-				<%= f.select :genre_name, [["J-Pop", "J-Pop"], ["K-Pop", "K-Pop"], ["R&B/ソウル", "R&B/ソウル"], ["ダンス", "ダンス"], ["Jazz", "Jazz"], ["Pop", "Pop"], ["Rock", "Rock"], ["その他", "その他"]] ,class:"form-control" %></td>
-			</tr>
+			<td><%= f.collection_select :genre_name, Genre.all, :genre_name, :genre_name %>
+			</td>
+		</tr>
 			<tr>
 				<td>タイトル</td>
 				<%= f.fields_for :cd_items do |cd_item| %>
