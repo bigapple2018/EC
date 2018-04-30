@@ -65,6 +65,7 @@ class CartsController < ApplicationController
 				item_cart.destroy
 			end
 			cart.destroy
+			session[:cart_id] = nil
 		else
 			flash.now[:error] = "購入に失敗しました"
 		end
