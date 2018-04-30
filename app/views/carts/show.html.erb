@@ -1,6 +1,11 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-9">
+			<% if @cart.item_carts.count == 0 %>
+			<div class="alert alert-warning alert_div" role="alert" >
+  			カートに商品がありません
+			</div>
+			<% else %>
 			<table class="table">
 				<thead>
 					<tr>
@@ -26,6 +31,7 @@
 					</tbody>
 				<% end %>
 			</table>
+			<% end %>
 		</div>
 		<div class="col-lg-3 summary">
       <div class="row">
@@ -51,7 +57,11 @@
       </div>
       <div class="row">
         <div class="cart_summary">
-          <%= link_to "購入手続きへ",cart_check_path, class: "btn red-btn"%>
+					<% if @cart.item_carts.count == 0 %>
+						<%= link_to "購入手続きへ","#", class: "btn red-btn", :disabled => true %>
+					<% else %>
+          	<%= link_to "購入手続きへ",cart_check_path, class: "btn red-btn"%>
+					<% end %>
         </div>
       </div>
     </div>
