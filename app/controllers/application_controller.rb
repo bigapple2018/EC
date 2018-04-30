@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
  helper_method :current_cart
- helper_method :current_cart_inside
+ helper_method :current_item_count
 
 	def current_cart
 		if session[:cart_id]
