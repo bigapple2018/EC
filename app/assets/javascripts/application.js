@@ -15,9 +15,8 @@
 //= require bootstrap-sprockets
 //= require jquery.jpostal
 //= require_tree .
-<<<<<<< HEAD
 //= require nested_form_fields
-=======
+
 
 
 $(document).ready(function(){
@@ -29,4 +28,4 @@ $(document).ready(function(){
 });
 
 });
->>>>>>> 0813e7c... jquery追加 トップページボタン送り実装
+
