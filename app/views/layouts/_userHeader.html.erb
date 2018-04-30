@@ -25,7 +25,7 @@
                <li>UserName:　<%= current_user.last_name %>  <%= current_user.first_name %> 　　</li>
                <li><%= link_to '　Home',root_path %></li>
                <li><%= link_to '　My Page',user_path(current_user.id) %></li>
-               <li><%= link_to '　View Cart', '#' %></li>
+               <li><%= link_to '　View Cart', cart_path(current_cart) %></li>
                <li><%= link_to '　Sign out',destroy_user_session_path, method: :delete %></li>
              <% else %>
                <li><%= link_to '　Home',items_path %></li>

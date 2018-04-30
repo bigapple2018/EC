@@ -97,7 +97,7 @@
       </div>
       <div class="row">
         <div class="cart_summary">
-          <%= link_to "キャンセル", "#" ,class:"btn red-gray-btn btn-xs" %><br>
+          <%= link_to "キャンセル", cart_path(current_cart) ,class:"btn red-gray-btn btn-xs" %><br>
         </div>
         <div class="cart_summary">
           <%= f.submit "購入確定", "data-confirm" => "購入を確定しますか", class: "btn red-btn" %>
