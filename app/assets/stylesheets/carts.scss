@@ -22,11 +22,41 @@
 .comfirm_box_btn .red-gray-btn {
     width: 300px;
 }
+
+/*購入手続き画面*/
+.table td{
+	vertical-align: middle !important;
+}
+.cart_summary{
+	margin:10px 0px;
+	text-align:center;
+}
+.sub_heading{
+  height: 20px;
+  border-bottom:solid 2px #c8c8c8;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+.sub_heading > p{
+  font-size: 16px;
+	padding-bottom:10px;
+}
+.summary {
+	background-color: #000;
+	color:#fff;
+	height: auto;
+	.heading{
+		border-bottom:solid 3px #fff;
+		margin:30px 20px;
+	}
+}
+.radio_label{
+	font-weight: normal;
+	margin-right: 20px;
+}
+.item_name{
+	font-size: 16px;
+}
 .table .red-border-btn{
 	width: 100px;
-}
-.summary{
-	background-color: #000;
-	color: white;
-	height:auto;
 }

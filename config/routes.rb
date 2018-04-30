@@ -38,10 +38,9 @@ Rails.application.routes.draw do
  post '/admins/items' => 'admins/items#create'
 
  get 'cart/:id' => 'carts#show', as:'cart'
-
-
-
-
+ get 'cart/:id/check' => 'carts#check', as: 'cart_check'
+ post 'cart/:id/confirm' => 'carts#confirm', as:'cart_confirm'
+ 
 namespace :admins do
  get "/users/:id",:to=>"users#show"
  get "/user/:user_id/orderHistories",:to=>"order_history#index", as:'order_histories'

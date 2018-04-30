@@ -56,9 +56,11 @@ ul.genre_list >a> li{
 }
 ul.genre_list a{
   color:#000;
+  font-family: 'Comic Sans MS', cursive, 'arial unicode ms' !important ;
 }
 ul.genre_list > a > li:hover{
   background-color:#ffded5;
+  border-radius: 5px;
 }
 
 // 商品詳細画面
