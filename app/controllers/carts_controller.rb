@@ -9,7 +9,6 @@ class CartsController < ApplicationController
 		@cart.item_carts.each do |itemcart|
 		@price = itemcart.item.price * itemcart.count
 		@total_price += @price
-        # @total_price += itemcart.item.price
         @total_count += itemcart.count
 		end
 	end
