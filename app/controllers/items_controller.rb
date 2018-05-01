@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   def index
     item_search_init
     @genres = Genre.all
+    @slick_images = Item.limit(8).order("created_at DESC")
   end
 
   def show
@@ -13,6 +14,6 @@ class ItemsController < ApplicationController
   private
   def item_search_init
     @q = Item.search(params[:q])
-    @items = @q.result(distinct: true).order(created_at: :desc).page(params[:page]).per(5)
+    @items = @q.result(distinct: true).order(created_at: :desc).page(params[:page]).per(10)
   end
 end

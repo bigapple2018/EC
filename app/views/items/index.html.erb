@@ -18,14 +18,9 @@
       </div>
     <!-- jquery slick読み込み -->
   <ul class="autoplay img_apple">
-     <li><%= image_tag "PED_kajiraretaapple_TP_V.jpg" %></li>
-     <li><%= image_tag "PED_kajiraretaapple_TP_V.jpg" %></li>
-     <li><%= image_tag "PED_kajiraretaapple_TP_V.jpg" %></li>
-     <li><%= image_tag "PED_kajiraretaapple_TP_V.jpg" %></li>
-     <li><%= image_tag "PED_kajiraretaapple_TP_V.jpg" %></li>
-     <li><%= image_tag "PED_kajiraretaapple_TP_V.jpg" %></li>
-     <li><%= image_tag "PED_kajiraretaapple_TP_V.jpg" %></li>
-     <li><%= image_tag "PED_kajiraretaapple_TP_V.jpg" %></li>
+    <% @slick_images.each do |slick_image| %>
+     <li><%= attachment_image_tag slick_image, :image, :fill, 120, 120, format: 'png' %></li>
+    <% end %>
  </ul>
   <!-- jquery slick読み込み -->
 
@@ -39,11 +34,11 @@
               </li>
               <li><%= item.title_name %></li>
               <li><%= item.artist %></li>
-              <%= paginate @items %>
             <% end %>
           </ul>
         </li>
       <% end %>
+       <%= paginate @items %>
     </ul>
     </div>
   </div>
