@@ -21,7 +21,8 @@ ul{
 ul.items_list {
  display: flex;
  flex-wrap: wrap;
- width: 100%;
+ width: 90%;
+ margin: 50px auto;
 }
 ul.items_list > li {
  width: 25%;

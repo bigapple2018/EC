@@ -13,6 +13,6 @@ class ItemsController < ApplicationController
   private
   def item_search_init
     @q = Item.search(params[:q])
-    @items = @q.result(distinct: true)
+    @items = @q.result(distinct: true).order(created_at: :desc).page(params[:page]).per(5)
   end
 end

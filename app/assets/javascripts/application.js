@@ -10,9 +10,22 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
 //= require jquery
+//= require jquery_ujs
 //= require bootstrap-sprockets
-//= require jquery.jpostal 
+//= require jquery.jpostal
 //= require_tree .
 //= require nested_form_fields
+
+
+
+$(document).ready(function(){
+  $('.autoplay').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 5000,
+});
+
+});
+

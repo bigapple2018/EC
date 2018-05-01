@@ -16,6 +16,19 @@
       <div class="heading">
         <p>Music</p>
       </div>
+    <!-- jquery slick読み込み -->
+  <ul class="autoplay img_apple">
+     <li><%= image_tag "PED_kajiraretaapple_TP_V.jpg" %></li>
+     <li><%= image_tag "PED_kajiraretaapple_TP_V.jpg" %></li>
+     <li><%= image_tag "PED_kajiraretaapple_TP_V.jpg" %></li>
+     <li><%= image_tag "PED_kajiraretaapple_TP_V.jpg" %></li>
+     <li><%= image_tag "PED_kajiraretaapple_TP_V.jpg" %></li>
+     <li><%= image_tag "PED_kajiraretaapple_TP_V.jpg" %></li>
+     <li><%= image_tag "PED_kajiraretaapple_TP_V.jpg" %></li>
+     <li><%= image_tag "PED_kajiraretaapple_TP_V.jpg" %></li>
+ </ul>
+  <!-- jquery slick読み込み -->
+
       <ul class="items_list">
       <% @items.each do |item| %>
         <li>
@@ -26,6 +39,7 @@
               </li>
               <li><%= item.title_name %></li>
               <li><%= item.artist %></li>
+              <%= paginate @items %>
             <% end %>
           </ul>
         </li>
