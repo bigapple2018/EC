@@ -1,23 +1,13 @@
-<h1 class="head-text">CD一覧画面</h1>
-
-<div class="new">
-	<%= link_to '新規登録',new_admins_item_path, class: 'btn btn-primary' %>
-</div>
-
 <div class="container">
+	<h1 class="head-text">CD一覧画面</h1>
+	<div class="new">
+		<%= link_to '新規登録',new_admins_item_path, class: 'btn btn-primary' %>
+	</div>
 	<div class="row">
-
 		<% @items.each do |item| %>
 		<%= attachment_image_tag item, :image, :fill, 300, 300, format: 'jpeg', class: "col-lg-4" %>
-		<%#= attachment_image_tag post_image, :image %>
-
-
-
 		<div class="admin_items">
-
 			<div class="col-lg-8 admin_items_table">
-
-
 				<table class="table">
 					<tbody>
 						<tr>
@@ -38,8 +28,24 @@
 						</tr>
 						<tr>
 							<td>タイトル</td>
-							<td><% item.cd_items.each do |cd_item| %>
-								<%= cd_item.cd_title %>
+							<td>
+								<% item.cd_items.each do |cd_item| %>
+									<table>
+										<tr>
+											<td>
+												<% if cd_item.songs.count == 0 %>
+													<%= cd_item.cd_title %>
+													<%= link_to '　収録曲を登録してください',edit_admins_item_cd_item_path(:item_id => item.id,:id => cd_item.id) %>
+												<% else %>
+													<ul>
+														<%= link_to cd_item.cd_title,edit_admins_item_cd_item_path(:item_id => item.id,:id => cd_item.id) %>
+														<% cd_item.songs.each do |song| %>
+													 		<li><%= "#{song.song_number}.#{song.song_title}" %></li>
+													 	<% end %>
+													</ul>
+												</td>
+											<% end %>
+									</table>
 								<% end %>
 							</td>
 						</tr>
@@ -71,6 +77,3 @@
 	</div>
 </div>
 <br>
-
-
-

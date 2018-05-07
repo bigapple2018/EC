@@ -70,6 +70,11 @@ input[type="text"],input[type="email"],input[type="password"]
   color:#fff;
   width: 200px;
 }
+.blue-gray-btn{
+  background-color: #ccc;
+  border:none;
+  color:#33a4ec;
+}
 // deviseエラー表示用
 // bootstrapのflushに寄せる
 #error_explanation{
@@ -194,5 +199,3 @@ footer{
     border: 1px solid #ccc;
   }
 }
-
-
