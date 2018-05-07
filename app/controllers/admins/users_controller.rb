@@ -1,7 +1,13 @@
 class Admins::UsersController < ApplicationController
 
  def index
-	@users = User.page(params[:page]).reverse_order .search(params[:search])
+	@q = User.ransack(params[:q])
+  @users = @q.result.order(created_at: :desc).page(params[:page]).per(2)
+ end
+
+ def search
+  @q = User.search(search_params)
+  @users = @q.result(distinct: true)
  end
 
 
@@ -27,6 +33,10 @@ class Admins::UsersController < ApplicationController
 private
    def admin_user_params
    	  params.require(:user).permit(:last_name, :first_name, :last_kana, :first_kana, :postal_code, :address, :tell, :delete_date, :email, :password)
+   end
+
+   def search_params
+	    params.require(:q).permit(:name_cont)
    end
 
 end
