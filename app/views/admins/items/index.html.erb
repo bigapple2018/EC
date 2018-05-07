@@ -37,10 +37,10 @@
 													<%= cd_item.cd_title %>
 													<%= link_to '　収録曲を登録してください',edit_admins_item_cd_item_path(:item_id => item.id,:id => cd_item.id) %>
 												<% else %>
-													<ul>
-														<%= link_to cd_item.cd_title,edit_admins_item_cd_item_path(:item_id => item.id,:id => cd_item.id) %>
+													<%= link_to cd_item.cd_title,edit_admins_item_cd_item_path(:item_id => item.id,:id => cd_item.id) %>
+													<ul class="song-list">
 														<% cd_item.songs.each do |song| %>
-													 		<li><%= "#{song.song_number}.#{song.song_title}" %></li>
+													 		<li><%= "#{"%02d" % song.song_number}.#{song.song_title}" %></li>
 													 	<% end %>
 													</ul>
 												</td>
@@ -51,7 +51,7 @@
 						</tr>
 						<tr>
 							<td>値段</td>
-							<td><%= item.price %></td>
+							<td>¥<%= item.price.to_s(:delimited) %></td>
 						</tr>
 						<tr>
 							<td>在庫数</td>
@@ -59,7 +59,6 @@
 						</tr>
 						<tr class="cd_index_content">
 							<td></td>
-							<!-- ead~doの中に入れて上げないとどこからitem.idを持ってきてくればいいのかわかない -->
 							<td>
 								<%= link_to "編集", edit_admins_item_path(item.id), class: 'btn btn-primary' %>
 								<%= link_to "削除", admins_destroy_item_path(item.id), method: :delete, "data-confirm" => "本当に削除しますか？" ,class: "btn btn-danger"%>

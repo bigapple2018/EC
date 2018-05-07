@@ -13,7 +13,7 @@
     <% end %>
   <div>
     <%= form_for(@cd_item, url: admins_item_cd_item_path) do |f| %>
-      <table class="table">
+      <table class="table song-table">
         <tr>
           <td>CD名</td>
           <td><%= f.text_field :cd_title, class: 'form-control' %></td>
@@ -25,13 +25,13 @@
         <tr>
           <td colspan="2">
             <!--子供要素の入力欄-->
-            <%= f.nested_fields_for :songs, wrapper_tag: :table,class: 'table table-border' do |q| %>
+            <%= f.nested_fields_for :songs, wrapper_tag: :table,class: 'song-table' do |q| %>
               <tr>
                 <td>
                   <%= q.number_field :song_number,:placeholder => "曲番号",class: 'form-control' %>
                 </td>
                 <td>
-                  <%= q.text_field :song_title,:placeholder => "曲タイトル",class: 'form-control' %>
+                  <%= q.text_field :song_title,:placeholder => "曲タイトル",class: 'form-control song-title' %>
                 </td>
                 <td>
                   <%= q.remove_nested_fields_link '曲削除', class: 'btn btn-danger', role: 'button' %>

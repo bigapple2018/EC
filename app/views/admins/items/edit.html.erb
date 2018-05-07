@@ -14,6 +14,14 @@
 	<table class="admin_item_new">
 		<tbody>
 			<tr>
+				<td>
+					<%= attachment_image_tag @item, :image, :fill, 300, 300, format: 'jpeg', class: "col-lg-4" %>
+				</td>
+				<td>
+					<%= f.attachment_field :image %>
+				</td>
+			</tr>
+			<tr>
 				<td>アーティスト</td>
 				<td><%= f.text_field :artist %></td>
 			</tr>
