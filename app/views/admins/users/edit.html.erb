@@ -1,3 +1,4 @@
+<div class="container">
 <h1 class="user-edit">ユーザー詳細編集</h1>
 
 
@@ -34,11 +35,12 @@
 		</tbody>
     </table>
 
-    <%= f.submit '保存' %>
-	<%= link_to "戻る", admins_path(@user),class: 'btn btn-primary' %>
+    <%= f.submit '保存' ,class: 'btn btn-primary'%>
+		<%= link_to "戻る", admins_path(@user),class: 'btn btn-primary blue-gray-btn' %>
 
 	<%#= link_to “更新”, ユーザー一覧画面_path %>
 
 
 <% end %>
+</div>
 </div>

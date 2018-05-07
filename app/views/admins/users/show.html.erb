@@ -1,3 +1,4 @@
+<div class="container">
 <h1>ユーザー詳細</h1>
 
 
@@ -31,40 +32,12 @@
 		</tbody>
     </table>
 
-	<%= link_to "戻る", admins_users_path(@user),class: 'btn btn-primary' %>
+	<%= link_to "戻る", admins_users_path(@user),class: 'btn btn-primary blue-gray-btn' %>
+	<%= link_to "購入履歴", admins_order_histories_path(@user.id), class: 'btn btn-primary' %>
 
 	<%= link_to "編集", edit_admins_user_path(@user.id), class: 'btn btn-primary' %>
 
 	<%= link_to "削除", admins_user_path(@user.id), method: :delete, "data-confirm" => "本当に削除しますか？" ,class: "btn btn-danger"%>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
