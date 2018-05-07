@@ -23,8 +23,12 @@ class Admins::CdItemsController < ApplicationController
 
   def update
     cd_item = CdItem.find(params[:id])
-    cd_item.update(cd_items_params)
-  	redirect_to admins_items_path
+    if cd_item.update(cd_items_params)
+  	   redirect_to admins_items_path
+    else
+      @cd_item = cd_item
+      render :action => "edit"
+    end
   end
 
   def destroy

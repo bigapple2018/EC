@@ -10,8 +10,12 @@ def create
 	item.admin_id = current_admin.id
 	genre = Genre.find(item_params[:genre_id])
 	item.genre_name = genre.genre_name
-	item.save
-	redirect_to  admins_items_path
+	if item.save
+		redirect_to  admins_items_path
+	else
+		@item = item
+		render :action => 'new'
+	end
 end
 
 
@@ -30,8 +34,12 @@ end
 
 def update
 	item = Item.find(params[:id])
-	item.update(item_params)
-	redirect_to admins_items_path
+	if item.update(item_params)
+		redirect_to admins_items_path
+	else
+		@item = item
+		render :action => "edit"
+	end
 end
 
 def destroy

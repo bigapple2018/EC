@@ -1,33 +1,47 @@
-<h1 class="head-text">CD編集画面</h1>
-
-
-<!-- 下記の様に指定することで、adminのコントローラからインスタンス変数を持ってくることができる -->
-<%= form_for([:admins, @item]) do |f| %>
-
-<table class="admin_item_new">
-	<tbody>
-		<tr>
-			<td>アーティスト</td>
-			<td><%= f.text_field :artist %></td>
-		</tr>
-		<tr>
-			<td>シングル・アルバム名</td>
-			<td><%= f.text_field :title_name %></td>
-		</tr>
-		<tr>
-			<td>レーベル名</td>
-			<td><%= f.text_field :label %></td>
-		</tr>
-		<tr>
-			<td>ジャンル</td>
-			<td><%= f.collection_select :genre_name, Genre.all, :genre_name, :genre_name %>
-			</td>
-		</tr>
+<div class="container">
+	<h1 class="head-text">CD編集画面</h1>
+	<% if @item.errors.any? %>
+		 <div id="error_explanation">
+			 <ul>
+				 <% @item.errors.full_messages.each do |message| %>
+					 <li><%= message %></li>
+					 <% end %>
+				 </ul>
+			 </div>
+	<% end %>
+	<!-- 下記の様に指定することで、adminのコントローラからインスタンス変数を持ってくることができる -->
+	<%= form_for([:admins, @item]) do |f| %>
+	<table class="admin_item_new">
+		<tbody>
 			<tr>
-				<td>タイトル</td>
-				<%= f.fields_for :cd_items do |cd_item| %>
-					<td><%= cd_item.text_field :cd_title %></td>
-				<% end %>
+				<td>アーティスト</td>
+				<td><%= f.text_field :artist %></td>
+			</tr>
+			<tr>
+				<td>シングル・アルバム名</td>
+				<td><%= f.text_field :title_name %></td>
+			</tr>
+			<tr>
+				<td>レーベル名</td>
+				<td><%= f.text_field :label %></td>
+			</tr>
+			<tr>
+				<td>ジャンル</td>
+				<td><%= f.collection_select :genre_name, Genre.all, :genre_name, :genre_name %></td>
+			</tr>
+			<tr>
+				<td>
+					CD
+					<%= f.add_nested_fields_link :cd_items, 'CD追加', class: 'btn btn-primary', role: 'button' %>
+				</td>
+				<td>
+					<table class="table_table-striped_table-bordered_table-hover">
+							<%= f.nested_fields_for :cd_items, wrapper_tag: :tr do |q| %>
+							<td><%= q.text_field :cd_title,     class: 'form-control' %></td>
+							<td><%= q.remove_nested_fields_link 'CD削除', class: 'btn btn-danger', role: 'button' %></td>
+							<% end %>
+					</table>
+				</td>
 			</tr>
 			<tr>
 				<td>値段</td>
@@ -39,11 +53,9 @@
 			</tr>
 		</tbody>
 	</table>
-
 	<div class="edit-back">
 		<%= f.submit '更新', class: 'btn btn-primary' %>
-		<%= link_to "戻る", admins_items_path(@item), class: 'btn btn-primary' %>
+		<%= link_to "戻る", admins_items_path(@item), class: 'btn btn-primary blue-gray-btn' %>
 	</div>
-
-
 	<% end %>
+</div>

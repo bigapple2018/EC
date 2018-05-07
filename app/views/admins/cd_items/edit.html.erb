@@ -2,6 +2,15 @@
   <div>
     <h1 class="head-text">タイトル編集</h1>
   </div>
+  <% if @cd_item.errors.any? %>
+       <div id="error_explanation">
+         <ul>
+           <% @cd_item.errors.full_messages.each do |message| %>
+             <li><%= message %></li>
+             <% end %>
+           </ul>
+         </div>
+    <% end %>
   <div>
     <%= form_for(@cd_item, url: admins_item_cd_item_path) do |f| %>
       <table class="table">
@@ -19,7 +28,7 @@
             <%= f.nested_fields_for :songs, wrapper_tag: :table,class: 'table table-border' do |q| %>
               <tr>
                 <td>
-                  <%= q.text_field :song_number,:placeholder => "曲番号",class: 'form-control' %>
+                  <%= q.number_field :song_number,:placeholder => "曲番号",class: 'form-control' %>
                 </td>
                 <td>
                   <%= q.text_field :song_title,:placeholder => "曲タイトル",class: 'form-control' %>
