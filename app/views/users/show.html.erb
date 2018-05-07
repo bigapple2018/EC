@@ -24,10 +24,10 @@
 		 	<div class="btn_box">
 				<%= link_to "編集", edit_user_path(current_user), class: "btn red-btn btn-xs" %>
 				<%= link_to "購入履歴", order_histories_path, class: "btn red-gray-btn btn-xs" %>
-				<%= link_to "住所管理", sub_addresses_path(current_user), class: "btn red-btn btn-xs" %>
+				<%= link_to "住所管理", sub_addresses_path, class: "btn red-btn btn-xs" %>
 			</div>
 		<div class="leave_btn">
-	        <%= link_to "退会", new_leave_path(current_user), class: "btn red-border-btn btn-xs " %>
+	        <%= link_to "退会", new_leave_path, class: "btn red-border-btn btn-xs " %>
 	    </div>
 </div>
 <!-- マイページ表示　-->
