@@ -39,6 +39,7 @@ Rails.application.routes.draw do
  get '/admins_top' => 'admins#top'
  post '/admins/items' => 'admins/items#create'
 
+
  get 'cart/:id' => 'carts#show', as:'cart'
  get 'cart/:id/check' => 'carts#check', as: 'cart_check'
  post 'cart/:id/confirm' => 'carts#confirm', as:'cart_confirm'
