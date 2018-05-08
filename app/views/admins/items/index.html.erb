@@ -1,23 +1,13 @@
-<h1 class="head-text">CD一覧画面</h1>
-
-<div class="new">
-	<%= link_to '新規登録',new_admins_item_path, class: 'btn btn-primary' %>
-</div>
-
 <div class="container">
+	<h1 class="head-text">CD一覧画面</h1>
+	<div class="new">
+		<%= link_to '新規登録',new_admins_item_path, class: 'btn btn-primary' %>
+	</div>
 	<div class="row">
-
 		<% @items.each do |item| %>
 		<%= attachment_image_tag item, :image, :fill, 300, 300, format: 'jpeg', class: "col-lg-4" %>
-		<%#= attachment_image_tag post_image, :image %>
-
-
-
 		<div class="admin_items">
-
 			<div class="col-lg-8 admin_items_table">
-
-
 				<table class="table">
 					<tbody>
 						<tr>
@@ -38,14 +28,30 @@
 						</tr>
 						<tr>
 							<td>タイトル</td>
-							<td><% item.cd_items.each do |cd_item| %>
-								<%= cd_item.cd_title %>
+							<td>
+								<% item.cd_items.each do |cd_item| %>
+									<table>
+										<tr>
+											<td>
+												<% if cd_item.songs.count == 0 %>
+													<%= cd_item.cd_title %>
+													<%= link_to '　収録曲を登録してください',edit_admins_item_cd_item_path(:item_id => item.id,:id => cd_item.id) %>
+												<% else %>
+													<%= link_to cd_item.cd_title,edit_admins_item_cd_item_path(:item_id => item.id,:id => cd_item.id) %>
+													<ul class="song-list">
+														<% cd_item.songs.each do |song| %>
+													 		<li><%= "#{"%02d" % song.song_number}.#{song.song_title}" %></li>
+													 	<% end %>
+													</ul>
+												</td>
+											<% end %>
+									</table>
 								<% end %>
 							</td>
 						</tr>
 						<tr>
 							<td>値段</td>
-							<td><%= item.price %></td>
+							<td>¥<%= item.price.to_s(:delimited) %></td>
 						</tr>
 						<tr>
 							<td>在庫数</td>
@@ -53,7 +59,6 @@
 						</tr>
 						<tr class="cd_index_content">
 							<td></td>
-							<!-- ead~doの中に入れて上げないとどこからitem.idを持ってきてくればいいのかわかない -->
 							<td>
 								<%= link_to "編集", edit_admins_item_path(item.id), class: 'btn btn-primary' %>
 								<%= link_to "削除", admins_destroy_item_path(item.id), method: :delete, "data-confirm" => "本当に削除しますか？" ,class: "btn btn-danger"%>
@@ -71,6 +76,3 @@
 	</div>
 </div>
 <br>
-
-
-

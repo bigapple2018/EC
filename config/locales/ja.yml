@@ -4,6 +4,9 @@ ja:
       user: ユーザー
       sub_address: "サブアドレス"
       leave: 退会
+      item: 商品
+      cd_items: CD
+      songs: 収録曲
     attributes:
       user:
         last_name: 姓
@@ -20,6 +23,19 @@ ja:
         sub_address: "住所"
       leave:
          leave_reason: 退会理由
+      item:
+          artist: アーティスト名
+          title_name: タイトル
+          label: レーベル
+          price: 価格
+          stock: 在庫
+          cd_items: CD
+      cd_items:
+          cd_title: CD名
+          songs: 収録曲
+      songs:
+         song_title: 収録曲タイトル
+         song_number: 収録曲番号
   views:
     pagination:
       first: "&laquo; 最初"
@@ -27,4 +43,3 @@ ja:
       previous: "&lsaquo; 前"
       next: "次 &rsaquo;"
       truncate: "&hellip;"
-
