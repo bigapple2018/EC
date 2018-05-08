@@ -1,4 +1,5 @@
 class Admins::CdItemsController < ApplicationController
+ before_action :authenticate_admin!
   def new
   	@item = Item.find_by(params[:item_id])
   	@cd_item = CdItem.new
