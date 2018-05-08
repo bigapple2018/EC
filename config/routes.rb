@@ -40,7 +40,6 @@ Rails.application.routes.draw do
  end
  get '/admins_top' => 'admins#top'
  post '/admins/items' => 'admins/items#create'
- get 'search', to: 'users#search'
 
 
  get 'cart/:id' => 'carts#show', as:'cart'
